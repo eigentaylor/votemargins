@@ -1,0 +1,65 @@
+Year: 1976
+Original Winner: CARTER, JIMMY (D) with 297 electoral votes vs FORD, GERALD (R) with 241 electoral votes
+Flipped states: {'HAWAII': {'EC': 4, 'flipped votes': 3687, '% flipped': 1.283}, 'OHIO': {'EC': 25, 'flipped votes': 4667, '% flipped': 0.116}} with 8354 total flipped votes
+New Winner: FORD, GERALD (R) with 270 electoral votes vs CARTER, JIMMY (D) with 268 electoral votes
+
+Year: 1980
+Original Winner: REAGAN, RONALD (R) with 448 electoral votes vs CARTER, JIMMY (D) with 90 electoral votes
+Flipped states: {'MASSACHUSETTS': {'EC': 14, 'flipped votes': 1915, '% flipped': 0.091}, 'TENNESSEE': {'EC': 10, 'flipped votes': 2356, '% flipped': 0.15}, 'ARKANSAS': {'EC': 6, 'flipped votes': 2562, '% flipped': 0.32}, 'DELAWARE': {'EC': 3, 'flipped votes': 2750, '% flipped': 1.267}, 'SOUTH CAROLINA': {'EC': 8, 'flipped votes': 5529, '% flipped': 0.637}, 'MISSISSIPPI': {'EC': 7, 'flipped votes': 5905, '% flipped': 0.678}, 'VERMONT': {'EC': 3, 'flipped votes': 6339, '% flipped': 3.59}, 'ALABAMA': {'EC': 9, 'flipped votes': 8732, '% flipped': 0.676}, 'MAINE': {'EC': 4, 'flipped votes': 8775, '% flipped': 1.91}, 'KENTUCKY': {'EC': 9, 'flipped votes': 8929, '% flipped': 0.713}, 'NORTH CAROLINA': {'EC': 13, 'flipped votes': 19692, '% flipped': 1.1}, 'LOUISIANA': {'EC': 10, 'flipped votes': 42201, '% flipped': 2.811}, 'WISCONSIN': {'EC': 11, 'flipped votes': 53631, '% flipped': 2.59}, 'MICHIGAN': {'EC': 21, 'flipped votes': 126847, '% flipped': 3.546}, 'PENNSYLVANIA': {'EC': 27, 'flipped votes': 162167, '% flipped': 3.862}, 'ILLINOIS': {'EC': 26, 'flipped votes': 188319, '% flipped': 4.34}} with 646649 total flipped votes
+New Winner: CARTER, JIMMY (D) with 271 electoral votes vs REAGAN, RONALD (R) with 267 electoral votes
+
+Year: 1984
+Original Winner: REAGAN, RONALD (R) with 525 electoral votes vs MONDALE, WALTER (D) with 13 electoral votes
+Flipped states: {'RHODE ISLAND': {'EC': 4, 'flipped votes': 7488, '% flipped': 1.83}, 'HAWAII': {'EC': 4, 'flipped votes': 18949, '% flipped': 5.704}, 'VERMONT': {'EC': 3, 'flipped votes': 20068, '% flipped': 8.665}, 'DELAWARE': {'EC': 3, 'flipped votes': 25268, '% flipped': 9.954}, 'MASSACHUSETTS': {'EC': 13, 'flipped votes': 35666, '% flipped': 1.398}, 'ALASKA': {'EC': 3, 'flipped votes': 38186, '% flipped': 19.056}, 'WEST VIRGINIA': {'EC': 6, 'flipped votes': 38680, '% flipped': 5.273}, 'WYOMING': {'EC': 3, 'flipped votes': 39936, '% flipped': 21.401}, 'MONTANA': {'EC': 4, 'flipped votes': 42855, '% flipped': 11.302}, 'MARYLAND': {'EC': 10, 'flipped votes': 45992, '% flipped': 2.758}, 'NEVADA': {'EC': 4, 'flipped votes': 48558, '% flipped': 17.316}, 'IOWA': {'EC': 8, 'flipped votes': 48735, '% flipped': 3.724}, 'NEW MEXICO': {'EC': 5, 'flipped votes': 52667, '% flipped': 10.35}, 'MAINE': {'EC': 4, 'flipped votes': 60993, '% flipped': 11.069}, 'OREGON': {'EC': 7, 'flipped votes': 74611, '% flipped': 6.105}, 'WISCONSIN': {'EC': 11, 'flipped votes': 101423, '% flipped': 4.622}, 'WASHINGTON': {'EC': 10, 'flipped votes': 126660, '% flipped': 6.846}, 'TENNESSEE': {'EC': 11, 'flipped votes': 139250, '% flipped': 8.182}, 'PENNSYLVANIA': {'EC': 25, 'flipped votes': 178097, '% flipped': 3.701}, 'GEORGIA': {'EC': 12, 'flipped votes': 181048, '% flipped': 10.198}, 'NEW YORK': {'EC': 36, 'flipped votes': 187618, '% flipped': 2.942}, 'ILLINOIS': {'EC': 24, 'flipped votes': 310303, '% flipped': 6.473}, 'CALIFORNIA': {'EC': 47, 'flipped votes': 772246, '% flipped': 8.225}} with 2595297 total flipped votes
+New Winner: MONDALE, WALTER (D) with 270 electoral votes vs REAGAN, RONALD (R) with 268 electoral votes
+
+Year: 1988
+Original Winner: BUSH, GEORGE H.W. (R) with 426 electoral votes vs DUKAKIS, MICHAEL (D) with 112 electoral votes
+Flipped states: {'VERMONT': {'EC': 3, 'flipped votes': 4279, '% flipped': 1.782}, 'SOUTH DAKOTA': {'EC': 3, 'flipped votes': 9928, '% flipped': 3.193}, 'MONTANA': {'EC': 4, 'flipped votes': 10739, '% flipped': 2.988}, 'NEW MEXICO': {'EC': 5, 'flipped votes': 12923, '% flipped': 2.51}, 'DELAWARE': {'EC': 3, 'flipped votes': 15497, '% flipped': 6.242}, 'NORTH DAKOTA': {'EC': 3, 'flipped votes': 19411, '% flipped': 6.596}, 'MARYLAND': {'EC': 10, 'flipped votes': 24932, '% flipped': 1.464}, 'MAINE': {'EC': 4, 'flipped votes': 31782, '% flipped': 5.771}, 'CONNECTICUT': {'EC': 8, 'flipped votes': 36829, '% flipped': 2.581}, 'MISSOURI': {'EC': 11, 'flipped votes': 41668, '% flipped': 1.997}, 'ILLINOIS': {'EC': 24, 'flipped votes': 47500, '% flipped': 1.049}, 'PENNSYLVANIA': {'EC': 25, 'flipped votes': 52572, '% flipped': 1.17}, 'COLORADO': {'EC': 8, 'flipped votes': 53363, '% flipped': 3.954}, 'CALIFORNIA': {'EC': 47, 'flipped votes': 176343, '% flipped': 1.807}} with 537766 total flipped votes
+New Winner: DUKAKIS, MICHAEL (D) with 270 electoral votes vs BUSH, GEORGE H.W. (R) with 268 electoral votes
+
+Year: 1992
+Original Winner: CLINTON, BILL (D) with 370 electoral votes vs BUSH, GEORGE H.W. (R) with 168 electoral votes
+Flipped states: {'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 3279, '% flipped': 0.797}, 'MONTANA': {'EC': 3, 'flipped votes': 5151, '% flipped': 1.724}, 'NEVADA': {'EC': 4, 'flipped votes': 6661, '% flipped': 1.825}, 'GEORGIA': {'EC': 13, 'flipped votes': 6858, '% flipped': 0.342}, 'DELAWARE': {'EC': 3, 'flipped votes': 11871, '% flipped': 5.198}, 'HAWAII': {'EC': 4, 'flipped votes': 21245, '% flipped': 6.72}, 'KENTUCKY': {'EC': 8, 'flipped votes': 23964, '% flipped': 1.869}, 'COLORADO': {'EC': 8, 'flipped votes': 33416, '% flipped': 2.802}, 'NEW JERSEY': {'EC': 15, 'flipped votes': 39671, '% flipped': 1.42}, 'LOUISIANA': {'EC': 9, 'flipped votes': 41293, '% flipped': 2.665}, 'OHIO': {'EC': 21, 'flipped votes': 45317, '% flipped': 1.168}, 'TENNESSEE': {'EC': 11, 'flipped votes': 46111, '% flipped': 2.598}} with 284837 total flipped votes
+New Winner: BUSH, GEORGE H.W. (R) with 271 electoral votes vs CLINTON, BILL (D) with 267 electoral votes
+
+Year: 1996
+Original Winner: CLINTON, BILL (D) with 379 electoral votes vs DOLE, ROBERT (R) with 159 electoral votes
+Flipped states: {'NEVADA': {'EC': 4, 'flipped votes': 2366, '% flipped': 0.587}, 'KENTUCKY': {'EC': 8, 'flipped votes': 6666, '% flipped': 0.529}, 'ARIZONA': {'EC': 8, 'flipped votes': 15608, '% flipped': 1.224}, 'NEW MEXICO': {'EC': 5, 'flipped votes': 20373, '% flipped': 4.024}, 'TENNESSEE': {'EC': 11, 'flipped votes': 22809, '% flipped': 1.287}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 24841, '% flipped': 5.612}, 'OREGON': {'EC': 7, 'flipped votes': 55745, '% flipped': 4.693}, 'IOWA': {'EC': 7, 'flipped votes': 63808, '% flipped': 5.733}, 'MISSOURI': {'EC': 11, 'flipped votes': 67960, '% flipped': 3.547}, 'OHIO': {'EC': 21, 'flipped votes': 144170, '% flipped': 3.597}, 'FLORIDA': {'EC': 25, 'flipped votes': 151168, '% flipped': 3.155}} with 575514 total flipped votes
+New Winner: DOLE, ROBERT (R) with 270 electoral votes vs CLINTON, BILL (D) with 268 electoral votes
+
+Year: 2000
+Original Winner: BUSH, GEORGE W. (R) with 271 electoral votes vs GORE, AL (D) with 267 electoral votes
+Flipped states: {'FLORIDA': {'EC': 25, 'flipped votes': 269, '% flipped': 0.005}} with 269 total flipped votes
+New Winner: GORE, AL (D) with 292 electoral votes vs BUSH, GEORGE W. (R) with 246 electoral votes
+
+Year: 2004
+Original Winner: BUSH, GEORGE W. (R) with 286 electoral votes vs KERRY, JOHN (D) with 252 electoral votes
+Flipped states: {'NEW MEXICO': {'EC': 5, 'flipped votes': 2995, '% flipped': 0.4}, 'IOWA': {'EC': 7, 'flipped votes': 5030, '% flipped': 0.337}, 'COLORADO': {'EC': 9, 'flipped votes': 49762, '% flipped': 2.366}} with 57787 total flipped votes
+New Winner: KERRY, JOHN (D) with 273 electoral votes vs BUSH, GEORGE W. (R) with 265 electoral votes
+
+Year: 2008
+Original Winner: OBAMA, BARACK H. (D) with 365 electoral votes vs MCCAIN, JOHN (R) with 173 electoral votes
+Flipped states: {'NORTH CAROLINA': {'EC': 15, 'flipped votes': 7089, '% flipped': 0.166}, 'INDIANA': {'EC': 11, 'flipped votes': 14196, '% flipped': 0.522}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 34147, '% flipped': 4.869}, 'IOWA': {'EC': 7, 'flipped votes': 73281, '% flipped': 4.849}, 'VIRGINIA': {'EC': 13, 'flipped votes': 117264, '% flipped': 3.183}, 'FLORIDA': {'EC': 27, 'flipped votes': 118226, '% flipped': 1.42}, 'OHIO': {'EC': 20, 'flipped votes': 131113, '% flipped': 2.334}} with 495316 total flipped votes
+New Winner: MCCAIN, JOHN (R) with 270 electoral votes vs OBAMA, BARACK H. (D) with 268 electoral votes
+
+Year: 2012
+Original Winner: OBAMA, BARACK H. (D) with 332 electoral votes vs ROMNEY, MITT (R) with 206 electoral votes
+Flipped states: {'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 19822, '% flipped': 2.834}, 'FLORIDA': {'EC': 29, 'flipped votes': 37155, '% flipped': 0.442}, 'VIRGINIA': {'EC': 13, 'flipped votes': 74650, '% flipped': 1.967}, 'OHIO': {'EC': 18, 'flipped votes': 83108, '% flipped': 1.514}} with 214735 total flipped votes
+New Winner: ROMNEY, MITT (R) with 270 electoral votes vs OBAMA, BARACK H. (D) with 268 electoral votes
+
+Year: 2016
+Original Winner: TRUMP, DONALD J. (R) with 306 electoral votes vs CLINTON, HILLARY (D) with 232 electoral votes
+Flipped states: {'MICHIGAN': {'EC': 16, 'flipped votes': 5353, '% flipped': 0.118}, 'WISCONSIN': {'EC': 10, 'flipped votes': 11375, '% flipped': 0.408}, 'PENNSYLVANIA': {'EC': 20, 'flipped votes': 22147, '% flipped': 0.376}} with 38875 total flipped votes
+New Winner: CLINTON, HILLARY (D) with 278 electoral votes vs TRUMP, DONALD J. (R) with 260 electoral votes
+
+Year: 2020
+Original Winner: BIDEN, JOSEPH R. JR (D) with 306 electoral votes vs TRUMP, DONALD J. (R) with 232 electoral votes
+Flipped states: {'ARIZONA': {'EC': 11, 'flipped votes': 5229, '% flipped': 0.157}, 'GEORGIA': {'EC': 16, 'flipped votes': 5890, '% flipped': 0.119}, 'WISCONSIN': {'EC': 10, 'flipped votes': 10342, '% flipped': 0.319}, 'NE-02': {'EC': 1, 'flipped votes': 10819, '% flipped': 3.366}} with 32280 total flipped votes
+New Winner: TRUMP, DONALD J. (R) with 270 electoral votes vs BIDEN, JOSEPH R. JR (D) with 268 electoral votes
+
+Year: 2024
+Original Winner: TRUMP, DONALD J. (R) with 312 electoral votes vs HARRIS, KAMALA D. (D) with 226 electoral votes
+Flipped states: {'WISCONSIN': {'EC': 10, 'flipped votes': 14699, '% flipped': 0.437}, 'MICHIGAN': {'EC': 15, 'flipped votes': 40052, '% flipped': 0.721}, 'PENNSYLVANIA': {'EC': 19, 'flipped votes': 60709, '% flipped': 0.872}} with 115460 total flipped votes
+New Winner: HARRIS, KAMALA D. (D) with 270 electoral votes vs TRUMP, DONALD J. (R) with 268 electoral votes
+
