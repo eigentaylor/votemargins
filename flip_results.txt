@@ -63,3 +63,58 @@ Original Winner: TRUMP, DONALD J. (R) with 312 electoral votes vs HARRIS, KAMALA
 Flipped states: {'WISCONSIN': {'EC': 10, 'flipped votes': 14699, '% flipped': 0.437}, 'MICHIGAN': {'EC': 15, 'flipped votes': 40052, '% flipped': 0.721}, 'PENNSYLVANIA': {'EC': 19, 'flipped votes': 60709, '% flipped': 0.872}} with 115460 total flipped votes
 New Winner: HARRIS, KAMALA D. (D) with 270 electoral votes vs TRUMP, DONALD J. (R) with 268 electoral votes
 
+Year: 1968
+Original Winner: Richard Nixon (R) with 302 electoral votes vs Hubert Humphrey (D) with 191 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: Hubert Humphrey (D) with 191 electoral votes vs Richard Nixon (R) with 302 electoral votes
+
+Year: 1972
+Original Winner: Richard Nixon (R) with 521 electoral votes vs George McGovern (D) with 17 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: George McGovern (D) with 17 electoral votes vs Richard Nixon (R) with 521 electoral votes
+
+Year: 1976
+Original Winner: Jimmy Carter (D) with 297 electoral votes vs Gerald Ford (R) with 241 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: Gerald Ford (R) with 241 electoral votes vs Jimmy Carter (D) with 297 electoral votes
+
+Year: 1968
+Original Winner: Richard Nixon (R) with 302 electoral votes vs Hubert Humphrey (D) with 191 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: Hubert Humphrey (D) with 191 electoral votes vs Richard Nixon (R) with 302 electoral votes
+
+Year: 1972
+Original Winner: Richard Nixon (R) with 521 electoral votes vs George McGovern (D) with 17 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: George McGovern (D) with 17 electoral votes vs Richard Nixon (R) with 521 electoral votes
+
+Year: 1976
+Original Winner: Jimmy Carter (D) with 297 electoral votes vs Gerald Ford (R) with 241 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: Gerald Ford (R) with 241 electoral votes vs Jimmy Carter (D) with 297 electoral votes
+
+Year: 1968
+Original Winner: Richard Nixon (R) with 302 electoral votes vs Hubert Humphrey (D) with 191 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: Hubert Humphrey (D) with 191 electoral votes vs Richard Nixon (R) with 302 electoral votes
+
+Year: 1972
+Original Winner: Richard Nixon (R) with 521 electoral votes vs George McGovern (D) with 17 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: George McGovern (D) with 17 electoral votes vs Richard Nixon (R) with 521 electoral votes
+
+Year: 1976
+Original Winner: Jimmy Carter (D) with 297 electoral votes vs Gerald Ford (R) with 241 electoral votes
+Flipped states: {} with 0 total flipped votes
+New Winner: Gerald Ford (R) with 241 electoral votes vs Jimmy Carter (D) with 297 electoral votes
+
+Year: 1968
+Original Winner: Richard Nixon (R) with 302 electoral votes vs Hubert Humphrey (D) with 191 electoral votes
+Flipped states: {'ALASKA': {'EC': 3, 'flipped votes': 1095, '% flipped': 1.319}, 'DELAWARE': {'EC': 3, 'flipped votes': 3761, '% flipped': 1.754}, 'NEVADA': {'EC': 3, 'flipped votes': 6296, '% flipped': 4.083}, 'VERMONT': {'EC': 3, 'flipped votes': 7444, '% flipped': 4.79}, 'MISSOURI': {'EC': 12, 'flipped votes': 10245, '% flipped': 0.566}, 'WISCONSIN': {'EC': 12, 'flipped votes': 30597, '% flipped': 1.814}, 'NEW JERSEY': {'EC': 17, 'flipped votes': 30631, '% flipped': 1.074}, 'OHIO': {'EC': 26, 'flipped votes': 45215, '% flipped': 1.142}} with 135284 total flipped votes
+New Winner: Hubert Humphrey (D) with 270 electoral votes vs Richard Nixon (R) with 223 electoral votes
+
+Year: 1972
+Original Winner: Richard Nixon (R) with 521 electoral votes vs George McGovern (D) with 17 electoral votes
+Flipped states: {'ALASKA': {'EC': 3, 'flipped votes': 11192, '% flipped': 11.754}, 'RHODE ISLAND': {'EC': 4, 'flipped votes': 12870, '% flipped': 3.101}, 'SOUTH DAKOTA': {'EC': 4, 'flipped votes': 13266, '% flipped': 4.329}, 'DELAWARE': {'EC': 3, 'flipped votes': 24038, '% flipped': 10.333}, 'VERMONT': {'EC': 3, 'flipped votes': 24488, '% flipped': 13.214}, 'NEVADA': {'EC': 3, 'flipped votes': 24868, '% flipped': 13.681}, 'WYOMING': {'EC': 3, 'flipped votes': 28054, '% flipped': 19.371}, 'MONTANA': {'EC': 4, 'flipped votes': 31890, '% flipped': 10.484}, 'HAWAII': {'EC': 4, 'flipped votes': 33729, '% flipped': 12.48}, 'OREGON': {'EC': 6, 'flipped votes': 46964, '% flipped': 5.34}, 'NEW MEXICO': {'EC': 4, 'flipped votes': 47262, '% flipped': 12.547}, 'MAINE': {'EC': 4, 'flipped votes': 47938, '% flipped': 11.495}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 48645, '% flipped': 14.734}, 'IDAHO': {'EC': 4, 'flipped votes': 59280, '% flipped': 19.18}, 'WISCONSIN': {'EC': 11, 'flipped votes': 89629, '% flipped': 4.98}, 'ARIZONA': {'EC': 6, 'flipped votes': 102137, '% flipped': 16.985}, 'WEST VIRGINIA': {'EC': 6, 'flipped votes': 103765, '% flipped': 13.61}, 'IOWA': {'EC': 8, 'flipped votes': 105001, '% flipped': 8.733}, 'CONNECTICUT': {'EC': 8, 'flipped votes': 127633, '% flipped': 9.342}, 'WASHINGTON': {'EC': 9, 'flipped votes': 134401, '% flipped': 9.563}, 'KENTUCKY': {'EC': 9, 'flipped votes': 152644, '% flipped': 14.571}, 'MARYLAND': {'EC': 10, 'flipped votes': 161763, '% flipped': 12.116}, 'MICHIGAN': {'EC': 21, 'flipped votes': 251144, '% flipped': 7.341}, 'ILLINOIS': {'EC': 26, 'flipped votes': 437354, '% flipped': 9.302}, 'CALIFORNIA': {'EC': 45, 'flipped votes': 563125, '% flipped': 6.971}, 'NEW YORK': {'EC': 41, 'flipped votes': 620848, '% flipped': 8.691}} with 3303928 total flipped votes
+New Winner: George McGovern (D) with 270 electoral votes vs Richard Nixon (R) with 268 electoral votes
+

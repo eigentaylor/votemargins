@@ -1,0 +1,49 @@
+year,state,state_po,D_name,R_name,T_name,party_win,D_votes,R_votes,T_votes,overall_winner,overall_runner_up,winner_state,electoral_votes,winner_votes,loser_votes,votes_to_flip,total_electoral_votes,electoral_votes_to_win,D_electoral,R_electoral,T_electoral,totalvotes
+1912,ALABAMA,AL,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,82438,9717,22680,D,R,True,12,82438,9717,36361,531,266,433,8,0,114835
+1912,ARIZONA,AZ,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,10324,3021,6949,D,R,True,3,10324,3021,3652,531,266,433,8,0,20294
+1912,ARKANSAS,AR,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,68814,25585,21644,D,R,True,9,68814,25585,21615,531,266,433,8,0,116043
+1912,CALIFORNIA,CA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,R,283436,283610,79201,D,R,False,13,283436,283610,0,531,266,433,8,0,646247
+1912,COLORADO,CO,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,114232,54956,72306,D,R,True,6,114232,54956,29639,531,266,433,8,0,241494
+1912,CONNECTICUT,CT,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,74561,68324,34129,D,R,True,7,74561,68324,3119,531,266,433,8,0,177014
+1912,DELAWARE,DE,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,22631,15998,8886,D,R,True,3,22631,15998,3317,531,266,433,8,0,47515
+1912,FLORIDA,FL,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,35343,4279,4806,D,R,True,6,35343,4279,15533,531,266,433,8,0,44428
+1912,GEORGIA,GA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,93087,0,21985,D,R,True,14,93087,0,46544,531,266,433,8,0,115072
+1912,IDAHO,ID,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,33921,32810,25527,D,R,True,4,33921,32810,556,531,266,433,8,0,92258
+1912,ILLINOIS,IL,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,405048,253593,386478,D,R,True,29,405048,253593,75728,531,266,433,8,0,1045119
+1912,INDIANA,IN,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,281890,151267,162007,D,R,True,15,281890,151267,65312,531,266,433,8,0,595164
+1912,IOWA,IA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,185325,119805,161819,D,R,True,13,185325,119805,32761,531,266,433,8,0,466949
+1912,KANSAS,KS,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,143663,74845,120210,D,R,True,10,143663,74845,34410,531,266,433,8,0,338718
+1912,KENTUCKY,KY,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,219484,115510,101766,D,R,True,13,219484,115510,51988,531,266,433,8,0,436760
+1912,LOUISIANA,LA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,60871,0,9283,D,R,True,10,60871,0,30436,531,266,433,8,0,70154
+1912,MAINE,ME,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,51113,26545,48495,D,R,True,6,51113,26545,12285,531,266,433,8,0,126153
+1912,MARYLAND,MD,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,112674,54956,57789,D,R,True,8,112674,54956,28860,531,266,433,8,0,225419
+1912,MASSACHUSETTS,MA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,173408,155948,142228,D,R,True,18,173408,155948,8731,531,266,433,8,0,471584
+1912,MICHIGAN,MI,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,T,150751,152244,214584,D,R,False,15,150751,152244,0,531,266,433,8,0,517579
+1912,MINNESOTA,MN,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,T,106426,64334,125856,D,R,False,12,106426,64334,21047,531,266,433,8,0,296616
+1912,MISSISSIPPI,MS,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,57324,0,3549,D,R,True,10,57324,0,28663,531,266,433,8,0,60873
+1912,MISSOURI,MO,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,330746,207821,124375,D,R,True,18,330746,207821,61463,531,266,433,8,0,662942
+1912,MONTANA,MT,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,27941,18512,22456,D,R,True,4,27941,18512,4715,531,266,433,8,0,68909
+1912,NEBRASKA,NE,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,109008,54226,72681,D,R,True,8,109008,54226,27392,531,266,433,8,0,235915
+1912,NEVADA,NV,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,7986,3196,5620,D,R,True,3,7986,3196,2396,531,266,433,8,0,16802
+1912,NEW HAMPSHIRE,NH,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,34724,32927,17794,D,R,True,4,34724,32927,899,531,266,433,8,0,85445
+1912,NEW JERSEY,NJ,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,178289,88835,145410,D,R,True,14,178289,88835,44728,531,266,433,8,0,412534
+1912,NEW MEXICO,NM,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,20437,17733,8347,D,R,True,3,20437,17733,1353,531,266,433,8,0,46517
+1912,NEW YORK,NY,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,655573,455487,390093,D,R,True,45,655573,455487,100044,531,266,433,8,0,1501153
+1912,NORTH CAROLINA,NC,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,133021,29139,69130,D,R,True,12,133021,29139,51942,531,266,433,8,0,231290
+1912,NORTH DAKOTA,ND,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,29555,23090,25726,D,R,True,5,29555,23090,3233,531,266,433,8,0,78371
+1912,OHIO,OH,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,424834,278168,229807,D,R,True,24,424834,278168,73334,531,266,433,8,0,932809
+1912,OKLAHOMA,OK,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,119156,90786,41674,D,R,True,10,119156,90786,14186,531,266,433,8,0,251616
+1912,OREGON,OR,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,47064,34673,37600,D,R,True,5,47064,34673,6196,531,266,433,8,0,119337
+1912,PENNSYLVANIA,PA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,T,395637,273360,444894,D,R,False,38,395637,273360,61139,531,266,433,8,0,1113891
+1912,RHODE ISLAND,RI,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,30412,27703,16878,D,R,True,5,30412,27703,1355,531,266,433,8,0,74993
+1912,SOUTH CAROLINA,SC,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,48357,0,1293,D,R,True,9,48357,0,24179,531,266,433,8,0,49650
+1912,SOUTH DAKOTA,SD,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,T,48942,0,58811,D,R,False,5,48942,0,24472,531,266,433,8,0,107753
+1912,TENNESSEE,TN,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,133021,60475,54041,D,R,True,12,133021,60475,36274,531,266,433,8,0,247537
+1912,TEXAS,TX,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,219489,28530,26745,D,R,True,20,219489,28530,95480,531,266,433,8,0,274764
+1912,UTAH,UT,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,R,36579,42100,24174,D,R,False,4,36579,42100,0,531,266,433,8,0,102853
+1912,VERMONT,VT,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,R,15354,23332,22132,D,R,False,4,15354,23332,0,531,266,433,8,0,60818
+1912,VIRGINIA,VA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,90332,23288,21777,D,R,True,12,90332,23288,33523,531,266,433,8,0,135397
+1912,WASHINGTON,WA,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,T,86840,70445,113698,D,R,False,7,86840,70445,8198,531,266,433,8,0,270983
+1912,WEST VIRGINIA,WV,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,113197,56754,79112,D,R,True,8,113197,56754,28222,531,266,433,8,0,249063
+1912,WISCONSIN,WI,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,164230,130596,62448,D,R,True,13,164230,130596,16818,531,266,433,8,0,357274
+1912,WYOMING,WY,Woodrow Wilson,William Howard Taft,Theodore Roosevelt,D,15310,14560,9232,D,R,True,3,15310,14560,376,531,266,433,8,0,39102
