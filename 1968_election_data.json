@@ -1,0 +1,259 @@
+{
+    "1968": {
+        "ALABAMA": {
+            "D_votes": 196579,
+            "R_votes": 146923,
+            "T_votes": 691425
+        },
+        "ALASKA": {
+            "D_votes": 35411,
+            "R_votes": 37600,
+            "T_votes": 10024
+        },
+        "ARIZONA": {
+            "D_votes": 170514,
+            "R_votes": 266721,
+            "T_votes": 46573
+        },
+        "ARKANSAS": {
+            "D_votes": 188228,
+            "R_votes": 190759,
+            "T_votes": 240982
+        },
+        "CALIFORNIA": {
+            "D_votes": 3244318,
+            "R_votes": 3467664,
+            "T_votes": 487270
+        },
+        "COLORADO": {
+            "D_votes": 335174,
+            "R_votes": 409345,
+            "T_votes": 60813
+        },
+        "CONNECTICUT": {
+            "D_votes": 621561,
+            "R_votes": 556721,
+            "T_votes": 76650
+        },
+        "DELAWARE": {
+            "D_votes": 89194,
+            "R_votes": 96714,
+            "T_votes": 28459
+        },
+        "FLORIDA": {
+            "D_votes": 676794,
+            "R_votes": 886804,
+            "T_votes": 624207
+        },
+        "GEORGIA": {
+            "D_votes": 334440,
+            "R_votes": 380111,
+            "T_votes": 535550
+        },
+        "HAWAII": {
+            "D_votes": 141324,
+            "R_votes": 91425,
+            "T_votes": 0
+        },
+        "IDAHO": {
+            "D_votes": 89273,
+            "R_votes": 165369,
+            "T_votes": 36541
+        },
+        "ILLINOIS": {
+            "D_votes": 2039814,
+            "R_votes": 2174774,
+            "T_votes": 390958
+        },
+        "INDIANA": {
+            "D_votes": 806659,
+            "R_votes": 1067885,
+            "T_votes": 243108
+        },
+        "IOWA": {
+            "D_votes": 476699,
+            "R_votes": 619106,
+            "T_votes": 66422
+        },
+        "KANSAS": {
+            "D_votes": 302996,
+            "R_votes": 478674,
+            "T_votes": 88921
+        },
+        "KENTUCKY": {
+            "D_votes": 397541,
+            "R_votes": 462411,
+            "T_votes": 193098
+        },
+        "LOUISIANA": {
+            "D_votes": 309615,
+            "R_votes": 257535,
+            "T_votes": 530300
+        },
+        "MAINE": {
+            "D_votes": 217312,
+            "R_votes": 169254,
+            "T_votes": 0
+        },
+        "MARYLAND": {
+            "D_votes": 538310,
+            "R_votes": 517995,
+            "T_votes": 178734
+        },
+        "MASSACHUSETTS": {
+            "D_votes": 1469218,
+            "R_votes": 766844,
+            "T_votes": 0
+        },
+        "MICHIGAN": {
+            "D_votes": 1593082,
+            "R_votes": 1370665,
+            "T_votes": 331968
+        },
+        "MINNESOTA": {
+            "D_votes": 0,
+            "R_votes": 658643,
+            "T_votes": 857738
+        },
+        "MISSISSIPPI": {
+            "D_votes": 150644,
+            "R_votes": 88516,
+            "T_votes": 415349
+        },
+        "MISSOURI": {
+            "D_votes": 791444,
+            "R_votes": 811932,
+            "T_votes": 206126
+        },
+        "MONTANA": {
+            "D_votes": 114117,
+            "R_votes": 138835,
+            "T_votes": 20015
+        },
+        "NEBRASKA": {
+            "D_votes": 170784,
+            "R_votes": 321163,
+            "T_votes": 44904
+        },
+        "NEVADA": {
+            "D_votes": 60598,
+            "R_votes": 73188,
+            "T_votes": 20432
+        },
+        "NEW HAMPSHIRE": {
+            "D_votes": 130589,
+            "R_votes": 154903,
+            "T_votes": 0
+        },
+        "NEW JERSEY": {
+            "D_votes": 1264206,
+            "R_votes": 1325467,
+            "T_votes": 262187
+        },
+        "NEW MEXICO": {
+            "D_votes": 130081,
+            "R_votes": 169692,
+            "T_votes": 25737
+        },
+        "NEW YORK": {
+            "D_votes": 3378470,
+            "R_votes": 3007932,
+            "T_votes": 358864
+        },
+        "NORTH CAROLINA": {
+            "D_votes": 464113,
+            "R_votes": 627192,
+            "T_votes": 496188
+        },
+        "NORTH DAKOTA": {
+            "D_votes": 0,
+            "R_votes": 138669,
+            "T_votes": 109013
+        },
+        "OHIO": {
+            "D_votes": 1700586,
+            "R_votes": 1791014,
+            "T_votes": 467495
+        },
+        "OKLAHOMA": {
+            "D_votes": 301658,
+            "R_votes": 449697,
+            "T_votes": 191731
+        },
+        "OREGON": {
+            "D_votes": 358866,
+            "R_votes": 408433,
+            "T_votes": 49683
+        },
+        "PENNSYLVANIA": {
+            "D_votes": 2259405,
+            "R_votes": 2090017,
+            "T_votes": 378582
+        },
+        "RHODE ISLAND": {
+            "D_votes": 246518,
+            "R_votes": 122359,
+            "T_votes": 0
+        },
+        "SOUTH CAROLINA": {
+            "D_votes": 197486,
+            "R_votes": 254062,
+            "T_votes": 215430
+        },
+        "SOUTH DAKOTA": {
+            "D_votes": 118023,
+            "R_votes": 149841,
+            "T_votes": 0
+        },
+        "TENNESSEE": {
+            "D_votes": 351233,
+            "R_votes": 472592,
+            "T_votes": 424792
+        },
+        "TEXAS": {
+            "D_votes": 1266804,
+            "R_votes": 1227844,
+            "T_votes": 584269
+        },
+        "UTAH": {
+            "D_votes": 156665,
+            "R_votes": 238728,
+            "T_votes": 26906
+        },
+        "VERMONT": {
+            "D_votes": 70255,
+            "R_votes": 85142,
+            "T_votes": 0
+        },
+        "VIRGINIA": {
+            "D_votes": 442387,
+            "R_votes": 590319,
+            "T_votes": 320272
+        },
+        "WASHINGTON": {
+            "D_votes": 616037,
+            "R_votes": 588510,
+            "T_votes": 96990
+        },
+        "WEST VIRGINIA": {
+            "D_votes": 374091,
+            "R_votes": 307555,
+            "T_votes": 72560
+        },
+        "WISCONSIN": {
+            "D_votes": 748804,
+            "R_votes": 809997,
+            "T_votes": 127835
+        },
+        "WYOMING": {
+            "D_votes": 45173,
+            "R_votes": 70927,
+            "T_votes": 11105
+        },
+        "D.C.": {
+            "D_votes": 139566,
+            "R_votes": 31012,
+            "T_votes": 0
+        }
+    }
+}
