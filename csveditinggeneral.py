@@ -46,6 +46,8 @@ def get_election_data(year):
             state_name = "D.C."
         if state_name == "MASSACHUSETTS":
             my = 0
+        if state_name == "MAINE" and year == 2020:
+            my = 0
         try:
             state_response = requests.get(state_url)
             state_soup = BeautifulSoup(state_response.text, "html.parser")
@@ -75,9 +77,6 @@ def get_election_data(year):
                         parties_added = [td.get_text(strip=True) for td in data]
                         parties.extend(parties_added)
                     elif header_text == "Popular\xa0vote":
-                        if state_name == "ARIZONA" and year == 1912:
-                            # Handle special case for Arkansas in 1912
-                            vote_counts = vote_counts
                         vote_counts_added = [
                             int(re.sub(r'\D', '', td.get_text(strip=True)))
                             for td in data
@@ -121,7 +120,7 @@ def get_election_data(year):
             # Map the vote counts to D_votes, R_votes, and T_votes
             state_results = {"D_votes": 0, "R_votes": 0, "T_votes": 0}
             for i, party in enumerate(parties):
-                if party == "Democratic":
+                if party == "Democratic" or party == "National Democratic":
                     state_results["D_votes"] = vote_counts[i]
                 elif party == "Republican":
                     state_results["R_votes"] = vote_counts[i]
@@ -163,6 +162,33 @@ def get_candidate_names(year, state):
         return {"R_name": "Richard Nixon", "D_name": "Hubert Humphrey", "T_name": "George Wallace"}
     if year == 1972:
         return {"R_name": "Richard Nixon", "D_name": "George McGovern", "T_name": ""}
+    if year == 1976:
+        return {"R_name": "Gerald Ford", "D_name": "Jimmy Carter", "T_name": ""}
+    if year == 1980:
+        return {"R_name": "Ronald Reagan", "D_name": "Jimmy Carter", "T_name": "John B. Anderson"}
+    if year == 1984:
+        return {"R_name": "Ronald Reagan", "D_name": "Walter Mondale", "T_name": ""}
+    if year == 1988:
+        return {"R_name": "George H. W. Bush", "D_name": "Michael Dukakis", "T_name": ""}
+    if year == 1992:
+        return {"R_name": "George H. W. Bush", "D_name": "Bill Clinton", "T_name": "Ross Perot"}
+    if year == 1996:
+        return {"R_name": "Bob Dole", "D_name": "Bill Clinton", "T_name": "Ross Perot"}
+    if year == 2000:
+        return {"R_name": "George W. Bush", "D_name": "Al Gore", "T_name": ""}
+    if year == 2004:
+        return {"R_name": "George W. Bush", "D_name": "John Kerry", "T_name": ""}
+    if year == 2008:
+        return {"R_name": "John McCain", "D_name": "Barack Obama", "T_name": ""}
+    if year == 2012:
+        return {"R_name": "Mitt Romney", "D_name": "Barack Obama", "T_name": ""}
+    if year == 2016:
+        return {"R_name": "Donald Trump", "D_name": "Hillary Clinton", "T_name": ""}
+    if year == 2020:
+        return {"R_name": "Donald Trump", "D_name": "Joe Biden", "T_name": ""}
+    if year == 2024:
+        return {"R_name": "Donald Trump", "D_name": "Kamala Harris", "T_name": ""}
+    
     
     state_name = state.replace(" ", "_")
     # currently it is uppercase, so we need to make it capital case (both words if it is two words)
@@ -227,9 +253,9 @@ def get_candidate_names(year, state):
 
 
 # Example Usage
-print(get_candidate_names(1912, "Arizona"))
-print(get_candidate_names(1916, "Arizona"))
-print(get_candidate_names(1860, "Missouri"))
+#print(get_candidate_names(1912, "Arizona"))
+#print(get_candidate_names(1916, "Arizona"))
+#print(get_candidate_names(1860, "Missouri"))
 
 
 # Example Usage
@@ -291,6 +317,8 @@ state_po = {
 def create_row_dict(year, state, state_po_code, D_name, R_name, T_name, party_win, D_votes, R_votes, T_votes, overall_winner, winner_state, state_electoral_votes, winner_votes, loser_votes, overall_runner_up, total_electoral_votes, electoral_votes_to_win, D_electoral, R_electoral, T_electoral):
     totalvotes = D_votes + R_votes + T_votes
     votes_to_flip = max((winner_votes - loser_votes) // 2 + 1, 0)
+    # ensure state_electoral_votes is an integer
+    state_electoral_votes = int(state_electoral_votes)
     return {
         "year": year,
         "state": state,
@@ -305,7 +333,7 @@ def create_row_dict(year, state, state_po_code, D_name, R_name, T_name, party_wi
         "overall_winner": overall_winner,
         "overall_runner_up": overall_runner_up,
         "winner_state": winner_state,
-        "electoral_votes": state_electoral_votes.astype(int),
+        "electoral_votes": state_electoral_votes,
         "winner_votes": winner_votes,
         "loser_votes": loser_votes,
         "votes_to_flip": votes_to_flip,
@@ -370,15 +398,15 @@ def generate_row(year, state, vote_data, electoral_college_df):
 
 def recalculate_votes(row, D_votes, R_votes, state_electoral_votes):
     # this function is only used for the NE and ME split votes, so we need to pass the D_votes and R_votes. there is no third party in any year when we split the votes
-    year = row['year'].iloc[0]
-    R_name = row['R_name'].iloc[0]
-    D_name = row['D_name'].iloc[0]
-    state = row['state'].iloc[0]
+    year = row['year']
+    R_name = row['R_name']
+    D_name = row['D_name']
+    state = row['state']
     state_po_code = state_po.get(state, "")
     
     totalvotes = D_votes + R_votes
-    overall_winner = row['overall_winner'].iloc[0]
-    overall_runner_up = row['overall_runner_up'].iloc[0]
+    overall_winner = row['overall_winner']
+    overall_runner_up = row['overall_runner_up']
     party_win = 'D' if D_votes > R_votes else 'R'
     winner_state = overall_winner == party_win
     winner_votes = max(D_votes, R_votes)
@@ -387,8 +415,8 @@ def recalculate_votes(row, D_votes, R_votes, state_electoral_votes):
     votes_to_flip = (winner_votes - loser_votes) // 2 + 1
     total_electoral_votes = 538 # in the case of NE and ME split votes, the total electoral votes is always 538
     electoral_votes_to_win = 270 # in the case of NE and ME split votes, the electoral votes to win is always 270
-    D_electoral = row['D_electoral'].iloc[0]
-    R_electoral = row['R_electoral'].iloc[0]
+    D_electoral = row['D_electoral']
+    R_electoral = row['R_electoral']
     
     return create_row_dict(year, state, state_po_code, D_name, R_name, "", party_win, D_votes, R_votes, 0, overall_winner, winner_state, state_electoral_votes, winner_votes, loser_votes, overall_runner_up, total_electoral_votes, electoral_votes_to_win, D_electoral, R_electoral, 0)
 
@@ -420,11 +448,13 @@ def generate_election_results_df(years, electoral_college_df=electoral_college_d
                 overall_row = generate_row(year, state, vote_data, electoral_college_df)
                 second_district_row = overall_row.copy()
                 second_district_row['state_po'] = 'NE-02'
-                second_district_row['state'] = 'NE-02'
-                overall_D_votes = overall_row['D_votes'].iloc[0] - NE_split[year]['D_votes']
-                overall_R_votes = overall_row['R_votes'].iloc[0] - NE_split[year]['R_votes']
+                second_district_row['state'] = 'NEBRASKA-02'
+                overall_D_votes = overall_row['D_votes'] - NE_split[year]['D_votes']
+                overall_R_votes = overall_row['R_votes'] - NE_split[year]['R_votes']
                 second_district_row = recalculate_votes(second_district_row, NE_split[year]['D_votes'], NE_split[year]['R_votes'], 1)
                 overall_row = recalculate_votes(overall_row, overall_D_votes, overall_R_votes, 4)
+                election_results.append(overall_row)
+                election_results.append(second_district_row)
                 
             elif state == 'MAINE' and year in ME_split:
                 # Handle Maine split votes
@@ -433,11 +463,13 @@ def generate_election_results_df(years, electoral_college_df=electoral_college_d
                 overall_row = generate_row(year, state, vote_data, electoral_college_df)
                 second_district_row = overall_row.copy()
                 second_district_row['state_po'] = 'ME-02'
-                second_district_row['state'] = 'ME-02'
-                overall_D_votes = overall_row['D_votes'].iloc[0] - ME_split[year]['D_votes']
-                overall_R_votes = overall_row['R_votes'].iloc[0] - ME_split[year]['R_votes']
+                second_district_row['state'] = 'MAINE-02'
+                overall_D_votes = overall_row['D_votes'] - ME_split[year]['D_votes']
+                overall_R_votes = overall_row['R_votes'] - ME_split[year]['R_votes']
                 second_district_row = recalculate_votes(second_district_row, ME_split[year]['D_votes'], ME_split[year]['R_votes'], 1)
                 overall_row = recalculate_votes(overall_row, overall_D_votes, overall_R_votes, 3)
+                election_results.append(overall_row)
+                election_results.append(second_district_row)
             else:
                 election_results.append(generate_row(year, state, vote_data, electoral_college_df))
         # save to csv
@@ -477,3 +509,9 @@ start_year = 1968
 end_year = 1976
 years = list(range(start_year, end_year + 1, 4))
 #election_results_df = generate_election_results_df(years)
+
+def combine_csvs():
+    modern_csv = pd.read_csv('summary_results_split_verify.csv')
+    historic_csv = pd.read_csv('election_results_1900_1972.csv')
+    # we need to get modern_csv in the same column format as historic_csv
+    

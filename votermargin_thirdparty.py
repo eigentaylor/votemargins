@@ -3,9 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from csveditinggeneral import generate_election_results_df
+import time
 
-start_year = 1912
-end_year = 1976
+start_year = 1900
+end_year = 1972
 years = list(range(start_year, end_year + 1, 4))
 recreate_csv = True  # Set this flag to True if you want to regenerate the CSV file every time
 
@@ -20,9 +21,17 @@ else:
     else:
         print(f'File election_results_{start_year}_{end_year}.csv does not exist')
     # Load electoral college data and generate the results
+    start_time = time.time()
     election_results_df = generate_election_results_df(years, electoral_college_df)
     # Save the generated results to a CSV file
     election_results_df.to_csv(f'election_results_{start_year}_{end_year}.csv', index=False)
+    print(f'Generated election results in {time.time() - start_time:.2f} seconds')
+    
+use_other_csv = True
+if use_other_csv:
+    start_year = 1976
+    end_year = 2024
+    election_results_df = pd.read_csv('summary_results_split_verify.csv')
 
 # We want to find the minimum number of votes needed to flip the result of the election for each year
 # We will take all the states that the overall winner won and find the optimal combination of states to flip which will push the loser to 270+ electoral votes
@@ -31,7 +40,7 @@ else:
 flip_results = {}
 
 # open a text file flip_resuults.txt to store the results
-with open('flip_results_{start_year}-{end_year}.txt', 'w') as f:
+with open(f'flip_results_{start_year}-{end_year}.txt', 'w') as f:
     f.write('')
 
 # loop through the years in the election results data
@@ -42,13 +51,19 @@ for year in election_results_df['year'].unique():
     total_electoral_votes = election_results['total_electoral_votes'].iloc[0]
     # get the number of votes needed to win
     #votes_to_win = total_electoral_votes // 2 + 1
-    votes_to_win = election_results['electoral_votes_to_win'].iloc[0]
+    if 'electoral_votes_to_win' not in election_results:
+        votes_to_win = 270
+    else:
+        votes_to_win = election_results['electoral_votes_to_win'].iloc[0]
     # get the winner of the election
     winner = election_results['overall_winner'].iloc[0]
     # get the number of electoral votes the winner won
     winner_electoral_votes = election_results[winner + '_electoral'].iloc[0]
     # get the number of electoral votes the loser won
-    loser = election_results['overall_runner_up'].iloc[0]
+    if 'overall_runner_up' not in election_results:
+        loser = 'R' if winner == 'D' else 'D'
+    else:
+        loser = election_results['overall_runner_up'].iloc[0]
     winner_name = election_results[winner + '_name'].iloc[0]
     loser_name = election_results[loser + '_name'].iloc[0]
     loser_electoral_votes = election_results[loser + '_electoral'].iloc[0]
@@ -145,15 +160,16 @@ for year in election_results_df['year'].unique():
     #print(f'Flipped States: {flipped_states} with {min_votes_to_flip} total flipped votes')
     print(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes')
     # save the results to a text file
-    with open('flip_results.txt', 'a') as f:
+    with open(f'flip_results_{start_year}-{end_year}.txt', 'a') as f:
         f.write(f'Year: {year}\n')
         f.write(f'Original Winner: {winner_name} ({winner}) with {winner_electoral_votes} electoral votes vs {loser_name} ({loser}) with {loser_electoral_votes} electoral votes\n')
+        f.write(f'Popular Vote Margin: {popular_vote_margin} {color}\n')
         f.write(f'Flipped states: {flipped_states_votes_dict} with {min_votes_to_flip} total flipped votes\n')
         f.write(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n\n')
 
 # Output the results
 flip_results_df = pd.DataFrame.from_dict(flip_results, orient='index')
-flip_results_df.to_csv('flip_results.csv', index=True)
+flip_results_df.to_csv(f'flip_results-{start_year}-{end_year}.csv')
 
 def plot_results(flip_results_df, flip_results, start_year, end_year, skip_reagan=False, path='img/', show_plot=True):
     prefix = 'noreg-' if skip_reagan else 'reg-'
@@ -262,3 +278,6 @@ def plot_results(flip_results_df, flip_results, start_year, end_year, skip_reaga
 plot_results(flip_results_df, flip_results, start_year, end_year, skip_reagan=False, show_plot=False)
 if end_year > 1984:
     plot_results(flip_results_df, flip_results, start_year, end_year, skip_reagan=True, show_plot=False)
+
+full_flip_results_df = pd.read_csv('flip_results.csv', index_col=0) # results from 1900-2024
+plot_results(full_flip_results_df, flip_results, 1900, 2024, skip_reagan=False, show_plot=False)
