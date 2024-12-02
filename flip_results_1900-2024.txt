@@ -1,0 +1,224 @@
+Year: 1900
+Original Winner: William McKinley (R) with 292 electoral votes vs William Jennings Bryan (D) with 155 electoral votes (224 needed)
+Popular Vote Margin: 860014  for William McKinley
+Flipped states: {'UTAH': {'EC': 3, 'flipped votes': 1067, '% flipped': 1.158}, 'DELAWARE': {'EC': 3, 'flipped votes': 1842, '% flipped': 4.451}, 'NEBRASKA': {'EC': 8, 'flipped votes': 3912, '% flipped': 1.659}, 'MARYLAND': {'EC': 8, 'flipped votes': 6974, '% flipped': 2.699}, 'KANSAS': {'EC': 10, 'flipped votes': 11678, '% flipped': 3.35}, 'INDIANA': {'EC': 15, 'flipped votes': 13240, '% flipped': 2.051}, 'OHIO': {'EC': 23, 'flipped votes': 34519, '% flipped': 3.388}}
+Total number of flipped votes: 73232 across 7 states, Ratio to Popular Vote Margin: 8.51521%, Ratio to Total Votes in Year: 0.53931%
+New Winner: William Jennings Bryan (D) with 225 electoral votes vs William McKinley (R) with 222 electoral votes
+
+Year: 1904
+Original Winner: Theodore Roosevelt (R) with 343 electoral votes vs Alton B. Parker (D) with 133 electoral votes (239 needed)
+Popular Vote Margin: 2546330  for Theodore Roosevelt
+Flipped states: {'MARYLAND': {'EC': 8, 'flipped votes': 26, '% flipped': 0.012}, 'NEVADA': {'EC': 3, 'flipped votes': 1442, '% flipped': 12.25}, 'DELAWARE': {'EC': 3, 'flipped votes': 2180, '% flipped': 5.064}, 'WYOMING': {'EC': 3, 'flipped votes': 5959, '% flipped': 20.013}, 'MONTANA': {'EC': 3, 'flipped votes': 6580, '% flipped': 10.548}, 'RHODE ISLAND': {'EC': 4, 'flipped votes': 8384, '% flipped': 12.618}, 'MISSOURI': {'EC': 18, 'flipped votes': 12569, '% flipped': 2.035}, 'WEST VIRGINIA': {'EC': 7, 'flipped votes': 15883, '% flipped': 6.803}, 'COLORADO': {'EC': 5, 'flipped votes': 17279, '% flipped': 7.36}, 'MAINE': {'EC': 6, 'flipped votes': 18896, '% flipped': 20.302}, 'CONNECTICUT': {'EC': 7, 'flipped votes': 19091, '% flipped': 10.376}, 'NEW YORK': {'EC': 39, 'flipped votes': 87777, '% flipped': 5.687}}
+Total number of flipped votes: 196066 across 12 states, Ratio to Popular Vote Margin: 7.69994%, Ratio to Total Votes in Year: 1.51723%
+New Winner: Alton B. Parker (D) with 239 electoral votes vs Theodore Roosevelt (R) with 237 electoral votes
+
+Year: 1908
+Original Winner: William Howard Taft (R) with 327 electoral votes vs William Jennings Bryan (D) with 156 electoral votes (242 needed)
+Popular Vote Margin: 1269315  for William Howard Taft
+Flipped states: {'MARYLAND': {'EC': 8, 'flipped votes': 303, '% flipped': 0.13}, 'MISSOURI': {'EC': 18, 'flipped votes': 315, '% flipped': 0.045}, 'DELAWARE': {'EC': 3, 'flipped votes': 1480, '% flipped': 3.144}, 'MONTANA': {'EC': 3, 'flipped votes': 1504, '% flipped': 2.228}, 'WYOMING': {'EC': 3, 'flipped votes': 2965, '% flipped': 8.29}, 'INDIANA': {'EC': 15, 'flipped votes': 5366, '% flipped': 0.781}, 'IDAHO': {'EC': 3, 'flipped votes': 8230, '% flipped': 8.647}, 'KANSAS': {'EC': 10, 'flipped votes': 18004, '% flipped': 5.023}, 'OHIO': {'EC': 23, 'flipped votes': 34796, '% flipped': 3.237}}
+Total number of flipped votes: 72963 across 9 states, Ratio to Popular Vote Margin: 5.74822%, Ratio to Total Votes in Year: 0.51302%
+New Winner: William Jennings Bryan (D) with 242 electoral votes vs William Howard Taft (R) with 241 electoral votes
+
+Year: 1912
+Original Winner: Woodrow Wilson (D) with 433 electoral votes vs Theodore Roosevelt (T) with 90 electoral votes (266 needed)
+Popular Vote Margin: 2120264  for Woodrow Wilson
+Flipped states: {'NEVADA': {'EC': 3, 'flipped votes': 1184, '% flipped': 7.047}, 'MAINE': {'EC': 6, 'flipped votes': 1310, '% flipped': 1.038}, 'ARIZONA': {'EC': 3, 'flipped votes': 1688, '% flipped': 8.318}, 'NORTH DAKOTA': {'EC': 5, 'flipped votes': 1915, '% flipped': 2.444}, 'MONTANA': {'EC': 4, 'flipped votes': 2743, '% flipped': 3.981}, 'WYOMING': {'EC': 3, 'flipped votes': 3040, '% flipped': 7.775}, 'IDAHO': {'EC': 4, 'flipped votes': 4198, '% flipped': 4.55}, 'OREGON': {'EC': 5, 'flipped votes': 4733, '% flipped': 3.966}, 'NEW MEXICO': {'EC': 3, 'flipped votes': 6046, '% flipped': 12.997}, 'RHODE ISLAND': {'EC': 5, 'flipped votes': 6768, '% flipped': 9.025}, 'DELAWARE': {'EC': 3, 'flipped votes': 6873, '% flipped': 14.465}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 8466, '% flipped': 9.908}, 'ILLINOIS': {'EC': 29, 'flipped votes': 9286, '% flipped': 0.889}, 'KANSAS': {'EC': 10, 'flipped votes': 11727, '% flipped': 3.462}, 'IOWA': {'EC': 13, 'flipped votes': 11754, '% flipped': 2.517}, 'FLORIDA': {'EC': 6, 'flipped votes': 15269, '% flipped': 34.368}, 'MASSACHUSETTS': {'EC': 18, 'flipped votes': 15591, '% flipped': 3.306}, 'NEW JERSEY': {'EC': 14, 'flipped votes': 16440, '% flipped': 3.985}, 'WEST VIRGINIA': {'EC': 8, 'flipped votes': 17043, '% flipped': 6.843}, 'NEBRASKA': {'EC': 8, 'flipped votes': 18164, '% flipped': 7.699}, 'LOUISIANA': {'EC': 10, 'flipped votes': 25795, '% flipped': 36.769}, 'ALABAMA': {'EC': 12, 'flipped votes': 29880, '% flipped': 26.02}}
+Total number of flipped votes: 219913 across 22 states, Ratio to Popular Vote Margin: 10.37196%, Ratio to Total Votes in Year: 1.58042%
+New Winner: Theodore Roosevelt (T) with 266 electoral votes vs Woodrow Wilson (D) with 257 electoral votes
+
+Year: 1916
+Original Winner: Woodrow Wilson (D) with 276 electoral votes vs Charles Evans Hughes (R) with 255 electoral votes (266 needed)
+Popular Vote Margin: 584693  for Woodrow Wilson
+Flipped states: {'CALIFORNIA': {'EC': 13, 'flipped votes': 1887, '% flipped': 0.203}}
+Total number of flipped votes: 1887 across 1 states, Ratio to Popular Vote Margin: 0.32273%, Ratio to Total Votes in Year: 0.01056%
+New Winner: Charles Evans Hughes (R) with 268 electoral votes vs Woodrow Wilson (D) with 263 electoral votes
+
+Year: 1920
+Original Winner: Warren G. Harding (R) with 404 electoral votes vs James M. Cox (D) with 127 electoral votes (266 needed)
+Popular Vote Margin: 7027428  for Warren G. Harding
+Flipped states: {'NEVADA': {'EC': 3, 'flipped votes': 2815, '% flipped': 10.352}, 'ARIZONA': {'EC': 3, 'flipped votes': 3736, '% flipped': 5.613}, 'NEW MEXICO': {'EC': 3, 'flipped votes': 5484, '% flipped': 5.258}, 'DELAWARE': {'EC': 3, 'flipped votes': 6474, '% flipped': 6.979}, 'TENNESSEE': {'EC': 12, 'flipped votes': 6636, '% flipped': 1.556}, 'WYOMING': {'EC': 3, 'flipped votes': 8832, '% flipped': 16.816}, 'UTAH': {'EC': 4, 'flipped votes': 12459, '% flipped': 9.016}, 'OKLAHOMA': {'EC': 10, 'flipped votes': 13390, '% flipped': 2.752}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 16268, '% flipped': 10.305}, 'IDAHO': {'EC': 4, 'flipped votes': 21199, '% flipped': 15.639}, 'VERMONT': {'EC': 4, 'flipped votes': 23647, '% flipped': 26.531}, 'MONTANA': {'EC': 4, 'flipped votes': 26030, '% flipped': 14.541}, 'RHODE ISLAND': {'EC': 5, 'flipped votes': 26201, '% flipped': 16.121}, 'MARYLAND': {'EC': 8, 'flipped votes': 27746, '% flipped': 6.658}, 'WEST VIRGINIA': {'EC': 8, 'flipped votes': 30610, '% flipped': 6.088}, 'OREGON': {'EC': 5, 'flipped votes': 31787, '% flipped': 14.215}, 'COLORADO': {'EC': 6, 'flipped votes': 34157, '% flipped': 12.279}, 'SOUTH DAKOTA': {'EC': 5, 'flipped votes': 37378, '% flipped': 20.612}, 'MAINE': {'EC': 6, 'flipped votes': 38698, '% flipped': 19.813}, 'CONNECTICUT': {'EC': 7, 'flipped votes': 54259, '% flipped': 15.504}, 'MISSOURI': {'EC': 18, 'flipped votes': 76182, '% flipped': 5.851}, 'INDIANA': {'EC': 15, 'flipped votes': 92504, '% flipped': 7.659}}
+Total number of flipped votes: 596492 across 22 states, Ratio to Popular Vote Margin: 8.48806%, Ratio to Total Votes in Year: 2.30215%
+New Winner: James M. Cox (D) with 267 electoral votes vs Warren G. Harding (R) with 264 electoral votes
+
+Year: 1924
+Original Winner: Calvin Coolidge (R) with 382 electoral votes vs John W. Davis (D) with 136 electoral votes (266 needed)
+Popular Vote Margin: 7339279  for Calvin Coolidge
+Flipped states: {'ARIZONA': {'EC': 3, 'flipped votes': 2141, '% flipped': 2.895}, 'NEVADA': {'EC': 3, 'flipped votes': 2668, '% flipped': 9.91}, 'NEW MEXICO': {'EC': 3, 'flipped votes': 3102, '% flipped': 2.749}, 'MARYLAND': {'EC': 8, 'flipped votes': 7172, '% flipped': 2.005}, 'DELAWARE': {'EC': 3, 'flipped votes': 9499, '% flipped': 10.454}, 'KENTUCKY': {'EC': 13, 'flipped votes': 12056, '% flipped': 1.558}, 'WYOMING': {'EC': 3, 'flipped votes': 14496, '% flipped': 18.143}, 'UTAH': {'EC': 4, 'flipped votes': 15164, '% flipped': 9.659}, 'WEST VIRGINIA': {'EC': 8, 'flipped votes': 15702, '% flipped': 2.695}, 'MONTANA': {'EC': 4, 'flipped votes': 20167, '% flipped': 11.586}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 20688, '% flipped': 12.556}, 'IDAHO': {'EC': 4, 'flipped votes': 22812, '% flipped': 15.383}, 'RHODE ISLAND': {'EC': 5, 'flipped votes': 24341, '% flipped': 12.056}, 'VERMONT': {'EC': 4, 'flipped votes': 32188, '% flipped': 31.377}, 'SOUTH DAKOTA': {'EC': 5, 'flipped votes': 37043, '% flipped': 18.17}, 'OREGON': {'EC': 5, 'flipped votes': 37496, '% flipped': 13.46}, 'MISSOURI': {'EC': 18, 'flipped votes': 37867, '% flipped': 2.901}, 'NORTH DAKOTA': {'EC': 5, 'flipped votes': 40537, '% flipped': 20.4}, 'NEBRASKA': {'EC': 8, 'flipped votes': 40649, '% flipped': 8.788}, 'MAINE': {'EC': 6, 'flipped votes': 48239, '% flipped': 25.153}, 'INDIANA': {'EC': 15, 'flipped votes': 105399, '% flipped': 8.319}}
+Total number of flipped votes: 549426 across 21 states, Ratio to Popular Vote Margin: 7.48610%, Ratio to Total Votes in Year: 1.90405%
+New Winner: John W. Davis (D) with 267 electoral votes vs Calvin Coolidge (R) with 251 electoral votes
+
+Year: 1928
+Original Winner: Herbert Hoover (R) with 444 electoral votes vs Al Smith (D) with 87 electoral votes (266 needed)
+Popular Vote Margin: 6407359  for Herbert Hoover
+Flipped states: {'NEVADA': {'EC': 3, 'flipped votes': 2119, '% flipped': 6.537}, 'UTAH': {'EC': 4, 'flipped votes': 6817, '% flipped': 3.882}, 'ARIZONA': {'EC': 3, 'flipped votes': 6999, '% flipped': 7.685}, 'NEW MEXICO': {'EC': 3, 'flipped votes': 10718, '% flipped': 9.094}, 'VIRGINIA': {'EC': 12, 'flipped votes': 12232, '% flipped': 4.014}, 'NORTH DAKOTA': {'EC': 5, 'flipped votes': 12647, '% flipped': 5.323}, 'TEXAS': {'EC': 20, 'flipped votes': 13003, '% flipped': 1.836}, 'TENNESSEE': {'EC': 12, 'flipped votes': 14023, '% flipped': 3.866}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 17345, '% flipped': 8.844}, 'MONTANA': {'EC': 4, 'flipped votes': 17362, '% flipped': 9.048}, 'FLORIDA': {'EC': 6, 'flipped votes': 21203, '% flipped': 8.621}, 'CONNECTICUT': {'EC': 7, 'flipped votes': 22279, '% flipped': 4.06}, 'NORTH CAROLINA': {'EC': 12, 'flipped votes': 31349, '% flipped': 4.936}, 'MARYLAND': {'EC': 8, 'flipped votes': 38927, '% flipped': 7.413}, 'WISCONSIN': {'EC': 13, 'flipped votes': 46974, '% flipped': 4.724}, 'NEW YORK': {'EC': 45, 'flipped votes': 51741, '% flipped': 1.208}, 'MISSOURI': {'EC': 18, 'flipped votes': 85760, '% flipped': 5.73}}
+Total number of flipped votes: 411498 across 17 states, Ratio to Popular Vote Margin: 6.42227%, Ratio to Total Votes in Year: 1.12894%
+New Winner: Al Smith (D) with 266 electoral votes vs Herbert Hoover (R) with 265 electoral votes
+
+Year: 1932
+Original Winner: Franklin D. Roosevelt (D) with 472 electoral votes vs Herbert Hoover (R) with 59 electoral votes (266 needed)
+Popular Vote Margin: 7060910  for Franklin D. Roosevelt
+Flipped states: {'WYOMING': {'EC': 3, 'flipped votes': 7394, '% flipped': 7.87}, 'NEVADA': {'EC': 3, 'flipped votes': 8042, '% flipped': 19.411}, 'NEW JERSEY': {'EC': 16, 'flipped votes': 15474, '% flipped': 0.978}, 'RHODE ISLAND': {'EC': 4, 'flipped votes': 15670, '% flipped': 5.984}, 'UTAH': {'EC': 4, 'flipped votes': 15978, '% flipped': 7.928}, 'IDAHO': {'EC': 4, 'flipped votes': 19032, '% flipped': 10.521}, 'NEW MEXICO': {'EC': 3, 'flipped votes': 20437, '% flipped': 13.688}, 'ARIZONA': {'EC': 3, 'flipped votes': 21581, '% flipped': 18.706}, 'COLORADO': {'EC': 6, 'flipped votes': 30631, '% flipped': 6.954}, 'MASSACHUSETTS': {'EC': 17, 'flipped votes': 31595, '% flipped': 2.055}, 'OHIO': {'EC': 26, 'flipped votes': 37189, '% flipped': 1.47}, 'WEST VIRGINIA': {'EC': 8, 'flipped votes': 37197, '% flipped': 5.055}, 'KANSAS': {'EC': 9, 'flipped votes': 37354, '% flipped': 4.828}, 'OREGON': {'EC': 5, 'flipped votes': 38927, '% flipped': 11.125}, 'SOUTH CAROLINA': {'EC': 8, 'flipped votes': 50185, '% flipped': 48.104}, 'VIRGINIA': {'EC': 11, 'flipped votes': 57172, '% flipped': 19.472}, 'MICHIGAN': {'EC': 19, 'flipped votes': 65904, '% flipped': 4.089}, 'TENNESSEE': {'EC': 11, 'flipped votes': 66361, '% flipped': 17.182}, 'NEW YORK': {'EC': 47, 'flipped votes': 298499, '% flipped': 6.673}}
+Total number of flipped votes: 874622 across 19 states, Ratio to Popular Vote Margin: 12.38682%, Ratio to Total Votes in Year: 2.26692%
+New Winner: Herbert Hoover (R) with 266 electoral votes vs Franklin D. Roosevelt (D) with 265 electoral votes
+
+Year: 1936
+Original Winner: Franklin D. Roosevelt (D) with 523 electoral votes vs Alf Landon (R) with 8 electoral votes (266 needed)
+Popular Vote Margin: 11073857  for Franklin D. Roosevelt
+Flipped states: {'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 1910, '% flipped': 0.896}, 'DELAWARE': {'EC': 3, 'flipped votes': 6234, '% flipped': 4.911}, 'NEVADA': {'EC': 3, 'flipped votes': 10002, '% flipped': 22.811}, 'WYOMING': {'EC': 3, 'flipped votes': 11943, '% flipped': 11.782}, 'SOUTH DAKOTA': {'EC': 4, 'flipped votes': 17081, '% flipped': 5.97}, 'RHODE ISLAND': {'EC': 4, 'flipped votes': 20104, '% flipped': 6.489}, 'NEW MEXICO': {'EC': 3, 'flipped votes': 22156, '% flipped': 13.207}, 'ARIZONA': {'EC': 3, 'flipped votes': 26645, '% flipped': 22.176}, 'IDAHO': {'EC': 4, 'flipped votes': 29714, '% flipped': 15.481}, 'KANSAS': {'EC': 9, 'flipped votes': 33397, '% flipped': 3.873}, 'UTAH': {'EC': 4, 'flipped votes': 42846, '% flipped': 19.947}, 'NORTH DAKOTA': {'EC': 4, 'flipped votes': 45199, '% flipped': 16.58}, 'NEBRASKA': {'EC': 7, 'flipped votes': 49858, '% flipped': 8.377}, 'CONNECTICUT': {'EC': 8, 'flipped votes': 51723, '% flipped': 7.827}, 'SOUTH CAROLINA': {'EC': 8, 'flipped votes': 56073, '% flipped': 48.575}, 'ARKANSAS': {'EC': 9, 'flipped votes': 57364, '% flipped': 32.082}, 'IOWA': {'EC': 11, 'flipped votes': 66890, '% flipped': 6.028}, 'VIRGINIA': {'EC': 11, 'flipped votes': 68323, '% flipped': 20.498}, 'MISSISSIPPI': {'EC': 9, 'flipped votes': 76434, '% flipped': 47.24}, 'MARYLAND': {'EC': 8, 'flipped votes': 79089, '% flipped': 12.735}, 'KENTUCKY': {'EC': 11, 'flipped votes': 86122, '% flipped': 9.447}, 'MASSACHUSETTS': {'EC': 17, 'flipped votes': 87052, '% flipped': 4.757}, 'WEST VIRGINIA': {'EC': 8, 'flipped votes': 88613, '% flipped': 10.703}, 'TENNESSEE': {'EC': 11, 'flipped votes': 90282, '% flipped': 19.063}, 'ALABAMA': {'EC': 11, 'flipped votes': 101420, '% flipped': 37.075}, 'GEORGIA': {'EC': 12, 'flipped votes': 109212, '% flipped': 37.362}, 'INDIANA': {'EC': 14, 'flipped votes': 121703, '% flipped': 7.482}, 'MICHIGAN': {'EC': 19, 'flipped votes': 158531, '% flipped': 9.236}, 'PENNSYLVANIA': {'EC': 36, 'flipped votes': 331894, '% flipped': 8.207}}
+Total number of flipped votes: 1947814 across 29 states, Ratio to Popular Vote Margin: 17.58930%, Ratio to Total Votes in Year: 4.35635%
+New Winner: Alf Landon (R) with 266 electoral votes vs Franklin D. Roosevelt (D) with 265 electoral votes
+
+Year: 1940
+Original Winner: Franklin D. Roosevelt (D) with 449 electoral votes vs Wendell Willkie (R) with 82 electoral votes (266 needed)
+Popular Vote Margin: 4964706  for Franklin D. Roosevelt
+Flipped states: {'WYOMING': {'EC': 3, 'flipped votes': 3328, '% flipped': 2.974}, 'NEVADA': {'EC': 3, 'flipped votes': 5359, '% flipped': 10.078}, 'DELAWARE': {'EC': 3, 'flipped votes': 6580, '% flipped': 4.837}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 7583, '% flipped': 3.221}, 'IDAHO': {'EC': 4, 'flipped votes': 10645, '% flipped': 4.541}, 'NEW MEXICO': {'EC': 3, 'flipped votes': 12193, '% flipped': 6.662}, 'WISCONSIN': {'EC': 12, 'flipped votes': 12808, '% flipped': 0.925}, 'MINNESOTA': {'EC': 11, 'flipped votes': 23962, '% flipped': 1.932}, 'CONNECTICUT': {'EC': 8, 'flipped votes': 27902, '% flipped': 3.58}, 'NEW JERSEY': {'EC': 16, 'flipped votes': 35667, '% flipped': 1.818}, 'MISSOURI': {'EC': 15, 'flipped votes': 43734, '% flipped': 2.391}, 'ILLINOIS': {'EC': 29, 'flipped votes': 51348, '% flipped': 1.223}, 'OHIO': {'EC': 26, 'flipped votes': 73184, '% flipped': 2.204}, 'NEW YORK': {'EC': 47, 'flipped votes': 112221, '% flipped': 1.787}}
+Total number of flipped votes: 426514 across 14 states, Ratio to Popular Vote Margin: 8.59092%, Ratio to Total Votes in Year: 0.85884%
+New Winner: Wendell Willkie (R) with 266 electoral votes vs Franklin D. Roosevelt (D) with 265 electoral votes
+
+Year: 1944
+Original Winner: Franklin D. Roosevelt (D) with 421 electoral votes vs Thomas E. Dewey (R) with 99 electoral votes (266 needed)
+Popular Vote Margin: 3009733  for Franklin D. Roosevelt
+Flipped states: {'NEVADA': {'EC': 3, 'flipped votes': 2507, '% flipped': 4.623}, 'IDAHO': {'EC': 4, 'flipped votes': 3632, '% flipped': 1.75}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 4874, '% flipped': 2.123}, 'NEW MEXICO': {'EC': 4, 'flipped votes': 5351, '% flipped': 3.519}, 'DELAWARE': {'EC': 3, 'flipped votes': 5710, '% flipped': 4.571}, 'MONTANA': {'EC': 4, 'flipped votes': 9697, '% flipped': 4.714}, 'MICHIGAN': {'EC': 19, 'flipped votes': 11239, '% flipped': 0.513}, 'MARYLAND': {'EC': 8, 'flipped votes': 11271, '% flipped': 1.852}, 'OREGON': {'EC': 6, 'flipped votes': 11636, '% flipped': 2.455}, 'NEW JERSEY': {'EC': 16, 'flipped votes': 13270, '% flipped': 0.681}, 'CONNECTICUT': {'EC': 8, 'flipped votes': 22310, '% flipped': 2.702}, 'MISSOURI': {'EC': 15, 'flipped votes': 23141, '% flipped': 1.475}, 'KENTUCKY': {'EC': 11, 'flipped votes': 40071, '% flipped': 4.632}, 'PENNSYLVANIA': {'EC': 35, 'flipped votes': 52713, '% flipped': 1.396}, 'ILLINOIS': {'EC': 28, 'flipped votes': 70083, '% flipped': 1.744}}
+Total number of flipped votes: 287505 across 15 states, Ratio to Popular Vote Margin: 9.55251%, Ratio to Total Votes in Year: 0.60186%
+New Winner: Thomas E. Dewey (R) with 267 electoral votes vs Franklin D. Roosevelt (D) with 253 electoral votes
+
+Year: 1948
+Original Winner: Harry S. Truman (D) with 304 electoral votes vs Thomas E. Dewey (R) with 189 electoral votes (266 needed)
+Popular Vote Margin: 1675961  for Harry S. Truman
+Flipped states: {'OHIO': {'EC': 25, 'flipped votes': 3554, '% flipped': 0.123}, 'CALIFORNIA': {'EC': 25, 'flipped votes': 8933, '% flipped': 0.235}, 'ILLINOIS': {'EC': 28, 'flipped votes': 16807, '% flipped': 0.425}}
+Total number of flipped votes: 29294 across 3 states, Ratio to Popular Vote Margin: 1.74789%, Ratio to Total Votes in Year: 0.06125%
+New Winner: Thomas E. Dewey (R) with 267 electoral votes vs Harry S. Truman (D) with 226 electoral votes
+
+Year: 1952
+Original Winner: Dwight D. Eisenhower (R) with 442 electoral votes vs Adlai Stevenson (D) with 89 electoral votes (266 needed)
+Popular Vote Margin: 7117752  for Dwight D. Eisenhower
+Flipped states: {'TENNESSEE': {'EC': 11, 'flipped votes': 1219, '% flipped': 0.137}, 'DELAWARE': {'EC': 3, 'flipped votes': 3373, '% flipped': 1.946}, 'RHODE ISLAND': {'EC': 4, 'flipped votes': 3822, '% flipped': 0.923}, 'NEVADA': {'EC': 3, 'flipped votes': 9408, '% flipped': 11.447}, 'NEW MEXICO': {'EC': 4, 'flipped votes': 13255, '% flipped': 5.573}, 'MISSOURI': {'EC': 13, 'flipped votes': 14800, '% flipped': 0.783}, 'WYOMING': {'EC': 3, 'flipped votes': 16557, '% flipped': 12.837}, 'ARIZONA': {'EC': 4, 'flipped votes': 21758, '% flipped': 8.35}, 'MONTANA': {'EC': 4, 'flipped votes': 25591, '% flipped': 9.708}, 'UTAH': {'EC': 4, 'flipped votes': 29414, '% flipped': 8.925}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 29813, '% flipped': 10.923}, 'VIRGINIA': {'EC': 12, 'flipped votes': 40181, '% flipped': 6.505}, 'OKLAHOMA': {'EC': 8, 'flipped votes': 43554, '% flipped': 4.59}, 'FLORIDA': {'EC': 10, 'flipped votes': 49544, '% flipped': 5.01}, 'MARYLAND': {'EC': 9, 'flipped votes': 52044, '% flipped': 5.817}, 'WASHINGTON': {'EC': 9, 'flipped votes': 53132, '% flipped': 4.866}, 'TEXAS': {'EC': 24, 'flipped votes': 66826, '% flipped': 3.225}, 'MASSACHUSETTS': {'EC': 16, 'flipped votes': 104401, '% flipped': 4.394}, 'PENNSYLVANIA': {'EC': 32, 'flipped votes': 134761, '% flipped': 2.954}}
+Total number of flipped votes: 713453 across 19 states, Ratio to Popular Vote Margin: 10.02357%, Ratio to Total Votes in Year: 1.16478%
+New Winner: Adlai Stevenson (D) with 266 electoral votes vs Dwight D. Eisenhower (R) with 265 electoral votes
+
+Year: 1956
+Original Winner: Dwight D. Eisenhower (R) with 457 electoral votes vs Adlai Stevenson (D) with 74 electoral votes (266 needed)
+Popular Vote Margin: 10264919  for Dwight D. Eisenhower
+Flipped states: {'TENNESSEE': {'EC': 11, 'flipped votes': 2891, '% flipped': 0.315}, 'NEVADA': {'EC': 3, 'flipped votes': 7705, '% flipped': 7.969}, 'DELAWARE': {'EC': 3, 'flipped votes': 9319, '% flipped': 5.251}, 'WYOMING': {'EC': 3, 'flipped votes': 12510, '% flipped': 10.078}, 'MONTANA': {'EC': 4, 'flipped votes': 19348, '% flipped': 7.135}, 'NEW MEXICO': {'EC': 4, 'flipped votes': 20346, '% flipped': 8.046}, 'SOUTH DAKOTA': {'EC': 4, 'flipped votes': 24641, '% flipped': 8.385}, 'IDAHO': {'EC': 4, 'flipped votes': 30556, '% flipped': 11.199}, 'RHODE ISLAND': {'EC': 4, 'flipped votes': 32015, '% flipped': 8.26}, 'ARIZONA': {'EC': 4, 'flipped votes': 32056, '% flipped': 11.059}, 'WEST VIRGINIA': {'EC': 8, 'flipped votes': 33882, '% flipped': 4.078}, 'OREGON': {'EC': 6, 'flipped votes': 38595, '% flipped': 5.247}, 'LOUISIANA': {'EC': 10, 'flipped votes': 42536, '% flipped': 6.888}, 'OKLAHOMA': {'EC': 8, 'flipped votes': 44095, '% flipped': 5.131}, 'KENTUCKY': {'EC': 10, 'flipped votes': 47870, '% flipped': 4.565}, 'WASHINGTON': {'EC': 9, 'flipped votes': 48715, '% flipped': 4.26}, 'VIRGINIA': {'EC': 12, 'flipped votes': 59350, '% flipped': 8.513}, 'FLORIDA': {'EC': 10, 'flipped votes': 81740, '% flipped': 7.271}, 'TEXAS': {'EC': 24, 'flipped votes': 110331, '% flipped': 5.685}, 'MICHIGAN': {'EC': 20, 'flipped votes': 176875, '% flipped': 5.755}, 'PENNSYLVANIA': {'EC': 32, 'flipped votes': 301742, '% flipped': 6.607}}
+Total number of flipped votes: 1177118 across 21 states, Ratio to Popular Vote Margin: 11.46739%, Ratio to Total Votes in Year: 1.90390%
+New Winner: Adlai Stevenson (D) with 267 electoral votes vs Dwight D. Eisenhower (R) with 264 electoral votes
+
+Year: 1960
+Original Winner: John F. Kennedy (D) with 298 electoral votes vs Richard Nixon (R) with 220 electoral votes (269 needed)
+Popular Vote Margin: 112827  for John F. Kennedy
+Flipped states: {'HAWAII': {'EC': 3, 'flipped votes': 58, '% flipped': 0.031}, 'NEW MEXICO': {'EC': 4, 'flipped votes': 1148, '% flipped': 0.371}, 'NEVADA': {'EC': 3, 'flipped votes': 1247, '% flipped': 1.163}, 'ILLINOIS': {'EC': 27, 'flipped votes': 4430, '% flipped': 0.093}, 'MISSOURI': {'EC': 13, 'flipped votes': 4991, '% flipped': 0.258}}
+Total number of flipped votes: 11874 across 5 states, Ratio to Popular Vote Margin: 10.52408%, Ratio to Total Votes in Year: 0.01722%
+New Winner: Richard Nixon (R) with 270 electoral votes vs John F. Kennedy (D) with 248 electoral votes
+
+Year: 1964
+Original Winner: Lyndon B. Johnson (D) with 472 electoral votes vs Barry Goldwater (R) with 52 electoral votes (270 needed)
+Popular Vote Margin: 15023097  for Lyndon B. Johnson
+Flipped states: {'IDAHO': {'EC': 4, 'flipped votes': 2672, '% flipped': 0.914}, 'WYOMING': {'EC': 3, 'flipped votes': 9361, '% flipped': 6.559}, 'ALASKA': {'EC': 3, 'flipped votes': 10700, '% flipped': 15.909}, 'NEVADA': {'EC': 3, 'flipped votes': 11623, '% flipped': 8.582}, 'NEBRASKA': {'EC': 5, 'flipped votes': 15231, '% flipped': 2.607}, 'SOUTH DAKOTA': {'EC': 4, 'flipped votes': 16452, '% flipped': 5.613}, 'UTAH': {'EC': 4, 'flipped votes': 19474, '% flipped': 4.865}, 'FLORIDA': {'EC': 14, 'flipped votes': 21300, '% flipped': 1.149}, 'DELAWARE': {'EC': 3, 'flipped votes': 22314, '% flipped': 11.114}, 'MONTANA': {'EC': 4, 'flipped votes': 25608, '% flipped': 9.235}, 'VERMONT': {'EC': 3, 'flipped votes': 26593, '% flipped': 16.308}, 'NEW MEXICO': {'EC': 4, 'flipped votes': 31090, '% flipped': 9.541}, 'ARKANSAS': {'EC': 6, 'flipped votes': 35467, '% flipped': 6.362}, 'VIRGINIA': {'EC': 12, 'flipped votes': 38353, '% flipped': 3.69}, 'KANSAS': {'EC': 7, 'flipped votes': 38725, '% flipped': 4.553}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 40018, '% flipped': 13.891}, 'OKLAHOMA': {'EC': 8, 'flipped votes': 53585, '% flipped': 5.746}, 'HAWAII': {'EC': 4, 'flipped votes': 59614, '% flipped': 28.761}, 'TENNESSEE': {'EC': 11, 'flipped votes': 62992, '% flipped': 5.507}, 'NORTH CAROLINA': {'EC': 13, 'flipped votes': 87648, '% flipped': 6.151}, 'COLORADO': {'EC': 6, 'flipped votes': 89629, '% flipped': 11.598}, 'OREGON': {'EC': 6, 'flipped votes': 109120, '% flipped': 13.922}, 'INDIANA': {'EC': 13, 'flipped votes': 129866, '% flipped': 6.238}, 'IOWA': {'EC': 9, 'flipped votes': 141942, '% flipped': 12.007}, 'TEXAS': {'EC': 25, 'flipped votes': 352310, '% flipped': 13.438}, 'CALIFORNIA': {'EC': 40, 'flipped votes': 646385, '% flipped': 9.167}}
+Total number of flipped votes: 2098072 across 26 states, Ratio to Popular Vote Margin: 13.96564%, Ratio to Total Votes in Year: 2.97533%
+New Winner: Barry Goldwater (R) with 270 electoral votes vs Lyndon B. Johnson (D) with 254 electoral votes
+
+Year: 1968
+Original Winner: Richard Nixon (R) with 302 electoral votes vs Hubert Humphrey (D) with 181 electoral votes (270 needed)
+Popular Vote Margin: 1462821  for Richard Nixon
+Flipped states: {'ALASKA': {'EC': 3, 'flipped votes': 1095, '% flipped': 1.319}, 'DELAWARE': {'EC': 3, 'flipped votes': 3761, '% flipped': 1.754}, 'NEVADA': {'EC': 3, 'flipped votes': 6296, '% flipped': 4.083}, 'MISSOURI': {'EC': 12, 'flipped votes': 10245, '% flipped': 0.566}, 'NEW JERSEY': {'EC': 17, 'flipped votes': 30631, '% flipped': 1.074}, 'OHIO': {'EC': 26, 'flipped votes': 45215, '% flipped': 1.142}, 'ILLINOIS': {'EC': 26, 'flipped votes': 67481, '% flipped': 1.465}}
+Total number of flipped votes: 164724 across 7 states, Ratio to Popular Vote Margin: 11.26071%, Ratio to Total Votes in Year: 0.22646%
+New Winner: Hubert Humphrey (D) with 271 electoral votes vs Richard Nixon (R) with 212 electoral votes
+
+Year: 1972
+Original Winner: Richard Nixon (R) with 521 electoral votes vs George McGovern (D) with 17 electoral votes (270 needed)
+Popular Vote Margin: 18898218  for Richard Nixon
+Flipped states: {'ALASKA': {'EC': 3, 'flipped votes': 11192, '% flipped': 11.754}, 'RHODE ISLAND': {'EC': 4, 'flipped votes': 12870, '% flipped': 3.101}, 'SOUTH DAKOTA': {'EC': 4, 'flipped votes': 13266, '% flipped': 4.329}, 'DELAWARE': {'EC': 3, 'flipped votes': 24038, '% flipped': 10.333}, 'VERMONT': {'EC': 3, 'flipped votes': 24488, '% flipped': 13.214}, 'NEVADA': {'EC': 3, 'flipped votes': 24868, '% flipped': 13.681}, 'WYOMING': {'EC': 3, 'flipped votes': 28054, '% flipped': 19.371}, 'MONTANA': {'EC': 4, 'flipped votes': 31890, '% flipped': 10.484}, 'HAWAII': {'EC': 4, 'flipped votes': 33729, '% flipped': 12.48}, 'OREGON': {'EC': 6, 'flipped votes': 46964, '% flipped': 5.34}, 'NEW MEXICO': {'EC': 4, 'flipped votes': 47262, '% flipped': 12.547}, 'MAINE': {'EC': 4, 'flipped votes': 47938, '% flipped': 11.495}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 48645, '% flipped': 14.734}, 'IDAHO': {'EC': 4, 'flipped votes': 59280, '% flipped': 19.18}, 'WISCONSIN': {'EC': 11, 'flipped votes': 89629, '% flipped': 4.98}, 'ARIZONA': {'EC': 6, 'flipped votes': 102137, '% flipped': 16.985}, 'WEST VIRGINIA': {'EC': 6, 'flipped votes': 103765, '% flipped': 13.61}, 'IOWA': {'EC': 8, 'flipped votes': 105001, '% flipped': 8.733}, 'CONNECTICUT': {'EC': 8, 'flipped votes': 127633, '% flipped': 9.342}, 'WASHINGTON': {'EC': 9, 'flipped votes': 134401, '% flipped': 9.563}, 'KENTUCKY': {'EC': 9, 'flipped votes': 152644, '% flipped': 14.571}, 'MARYLAND': {'EC': 10, 'flipped votes': 161763, '% flipped': 12.116}, 'MICHIGAN': {'EC': 21, 'flipped votes': 251144, '% flipped': 7.341}, 'ILLINOIS': {'EC': 26, 'flipped votes': 437354, '% flipped': 9.302}, 'CALIFORNIA': {'EC': 45, 'flipped votes': 563125, '% flipped': 6.971}, 'NEW YORK': {'EC': 41, 'flipped votes': 620848, '% flipped': 8.691}}
+Total number of flipped votes: 3303928 across 26 states, Ratio to Popular Vote Margin: 17.48275%, Ratio to Total Votes in Year: 4.32416%
+New Winner: George McGovern (D) with 270 electoral votes vs Richard Nixon (R) with 268 electoral votes
+
+Year: 1976
+Original Winner: Jimmy Carter (D) with 297 electoral votes vs Gerald Ford (R) with 241 electoral votes (270 needed)
+Popular Vote Margin: 1809553  for Jimmy Carter
+Flipped states: {'HAWAII': {'EC': 4, 'flipped votes': 3687, '% flipped': 1.283}, 'OHIO': {'EC': 25, 'flipped votes': 4667, '% flipped': 0.116}}
+Total number of flipped votes: 8354 across 2 states, Ratio to Popular Vote Margin: 0.46166%, Ratio to Total Votes in Year: 0.01050%
+New Winner: Gerald Ford (R) with 270 electoral votes vs Jimmy Carter (D) with 268 electoral votes
+
+Year: 1980
+Original Winner: Ronald Reagan (R) with 448 electoral votes vs Jimmy Carter (D) with 90 electoral votes (270 needed)
+Popular Vote Margin: 8161691  for Ronald Reagan
+Flipped states: {'MASSACHUSETTS': {'EC': 14, 'flipped votes': 1915, '% flipped': 0.091}, 'TENNESSEE': {'EC': 10, 'flipped votes': 2356, '% flipped': 0.15}, 'ARKANSAS': {'EC': 6, 'flipped votes': 2562, '% flipped': 0.32}, 'DELAWARE': {'EC': 3, 'flipped votes': 2750, '% flipped': 1.267}, 'SOUTH CAROLINA': {'EC': 8, 'flipped votes': 5529, '% flipped': 0.637}, 'MISSISSIPPI': {'EC': 7, 'flipped votes': 5905, '% flipped': 0.678}, 'VERMONT': {'EC': 3, 'flipped votes': 6339, '% flipped': 3.59}, 'ALABAMA': {'EC': 9, 'flipped votes': 8732, '% flipped': 0.676}, 'MAINE': {'EC': 4, 'flipped votes': 8775, '% flipped': 1.91}, 'KENTUCKY': {'EC': 9, 'flipped votes': 8929, '% flipped': 0.713}, 'NORTH CAROLINA': {'EC': 13, 'flipped votes': 19692, '% flipped': 1.1}, 'LOUISIANA': {'EC': 10, 'flipped votes': 42201, '% flipped': 2.811}, 'WISCONSIN': {'EC': 11, 'flipped votes': 53631, '% flipped': 2.59}, 'MICHIGAN': {'EC': 21, 'flipped votes': 126847, '% flipped': 3.546}, 'PENNSYLVANIA': {'EC': 27, 'flipped votes': 162167, '% flipped': 3.862}, 'ILLINOIS': {'EC': 26, 'flipped votes': 188319, '% flipped': 4.34}}
+Total number of flipped votes: 646649 across 16 states, Ratio to Popular Vote Margin: 7.92298%, Ratio to Total Votes in Year: 0.81726%
+New Winner: Jimmy Carter (D) with 271 electoral votes vs Ronald Reagan (R) with 267 electoral votes
+
+Year: 1984
+Original Winner: Ronald Reagan (R) with 525 electoral votes vs Walter Mondale (D) with 13 electoral votes (270 needed)
+Popular Vote Margin: 16717016  for Ronald Reagan
+Flipped states: {'RHODE ISLAND': {'EC': 4, 'flipped votes': 7488, '% flipped': 1.83}, 'HAWAII': {'EC': 4, 'flipped votes': 18949, '% flipped': 5.704}, 'VERMONT': {'EC': 3, 'flipped votes': 20068, '% flipped': 8.665}, 'DELAWARE': {'EC': 3, 'flipped votes': 25268, '% flipped': 9.954}, 'MASSACHUSETTS': {'EC': 13, 'flipped votes': 35666, '% flipped': 1.398}, 'ALASKA': {'EC': 3, 'flipped votes': 38186, '% flipped': 19.056}, 'WEST VIRGINIA': {'EC': 6, 'flipped votes': 38680, '% flipped': 5.273}, 'WYOMING': {'EC': 3, 'flipped votes': 39936, '% flipped': 21.401}, 'MONTANA': {'EC': 4, 'flipped votes': 42855, '% flipped': 11.302}, 'MARYLAND': {'EC': 10, 'flipped votes': 45992, '% flipped': 2.758}, 'NEVADA': {'EC': 4, 'flipped votes': 48558, '% flipped': 17.316}, 'IOWA': {'EC': 8, 'flipped votes': 48735, '% flipped': 3.724}, 'NEW MEXICO': {'EC': 5, 'flipped votes': 52667, '% flipped': 10.35}, 'MAINE': {'EC': 4, 'flipped votes': 60993, '% flipped': 11.069}, 'OREGON': {'EC': 7, 'flipped votes': 74611, '% flipped': 6.105}, 'WISCONSIN': {'EC': 11, 'flipped votes': 101423, '% flipped': 4.622}, 'WASHINGTON': {'EC': 10, 'flipped votes': 126660, '% flipped': 6.846}, 'TENNESSEE': {'EC': 11, 'flipped votes': 139250, '% flipped': 8.182}, 'PENNSYLVANIA': {'EC': 25, 'flipped votes': 178097, '% flipped': 3.701}, 'GEORGIA': {'EC': 12, 'flipped votes': 181048, '% flipped': 10.198}, 'NEW YORK': {'EC': 36, 'flipped votes': 187618, '% flipped': 2.942}, 'ILLINOIS': {'EC': 24, 'flipped votes': 310303, '% flipped': 6.473}, 'CALIFORNIA': {'EC': 47, 'flipped votes': 772246, '% flipped': 8.225}}
+Total number of flipped votes: 2595297 across 23 states, Ratio to Popular Vote Margin: 15.52488%, Ratio to Total Votes in Year: 2.83278%
+New Winner: Walter Mondale (D) with 270 electoral votes vs Ronald Reagan (R) with 268 electoral votes
+
+Year: 1988
+Original Winner: George H.W. Bush (R) with 426 electoral votes vs Michael Dukakis (D) with 112 electoral votes (270 needed)
+Popular Vote Margin: 6925961  for George H.W. Bush
+Flipped states: {'VERMONT': {'EC': 3, 'flipped votes': 4279, '% flipped': 1.782}, 'SOUTH DAKOTA': {'EC': 3, 'flipped votes': 9928, '% flipped': 3.193}, 'MONTANA': {'EC': 4, 'flipped votes': 10739, '% flipped': 2.988}, 'NEW MEXICO': {'EC': 5, 'flipped votes': 12923, '% flipped': 2.51}, 'DELAWARE': {'EC': 3, 'flipped votes': 15497, '% flipped': 6.242}, 'NORTH DAKOTA': {'EC': 3, 'flipped votes': 19411, '% flipped': 6.596}, 'MARYLAND': {'EC': 10, 'flipped votes': 24932, '% flipped': 1.464}, 'MAINE': {'EC': 4, 'flipped votes': 31782, '% flipped': 5.771}, 'CONNECTICUT': {'EC': 8, 'flipped votes': 36829, '% flipped': 2.581}, 'MISSOURI': {'EC': 11, 'flipped votes': 41668, '% flipped': 1.997}, 'ILLINOIS': {'EC': 24, 'flipped votes': 47500, '% flipped': 1.049}, 'PENNSYLVANIA': {'EC': 25, 'flipped votes': 52572, '% flipped': 1.17}, 'COLORADO': {'EC': 8, 'flipped votes': 53363, '% flipped': 3.954}, 'CALIFORNIA': {'EC': 47, 'flipped votes': 176343, '% flipped': 1.807}}
+Total number of flipped votes: 537766 across 14 states, Ratio to Popular Vote Margin: 7.76450%, Ratio to Total Votes in Year: 0.59514%
+New Winner: Michael Dukakis (D) with 270 electoral votes vs George H.W. Bush (R) with 268 electoral votes
+
+Year: 1992
+Original Winner: Bill Clinton (D) with 370 electoral votes vs George H.W. Bush (R) with 168 electoral votes (270 needed)
+Popular Vote Margin: 6057834  for Bill Clinton
+Flipped states: {'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 3279, '% flipped': 0.797}, 'MONTANA': {'EC': 3, 'flipped votes': 5151, '% flipped': 1.724}, 'NEVADA': {'EC': 4, 'flipped votes': 6661, '% flipped': 1.825}, 'GEORGIA': {'EC': 13, 'flipped votes': 6858, '% flipped': 0.342}, 'DELAWARE': {'EC': 3, 'flipped votes': 11871, '% flipped': 5.198}, 'HAWAII': {'EC': 4, 'flipped votes': 21245, '% flipped': 6.72}, 'KENTUCKY': {'EC': 8, 'flipped votes': 23964, '% flipped': 1.869}, 'COLORADO': {'EC': 8, 'flipped votes': 33416, '% flipped': 2.802}, 'NEW JERSEY': {'EC': 15, 'flipped votes': 39671, '% flipped': 1.42}, 'LOUISIANA': {'EC': 9, 'flipped votes': 41293, '% flipped': 2.665}, 'OHIO': {'EC': 21, 'flipped votes': 45317, '% flipped': 1.168}, 'TENNESSEE': {'EC': 11, 'flipped votes': 46111, '% flipped': 2.598}}
+Total number of flipped votes: 284837 across 12 states, Ratio to Popular Vote Margin: 4.70196%, Ratio to Total Votes in Year: 0.34049%
+New Winner: George H.W. Bush (R) with 271 electoral votes vs Bill Clinton (D) with 267 electoral votes
+
+Year: 1996
+Original Winner: Bill Clinton (D) with 379 electoral votes vs Robert Dole (R) with 159 electoral votes (270 needed)
+Popular Vote Margin: 8291654  for Bill Clinton
+Flipped states: {'NEVADA': {'EC': 4, 'flipped votes': 2366, '% flipped': 0.587}, 'KENTUCKY': {'EC': 8, 'flipped votes': 6666, '% flipped': 0.529}, 'ARIZONA': {'EC': 8, 'flipped votes': 15608, '% flipped': 1.224}, 'NEW MEXICO': {'EC': 5, 'flipped votes': 20373, '% flipped': 4.024}, 'TENNESSEE': {'EC': 11, 'flipped votes': 22809, '% flipped': 1.287}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 24841, '% flipped': 5.612}, 'OREGON': {'EC': 7, 'flipped votes': 55745, '% flipped': 4.693}, 'IOWA': {'EC': 7, 'flipped votes': 63808, '% flipped': 5.733}, 'MISSOURI': {'EC': 11, 'flipped votes': 67960, '% flipped': 3.547}, 'OHIO': {'EC': 21, 'flipped votes': 144170, '% flipped': 3.597}, 'FLORIDA': {'EC': 25, 'flipped votes': 151168, '% flipped': 3.155}}
+Total number of flipped votes: 575514 across 11 states, Ratio to Popular Vote Margin: 6.94088%, Ratio to Total Votes in Year: 0.66688%
+New Winner: Robert Dole (R) with 270 electoral votes vs Bill Clinton (D) with 268 electoral votes
+
+Year: 2000
+Original Winner: George W. Bush (R) with 271 electoral votes vs Al Gore (D) with 267 electoral votes (270 needed)
+Popular Vote Margin: -519208  for Al Gore
+Flipped states: {'FLORIDA': {'EC': 25, 'flipped votes': 269, '% flipped': 0.005}}
+Total number of flipped votes: 269 across 1 states, Ratio to Popular Vote Margin: 0.05181%, Ratio to Total Votes in Year: 0.00027%
+New Winner: Al Gore (D) with 292 electoral votes vs George W. Bush (R) with 246 electoral votes
+
+Year: 2004
+Original Winner: George W. Bush (R) with 286 electoral votes vs John Kerry (D) with 252 electoral votes (270 needed)
+Popular Vote Margin: 2978157  for George W. Bush
+Flipped states: {'NEW MEXICO': {'EC': 5, 'flipped votes': 2995, '% flipped': 0.4}, 'IOWA': {'EC': 7, 'flipped votes': 5030, '% flipped': 0.337}, 'COLORADO': {'EC': 9, 'flipped votes': 49762, '% flipped': 2.366}}
+Total number of flipped votes: 57787 across 3 states, Ratio to Popular Vote Margin: 1.94036%, Ratio to Total Votes in Year: 0.04785%
+New Winner: John Kerry (D) with 273 electoral votes vs George W. Bush (R) with 265 electoral votes
+
+Year: 2008
+Original Winner: Barack H. Obama (D) with 365 electoral votes vs John Mccain (R) with 173 electoral votes (270 needed)
+Popular Vote Margin: 9725011  for Barack H. Obama
+Flipped states: {'NORTH CAROLINA': {'EC': 15, 'flipped votes': 7089, '% flipped': 0.166}, 'INDIANA': {'EC': 11, 'flipped votes': 14196, '% flipped': 0.522}, 'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 34147, '% flipped': 4.869}, 'IOWA': {'EC': 7, 'flipped votes': 73281, '% flipped': 4.849}, 'VIRGINIA': {'EC': 13, 'flipped votes': 117264, '% flipped': 3.183}, 'FLORIDA': {'EC': 27, 'flipped votes': 118226, '% flipped': 1.42}, 'OHIO': {'EC': 20, 'flipped votes': 131113, '% flipped': 2.334}}
+Total number of flipped votes: 495316 across 7 states, Ratio to Popular Vote Margin: 5.09322%, Ratio to Total Votes in Year: 0.38411%
+New Winner: John Mccain (R) with 270 electoral votes vs Barack H. Obama (D) with 268 electoral votes
+
+Year: 2012
+Original Winner: Barack H. Obama (D) with 332 electoral votes vs Mitt Romney (R) with 206 electoral votes (270 needed)
+Popular Vote Margin: 5081900  for Barack H. Obama
+Flipped states: {'NEW HAMPSHIRE': {'EC': 4, 'flipped votes': 19822, '% flipped': 2.834}, 'FLORIDA': {'EC': 29, 'flipped votes': 37155, '% flipped': 0.442}, 'VIRGINIA': {'EC': 13, 'flipped votes': 74650, '% flipped': 1.967}, 'OHIO': {'EC': 18, 'flipped votes': 83108, '% flipped': 1.514}}
+Total number of flipped votes: 214735 across 4 states, Ratio to Popular Vote Margin: 4.22549%, Ratio to Total Votes in Year: 0.16986%
+New Winner: Mitt Romney (R) with 270 electoral votes vs Barack H. Obama (D) with 268 electoral votes
+
+Year: 2016
+Original Winner: Donald J. Trump (R) with 306 electoral votes vs Hillary Clinton (D) with 232 electoral votes (270 needed)
+Popular Vote Margin: -2984757  for Hillary Clinton
+Flipped states: {'MICHIGAN': {'EC': 16, 'flipped votes': 5353, '% flipped': 0.118}, 'WISCONSIN': {'EC': 10, 'flipped votes': 11375, '% flipped': 0.408}, 'PENNSYLVANIA': {'EC': 20, 'flipped votes': 22147, '% flipped': 0.376}}
+Total number of flipped votes: 38875 across 3 states, Ratio to Popular Vote Margin: 1.30245%, Ratio to Total Votes in Year: 0.03028%
+New Winner: Hillary Clinton (D) with 278 electoral votes vs Donald J. Trump (R) with 260 electoral votes
+
+Year: 2020
+Original Winner: Joseph R. Biden (D) with 306 electoral votes vs Donald J. Trump (R) with 232 electoral votes (270 needed)
+Popular Vote Margin: 7052762  for Joseph R. Biden
+Flipped states: {'ARIZONA': {'EC': 11, 'flipped votes': 5229, '% flipped': 0.157}, 'GEORGIA': {'EC': 16, 'flipped votes': 5890, '% flipped': 0.119}, 'WISCONSIN': {'EC': 10, 'flipped votes': 10342, '% flipped': 0.319}, 'NE-02': {'EC': 1, 'flipped votes': 10819, '% flipped': 3.366}}
+Total number of flipped votes: 32280 across 4 states, Ratio to Popular Vote Margin: 0.45769%, Ratio to Total Votes in Year: 0.02076%
+New Winner: Donald J. Trump (R) with 270 electoral votes vs Joseph R. Biden (D) with 268 electoral votes
+
+Year: 2024
+Original Winner: Donald J. Trump (R) with 312 electoral votes vs Kamala D. Harris (D) with 226 electoral votes (270 needed)
+Popular Vote Margin: 2484570  for Donald J. Trump
+Flipped states: {'WISCONSIN': {'EC': 10, 'flipped votes': 14699, '% flipped': 0.437}, 'MICHIGAN': {'EC': 15, 'flipped votes': 40052, '% flipped': 0.721}, 'PENNSYLVANIA': {'EC': 19, 'flipped votes': 60709, '% flipped': 0.872}}
+Total number of flipped votes: 115460 across 3 states, Ratio to Popular Vote Margin: 4.64708%, Ratio to Total Votes in Year: 0.07626%
+New Winner: Kamala D. Harris (D) with 270 electoral votes vs Donald J. Trump (R) with 268 electoral votes
+
