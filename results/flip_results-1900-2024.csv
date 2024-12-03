@@ -1,4 +1,4 @@
-,min_votes_to_flip,flipped_states,number_of_flipped_states,electoral_votes_flipped,total_electoral_votes,electoral_votes_to_win,popular_vote_margin,color,flip_margin_ratio,popular_vote_ratio
+,min_votes_to_flip,flipped_states,number_of_flipped_states,electoral_votes_flipped,total_electoral_votes,electoral_votes_to_win,popular_vote_margin,color,flip_margin_ratio,popular_margin_ratio
 1900,73232,"['OHIO', 'KANSAS', 'INDIANA', 'MARYLAND', 'DELAWARE', 'NEBRASKA', 'UTAH']",7,70,447,224,860014,red,0.5393117559534768,6.333510766940319
 1904,196066,"['COLORADO', 'MAINE', 'CONNECTICUT', 'WEST VIRGINIA', 'NEW YORK', 'MONTANA', 'RHODE ISLAND', 'WYOMING', 'DELAWARE', 'MISSOURI', 'NEVADA', 'MARYLAND']",12,106,476,239,2546330,red,1.5172290299572757,19.70441481874017
 1908,72963,"['IDAHO', 'KANSAS', 'OHIO', 'WYOMING', 'MONTANA', 'DELAWARE', 'INDIANA', 'MARYLAND', 'MISSOURI']",9,86,483,242,1269315,red,0.5130239514537296,8.92492080834794

@@ -127,7 +127,7 @@ def get_flip_results(election_results_df, print_results=False):
             'popular_vote_margin': popular_vote_margin,
             'color': color, # color for the popular vote margin plot
             'flip_margin_ratio': 100 * min_votes_to_flip / total_votes_in_year,
-            'popular_vote_ratio': 100 * abs_popular_vote_margin / total_votes_in_year
+            'popular_margin_ratio': 100 * abs_popular_vote_margin / total_votes_in_year
         }
         generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, print_results=print_results)
 
@@ -279,7 +279,7 @@ def make_all_plots(flip_results_df, start_year, end_year, folder_path='results/'
     plot_count += 1
     make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'popular_vote_margin', 'Popular Vote Margin', f'Popular Vote Margin by Year ({start_year}-{end_year})', 'pop_vote_margin', folder_path, show_plot)
     plot_count += 1
-    make_plot(flip_results_df, start_year, end_year, plot_count, 'popular_vote_ratio', 'Popular Vote Margin / Total Votes Cast in Year (%)', f'Percentage Popular Vote Margin / Total Votes Cast in Year ({start_year}-{end_year})', 'popular_vote_ratio', folder_path, show_plot)
+    make_plot(flip_results_df, start_year, end_year, plot_count, 'popular_margin_ratio', 'Popular Vote Margin / Total Votes Cast in Year (%)', f'Percentage Popular Vote Margin / Total Votes Cast in Year ({start_year}-{end_year})', 'popular_margin_ratio', folder_path, show_plot)
     plot_count += 1
     make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count, folder_path, show_plot)
     
