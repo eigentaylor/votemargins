@@ -25,22 +25,13 @@ for year in election_results_df['year'].unique():
     # get the total electoral votes
     total_electoral_votes = election_results['total_electoral_votes'].iloc[0]
     # get the number of votes needed to win
-    #votes_to_win = total_electoral_votes // 2 + 1
-    if 'electoral_votes_to_win' not in election_results:
-        votes_to_win = 270
-    else:
-        votes_to_win = election_results['electoral_votes_to_win'].iloc[0]
+    votes_to_win = election_results['electoral_votes_to_win'].iloc[0]
     # get the winner of the election
     winner = election_results['overall_winner'].iloc[0]
     # get the number of electoral votes the winner won
     winner_electoral_votes = election_results[winner + '_electoral'].iloc[0]
     # get the number of electoral votes the loser won
-    if 'overall_runner_up' not in election_results:
-        loser = 'R' if winner == 'D' else 'D'
-    else:
-        loser = election_results['overall_runner_up'].iloc[0]
-    if year == 1912:
-        loser = 'T'
+    loser = election_results['overall_runner_up'].iloc[0]
     winner_name = election_results[winner + '_name'].iloc[0]
     loser_name = election_results[loser + '_name'].iloc[0]
     loser_electoral_votes = election_results[loser + '_electoral'].iloc[0]
@@ -113,7 +104,7 @@ for year in election_results_df['year'].unique():
     total_votes_winner = election_results[winner + '_votes'].sum()
     total_votes_loser = election_results[loser + '_votes'].sum()
     if year == 1960:
-        # this year was fucked up. WTF ALABAMA and MISSISSIPPI
+        # this year was f'd up. WTF ALABAMA AND MISSISSIPPI
         total_votes_winner = 34220984
         total_votes_loser = 34108157
     popular_vote_margin = total_votes_winner - total_votes_loser
@@ -121,7 +112,6 @@ for year in election_results_df['year'].unique():
     total_votes_in_year = election_results['totalvotes'].sum()
     # set the color to be blue for democrat and red for republican
     color = 'blue' if election_results['D_votes'].sum() > election_results['R_votes'].sum() else 'red'
-    #pop_vote_dict[year] = {'margin': popular_vote_margin, 'color': color}
     total_electoral_votes_in_year = election_results['electoral_votes'].sum()
     electoral_college_votes_to_win = total_electoral_votes_in_year // 2 + 1
     number_of_flipped_states = len(flipped_states)
@@ -136,14 +126,12 @@ for year in election_results_df['year'].unique():
         'electoral_votes_to_win': electoral_college_votes_to_win,
         'margin': popular_vote_margin,
         'color': color, # color for the popular vote margin plot
-        #'flip_margin_ratio': 100 * min_votes_to_flip / abs_popular_vote_margin
         'flip_margin_ratio': 100 * min_votes_to_flip / total_votes_in_year,
         'popular_vote_ratio': 100 * abs_popular_vote_margin / total_votes_in_year
     }
     # Print the results
     print(f'Year: {year}')
     print(f'Original Winner: {winner_name} ({winner}) with {winner_electoral_votes} electoral votes vs {loser_name} ({loser}) with {loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)')
-    #print(f'Original Loser: {loser_name} ({loser}) with {loser_votes} electoral votes')
     print(f'Flipped states: {flipped_states_votes_dict}')
     print(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%\n')
     print(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes')
