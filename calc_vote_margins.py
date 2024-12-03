@@ -133,8 +133,8 @@ for year in election_results_df['year'].unique():
     print(f'Year: {year}')
     print(f'Original Winner: {winner_name} ({winner}) with {winner_electoral_votes} electoral votes vs {loser_name} ({loser}) with {loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)')
     print(f'Flipped states: {flipped_states_votes_dict}')
-    print(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%\n')
-    print(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes')
+    print(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%')
+    print(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n')
     # save the results to a text file in the /results folder
     # check if the folder exists, if not create it
     if not os.path.exists('results'):
@@ -302,7 +302,7 @@ def plot_results(flip_results_df, flip_results, start_year, end_year, skip_reaga
     # sort the states by frequency
     flipped_states_count = {k: v for k, v in sorted(flipped_states_count.items(), key=lambda item: item[1], reverse=True)}
     # print how many states appear in this dict (i.e. how many states were flipped at least once)
-    print(f'Number of states flipped at least once: {len(flipped_states_count)}')
+    #print(f'Number of states flipped at least once: {len(flipped_states_count)}')
     # plot a bar chart of the frequency of flipped states
     plt.figure(figsize=(18, 8))
     plt.bar(flipped_states_count.keys(), flipped_states_count.values())
