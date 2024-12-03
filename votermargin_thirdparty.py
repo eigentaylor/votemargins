@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-from csveditinggeneral import generate_election_results_df
+#from csveditinggeneral import generate_election_results_df
 import time
 
 
@@ -165,7 +165,8 @@ for year in election_results_df['year'].unique():
         'margin': popular_vote_margin,
         'color': color, # color for the popular vote margin plot
         #'flip_margin_ratio': 100 * min_votes_to_flip / abs_popular_vote_margin
-        'flip_margin_ratio': 100 * min_votes_to_flip / total_votes_in_year
+        'flip_margin_ratio': 100 * min_votes_to_flip / total_votes_in_year,
+        'popular_vote_ratio': 100 * abs_popular_vote_margin / total_votes_in_year
     }
     # Print the results
     print(f'Year: {year}')
@@ -247,6 +248,23 @@ def plot_results(flip_results_df, flip_results, start_year, end_year, skip_reaga
     plt.savefig(os.path.join(path, f'{prefix}pop_vote_margin.png'))
     if show_plot:
         plt.show()
+    
+    # plot popular vote margin / total votes in year flip_results_df['popular_vote_ratio']
+    plt.figure(figsize=(18, 8))
+    plt.plot(flip_results_df.index, flip_results_df['popular_vote_ratio']) # Ratio of popular vote margin to total votes in year
+    plt.xlabel('Year')
+    plt.xticks(flip_results_df.index, rotation=45, ha='right')
+    plt.ylabel('Popular Vote Margin / Total Votes Cast in Year (%)')
+    plt.title(f'Percentage Popular Vote Margin / Total Votes Cast in Year ({start_year}-{end_year})')
+    for i in range(len(flip_results_df)):
+        ratio = flip_results_df['popular_vote_ratio'][flip_results_df.index[i]]
+        formatted_ratio = f'{ratio:.5f}'
+        plt.text(flip_results_df.index[i], ratio, formatted_ratio, ha='center', va='bottom')
+    plt.tight_layout()
+    plt.savefig(os.path.join(path, f'{prefix}popular_vote_ratio.png'))
+    if show_plot:
+        plt.show()
+    
 
     # Ratio of votes to flip vs popular vote margin
     plt.figure(figsize=(18, 8))
@@ -302,6 +320,7 @@ def plot_results(flip_results_df, flip_results, start_year, end_year, skip_reaga
     plt.savefig(os.path.join(path, f'{prefix}flipped_states_frequency.png'))
     if show_plot:
         plt.show()
+        
     # bar chart of number of flipped states by year
     plt.figure(figsize=(18, 8))
     plt.bar(flip_results_df.index, flip_results_df['number_of_flipped_states'])
