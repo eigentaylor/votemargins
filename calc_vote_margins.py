@@ -185,6 +185,10 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
     if use_log_scale:
         plt.yscale('log')
     plt.tight_layout()
+    
+    # add my name
+    plt.text(0.5, 0.01, 'By: eigentaylor', ha='center', va='bottom', transform=plt.gca().transAxes)
+    
     plt.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
     print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
     if show_plot:
@@ -225,6 +229,8 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
     plt.title(title)
     plt.xticks(flip_results_df.index, rotation=45, ha='right')
     plt.tight_layout()
+    # add my name (since this is a bar plot, put it at the top)
+    plt.text(0.5, 0.99, 'By: eigentaylor', ha='center', va='top', transform=plt.gca().transAxes)
     plt.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
     print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
     if show_plot:
@@ -252,6 +258,8 @@ def make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count,
     plt.xticks(rotation=90)
     plt.yticks(np.arange(0, max(flipped_states_count.values()) + 1, 1))
     plt.tight_layout()
+    # add my name (since this is a bar plot, put it at the top)
+    plt.text(0.5, 0.99, 'By: eigentaylor', ha='center', va='top', transform=plt.gca().transAxes)
     plt.savefig(os.path.join(folder_path, f'{plot_count}-flipped_states_frequency.png'))
     print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-flipped_states_frequency.png")}')
     if show_plot:
