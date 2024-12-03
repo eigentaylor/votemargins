@@ -4,137 +4,147 @@ import matplotlib.pyplot as plt
 import os
 import time
 
-start_year = 1900
-end_year = 2024
-election_results_df = pd.read_csv('1900_2024_election_results.csv')
-
 # We want to find the minimum number of votes needed to flip the result of the election for each year
 # We will take all the states that the overall winner won and find the optimal combination of states to flip which will push the loser to 270+ electoral votes
 
-# Initialize a dictionary to store the results for each year
-flip_results = {}
+def get_flip_results(election_results_df):
+    # Initialize a dictionary to store the results for each year
+    flip_results = {}
 
-# open a text file flip_resuults.txt to store the results
-with open(f'results/flip_results_{start_year}-{end_year}.txt', 'w') as f:
-    f.write('')
+    # open a text file flip_resuults.txt to store the results
+    with open(f'results/flip_results_{start_year}-{end_year}.txt', 'w') as f:
+        f.write('')
+    # loop through the years in the election results data
+    for year in election_results_df['year'].unique():
+        # get the election results for the year
+        election_results = election_results_df[election_results_df['year'] == year]
+        # get the total electoral votes
+        total_electoral_votes = election_results['total_electoral_votes'].iloc[0]
+        # get the number of votes needed to win
+        votes_to_win = election_results['electoral_votes_to_win'].iloc[0]
+        # get the winner of the election
+        winner = election_results['overall_winner'].iloc[0]
+        # get the number of electoral votes the winner won
+        winner_electoral_votes = election_results[winner + '_electoral'].iloc[0]
+        # get the number of electoral votes the loser won
+        loser = election_results['overall_runner_up'].iloc[0]
+        winner_name = election_results[winner + '_name'].iloc[0]
+        loser_name = election_results[loser + '_name'].iloc[0]
+        loser_electoral_votes = election_results[loser + '_electoral'].iloc[0]
+        # get the number of electoral votes to flip
+        electoral_votes_to_flip = votes_to_win - loser_electoral_votes
+        # get the states that the overall winner won
+        winner_states = election_results[election_results['winner_state'] == True]
+        if winner_states.empty:
+            print(f'Year: {year} No winner states')
+        # create a dict to store the name, electoral votes, and votes to flip for each state
+        winner_states_dict = {}
+        for index, row in winner_states.iterrows():
+            state = row['state']
+            electoral_votes = row['electoral_votes']
+            votes_to_flip = row['votes_to_flip']
+            winner_states_dict[state] = {'electoral_votes': electoral_votes, 'votes_to_flip': votes_to_flip, 'total_votes': row['totalvotes']}
+        
+        # sort the winner states by efficiencu (votes to flip / electoral votes)
+        winner_states_dict = {k: v for k, v in sorted(winner_states_dict.items(), key=lambda item: item[1]['votes_to_flip'] / item[1]['electoral_votes'])}
+        # Implement the DP table
+        max_electoral_votes = sum([data['electoral_votes'] for data in winner_states_dict.values()])
+        dp = [np.inf] * (max_electoral_votes + 1)
+        dp[0] = 0
+        
+        # State tracking for backtracking later
+        state_used = [None] * (max_electoral_votes + 1)
+        
+        # Process each state
+        for state, data in winner_states_dict.items():
+            electoral_votes = data['electoral_votes']
+            votes_to_flip = data['votes_to_flip']
+            for v in range(max_electoral_votes, electoral_votes - 1, -1):
+                if dp[v - electoral_votes] + votes_to_flip < dp[v]:
+                    dp[v] = dp[v - electoral_votes] + votes_to_flip
+                    state_used[v] = state
+        
+        # Find the minimum votes needed to flip while ensuring 270 EC votes
+        # do this by disregarding v < electoral_votes_to_flip
+        # find the minimum dp[v] where v >= electoral_votes_to_flip
+        min_dp = np.inf
+        best_v = 0
+        for v in range(electoral_votes_to_flip, max_electoral_votes + 1):
+            if dp[v] < min_dp:
+                min_dp = dp[v]
+                best_v = v
+        # Get the states that were flipped
+        flipped_states = []
+        v_current = best_v
+        min_votes_to_flip = 0
+        #print(f'best_v: {best_v}')
+        
+        while v_current > 0:
+            state = state_used[v_current]
+            min_votes_to_flip += winner_states_dict[state]['votes_to_flip']
+            if state is not None:
+                flipped_states.append(state)
+                v_current -= winner_states_dict[state]['electoral_votes']
+        
+        # create dict for each flipped state along with the votes to flip
+        flipped_states_votes_dict = {}
+        for state in flipped_states:
+            # add dict of EC votes and votes to flip
+            flipped_states_votes_dict[state] = {'EC': winner_states_dict[state]['electoral_votes'], 'flipped votes': winner_states_dict[state]['votes_to_flip'], '% flipped': round(winner_states_dict[state]['votes_to_flip'] / winner_states_dict[state]['total_votes'] * 100, 3)}
+        if flipped_states_votes_dict == {}:
+            print(f'Year: {year} No states flipped')
+        # sort the flipped states by flipped votes
+        flipped_states_votes_dict = {k: v for k, v in sorted(flipped_states_votes_dict.items(), key=lambda item: item[1]['flipped votes'], reverse=False)}
+        
+        # get the total votes for the winner and loser
+        total_votes_winner = election_results[winner + '_votes'].sum()
+        total_votes_loser = election_results[loser + '_votes'].sum()
+        # set the color to be blue for democrat and red for republican
+        color = 'blue' if election_results['D_votes'].sum() > election_results['R_votes'].sum() else 'red'
+        if year == 1960:
+            # this year was f'd up. WTF ALABAMA AND MISSISSIPPI
+            total_votes_winner = 34220984
+            total_votes_loser = 34108157
+            color = 'blue'
+        popular_vote_margin = total_votes_winner - total_votes_loser
+        abs_popular_vote_margin = abs(popular_vote_margin)
+        total_votes_in_year = election_results['totalvotes'].sum()
+        total_electoral_votes_in_year = election_results['electoral_votes'].sum()
+        electoral_college_votes_to_win = total_electoral_votes_in_year // 2 + 1
+        number_of_flipped_states = len(flipped_states)
+        
+        # Store the result for the year
+        flip_results[year] = {
+            'min_votes_to_flip': min_votes_to_flip,
+            'flipped_states': flipped_states,
+            'number_of_flipped_states': number_of_flipped_states,
+            'electoral_votes_flipped': best_v,
+            'total_electoral_votes': total_electoral_votes_in_year,
+            'electoral_votes_to_win': electoral_college_votes_to_win,
+            'popular_vote_margin': popular_vote_margin,
+            'color': color, # color for the popular vote margin plot
+            'flip_margin_ratio': 100 * min_votes_to_flip / total_votes_in_year,
+            'popular_vote_ratio': 100 * abs_popular_vote_margin / total_votes_in_year
+        }
+        generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, print_results=True)
 
-# loop through the years in the election results data
-for year in election_results_df['year'].unique():
-    # get the election results for the year
-    election_results = election_results_df[election_results_df['year'] == year]
-    # get the total electoral votes
-    total_electoral_votes = election_results['total_electoral_votes'].iloc[0]
-    # get the number of votes needed to win
-    votes_to_win = election_results['electoral_votes_to_win'].iloc[0]
-    # get the winner of the election
-    winner = election_results['overall_winner'].iloc[0]
-    # get the number of electoral votes the winner won
-    winner_electoral_votes = election_results[winner + '_electoral'].iloc[0]
-    # get the number of electoral votes the loser won
-    loser = election_results['overall_runner_up'].iloc[0]
-    winner_name = election_results[winner + '_name'].iloc[0]
-    loser_name = election_results[loser + '_name'].iloc[0]
-    loser_electoral_votes = election_results[loser + '_electoral'].iloc[0]
-    # get the number of electoral votes to flip
-    electoral_votes_to_flip = votes_to_win - loser_electoral_votes
-    # get the states that the overall winner won
-    winner_states = election_results[election_results['winner_state'] == True]
-    if winner_states.empty:
-        print(f'Year: {year} No winner states')
-    # create a dict to store the name, electoral votes, and votes to flip for each state
-    winner_states_dict = {}
-    for index, row in winner_states.iterrows():
-        state = row['state']
-        electoral_votes = row['electoral_votes']
-        votes_to_flip = row['votes_to_flip']
-        winner_states_dict[state] = {'electoral_votes': electoral_votes, 'votes_to_flip': votes_to_flip, 'total_votes': row['totalvotes']}
-    
-    # sort the winner states by efficiencu (votes to flip / electoral votes)
-    winner_states_dict = {k: v for k, v in sorted(winner_states_dict.items(), key=lambda item: item[1]['votes_to_flip'] / item[1]['electoral_votes'])}
-    # Implement the DP table
-    max_electoral_votes = sum([data['electoral_votes'] for data in winner_states_dict.values()])
-    dp = [np.inf] * (max_electoral_votes + 1)
-    dp[0] = 0
-    
-    # State tracking for backtracking later
-    state_used = [None] * (max_electoral_votes + 1)
-    
-    # Process each state
-    for state, data in winner_states_dict.items():
-        electoral_votes = data['electoral_votes']
-        votes_to_flip = data['votes_to_flip']
-        for v in range(max_electoral_votes, electoral_votes - 1, -1):
-            if dp[v - electoral_votes] + votes_to_flip < dp[v]:
-                dp[v] = dp[v - electoral_votes] + votes_to_flip
-                state_used[v] = state
-    
-    # Find the minimum votes needed to flip while ensuring 270 EC votes
-    # do this by disregarding v < electoral_votes_to_flip
-    # find the minimum dp[v] where v >= electoral_votes_to_flip
-    min_dp = np.inf
-    best_v = 0
-    for v in range(electoral_votes_to_flip, max_electoral_votes + 1):
-        if dp[v] < min_dp:
-            min_dp = dp[v]
-            best_v = v
-    # Get the states that were flipped
-    flipped_states = []
-    v_current = best_v
-    min_votes_to_flip = 0
-    #print(f'best_v: {best_v}')
-    
-    while v_current > 0:
-        state = state_used[v_current]
-        min_votes_to_flip += winner_states_dict[state]['votes_to_flip']
-        if state is not None:
-            flipped_states.append(state)
-            v_current -= winner_states_dict[state]['electoral_votes']
-    
-    # create dict for each flipped state along with the votes to flip
-    flipped_states_votes_dict = {}
-    for state in flipped_states:
-        # add dict of EC votes and votes to flip
-        flipped_states_votes_dict[state] = {'EC': winner_states_dict[state]['electoral_votes'], 'flipped votes': winner_states_dict[state]['votes_to_flip'], '% flipped': round(winner_states_dict[state]['votes_to_flip'] / winner_states_dict[state]['total_votes'] * 100, 3)}
-    if flipped_states_votes_dict == {}:
-        print(f'Year: {year} No states flipped')
-    # sort the flipped states by flipped votes
-    flipped_states_votes_dict = {k: v for k, v in sorted(flipped_states_votes_dict.items(), key=lambda item: item[1]['flipped votes'], reverse=False)}
-    
-    # get the total votes for the winner and loser
-    total_votes_winner = election_results[winner + '_votes'].sum()
-    total_votes_loser = election_results[loser + '_votes'].sum()
-    if year == 1960:
-        # this year was f'd up. WTF ALABAMA AND MISSISSIPPI
-        total_votes_winner = 34220984
-        total_votes_loser = 34108157
+    # Output the results
+    flip_results_df = pd.DataFrame.from_dict(flip_results, orient='index')
+    flip_results_df.to_csv(f'results/flip_results-{start_year}-{end_year}.csv')
+
+    # copy the input data to the results folder
+    election_results_df.to_csv(f'results/election_results-{start_year}-{end_year}.csv', index=False)
+    return flip_results_df, flip_results
+        
+def generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, print_results=True):
     popular_vote_margin = total_votes_winner - total_votes_loser
-    abs_popular_vote_margin = abs(popular_vote_margin)
-    total_votes_in_year = election_results['totalvotes'].sum()
-    # set the color to be blue for democrat and red for republican
-    color = 'blue' if election_results['D_votes'].sum() > election_results['R_votes'].sum() else 'red'
-    total_electoral_votes_in_year = election_results['electoral_votes'].sum()
-    electoral_college_votes_to_win = total_electoral_votes_in_year // 2 + 1
-    number_of_flipped_states = len(flipped_states)
-    
-    # Store the result for the year
-    flip_results[year] = {
-        'min_votes_to_flip': min_votes_to_flip,
-        'flipped_states': flipped_states,
-        'number_of_flipped_states': number_of_flipped_states,
-        'electoral_votes_flipped': best_v,
-        'total_electoral_votes': total_electoral_votes_in_year,
-        'electoral_votes_to_win': electoral_college_votes_to_win,
-        'margin': popular_vote_margin,
-        'color': color, # color for the popular vote margin plot
-        'flip_margin_ratio': 100 * min_votes_to_flip / total_votes_in_year,
-        'popular_vote_ratio': 100 * abs_popular_vote_margin / total_votes_in_year
-    }
-    # Print the results
-    print(f'Year: {year}')
-    print(f'Original Winner: {winner_name} ({winner}) with {winner_electoral_votes} electoral votes vs {loser_name} ({loser}) with {loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)')
-    print(f'Flipped states: {flipped_states_votes_dict}')
-    print(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%')
-    print(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n')
+    if print_results:
+        # Print the results
+        print(f'Year: {year}')
+        print(f'Original Winner: {winner_name} ({winner}) with {winner_electoral_votes} electoral votes vs {loser_name} ({loser}) with {loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)')
+        print(f'Flipped states: {flipped_states_votes_dict}')
+        print(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%')
+        print(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n')
     # save the results to a text file in the /results folder
     # check if the folder exists, if not create it
     if not os.path.exists('results'):
@@ -149,174 +159,120 @@ for year in election_results_df['year'].unique():
         f.write(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%\n')
         f.write(f'New Winner: {loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n\n')
 
-# Output the results
-flip_results_df = pd.DataFrame.from_dict(flip_results, orient='index')
-flip_results_df.to_csv(f'results/flip_results-{start_year}-{end_year}.csv')
-
-# copy the input data to the results folder
-election_results_df.to_csv(f'results/election_results-{start_year}-{end_year}.csv', index=False)
-
-def plot_results(flip_results_df, flip_results, start_year, end_year, skip_reagan=False, path='results/', show_plot=True):
-    prefix = 'noreg-' if skip_reagan else ''
-    
-    if skip_reagan:
-        if 1980 in flip_results_df.index:
-            flip_results_df = flip_results_df.drop(1980)
-        if 1984 in flip_results_df.index:
-            flip_results_df = flip_results_df.drop(1984)
-    
-    # create directory for images if it doesn't exist
-    if not os.path.exists(path):
-        os.makedirs(path)
-    # clear folder of images
-    for file in os.listdir(path):
-        if file.endswith('.png'):
-            os.remove(os.path.join(path, file))
-    plot_count = 1
-    # min votes to flip plot
+def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, title, filename, folder_path='results/', show_plot=False, use_log_scale=False):
     plt.figure(figsize=(18, 8))
-
-    plt.plot(flip_results_df.index, flip_results_df['min_votes_to_flip'])
-    plt.xlabel('Year')
-    # x ticks for each year
-    plt.xticks(flip_results_df.index, rotation=45, ha='right')
-    plt.ylabel('Minimum Votes to Flip')
-    # plot (x,y) labels for each point
-    for i in range(len(flip_results_df)):
-        min_votes_to_flip = flip_results_df['min_votes_to_flip'][flip_results_df.index[i]]
-        formatted_votes = f'{min_votes_to_flip:,}'
-        plt.text(flip_results_df.index[i], min_votes_to_flip, formatted_votes, ha='center', va='bottom')
-    plt.title(f'Minimum Votes to Flip Election Result by Year ({start_year}-{end_year})')
-    plt.tight_layout()
-
-    # save plot to file
-    plt.savefig(os.path.join(path, f'{prefix}{plot_count}-flip_results.png'))
-    print(f'Saved plot to {os.path.join(path, f"{prefix}{plot_count}-flip_results.png")}')
-    plot_count += 1
-    if show_plot:
-        plt.show()
-    
-
-    # Ratio of votes to flip vs popular vote margin
-    plt.figure(figsize=(18, 8))
-
-    use_log_scale_for_ratio_plot = True
-
-    # Plot the data
-    plt.plot(flip_results_df.index, flip_results_df['flip_margin_ratio'])
+    plt.plot(flip_results_df.index, flip_results_df[key])
     plt.xlabel('Year')
     plt.xticks(flip_results_df.index, rotation=45, ha='right')
-    plt.ylabel('Minimum Votes to Flip / Total Votes Cast in Year (%)')
-    if use_log_scale_for_ratio_plot:
-        plt.yscale('log')
-    plt.title(f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})')
-
-    # Add text annotations for each point
+    plt.ylabel(ylabel)
+    plt.title(title)
+    
+    # Check if all values are integers
+    all_integers = flip_results_df[key].apply(lambda x: float(x).is_integer()).all()
+    
+    # Put labels
     for i in range(len(flip_results_df)):
-        ratio = flip_results_df['flip_margin_ratio'][flip_results_df.index[i]]
-        formatted_ratio = f'{ratio:.5f}'
+        ratio = flip_results_df[key][flip_results_df.index[i]]
+        if all_integers:
+            formatted_ratio = f'{int(ratio)}'
+        else:
+            formatted_ratio = f'{ratio:.5f}'
         plt.text(flip_results_df.index[i], ratio, formatted_ratio, ha='center', va='bottom')
-
+    
+    if use_log_scale:
+        plt.yscale('log')
     plt.tight_layout()
-    # Save the figure
-    plt.savefig(os.path.join(path, f'{prefix}{plot_count}-flip_margin_ratio.png'))
-    print(f'Saved plot to {os.path.join(path, f"{prefix}{plot_count}-flip_margin_ratio.png")}')
-    plot_count += 1
-    # Show the plot
+    plt.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
+    print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
     if show_plot:
         plt.show()
         
-    # bar chart of number of flipped states by year
+def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, title, filename, folder_path='results/', show_plot=False):
     plt.figure(figsize=(18, 8))
-    plt.bar(flip_results_df.index, flip_results_df['number_of_flipped_states'])
-    # put the number of flipped states on top of each bar
-    for i in range(len(flip_results_df)):
-        num_flipped_states = flip_results_df['number_of_flipped_states'][flip_results_df.index[i]]
-        plt.text(flip_results_df.index[i], num_flipped_states, num_flipped_states, ha='center', va='bottom')
-    plt.xlabel('Year')
-    plt.ylabel('Number of Flipped States')
-    plt.title(f'Number of Flipped States by Year ({start_year}-{end_year})')
-    plt.xticks(flip_results_df.index, rotation=45, ha='right')
-    plt.tight_layout()
-    plt.savefig(os.path.join(path, f'{prefix}{plot_count}-number_of_flipped_states.png'))
-    print(f'Saved plot to {os.path.join(path, f"{prefix}{plot_count}-number_of_flipped_states.png")}')
-    plot_count += 1
-    if show_plot:
-        plt.show()
-
-    # plot the popular vote margin
-    plt.figure(figsize=(18, 8))
-    pop_vote_df = pd.DataFrame.from_dict(flip_results, orient='index')
-    plt.bar(pop_vote_df.index, pop_vote_df['margin'], color=pop_vote_df['color'])
-    # x ticks for each year
-    plt.xticks(pop_vote_df.index, rotation=45, ha='right')
-    # plot a horizontal line at 0
-    plt.axhline(y=0, color='black', linewidth=1)
-    # put the margin on top of each bar
-    for i in range(len(pop_vote_df)):
-        margin = pop_vote_df['margin'][pop_vote_df.index[i]]
-        formatted_margin = f'{margin:,}'
-        # if the margin is negative, put the text below the bar
-        if margin < 0:
-            plt.text(pop_vote_df.index[i], margin, formatted_margin, ha='center', va='top')
-        else:
-            plt.text(pop_vote_df.index[i], margin, formatted_margin, ha='center', va='bottom')
-    plt.xlabel('Year')
-    plt.ylabel('Popular Vote Margin')
-    plt.title(f'Popular Vote Margin by Year ({start_year}-{end_year})')
-    plt.tight_layout()
-    #save plot to file
-    plt.savefig(os.path.join(path, f'{prefix}{plot_count}-pop_vote_margin.png'))
-    print(f'Saved plot to {os.path.join(path, f"{prefix}{plot_count}-pop_vote_margin.png")}')
-    plot_count += 1
-    if show_plot:
-        plt.show()
-    
-    # plot popular vote margin / total votes in year flip_results_df['popular_vote_ratio']
-    plt.figure(figsize=(18, 8))
-    plt.plot(flip_results_df.index, flip_results_df['popular_vote_ratio']) # Ratio of popular vote margin to total votes in year
-    plt.xlabel('Year')
-    plt.xticks(flip_results_df.index, rotation=45, ha='right')
-    plt.ylabel('Popular Vote Margin / Total Votes Cast in Year (%)')
-    plt.title(f'Percentage Popular Vote Margin / Total Votes Cast in Year ({start_year}-{end_year})')
-    for i in range(len(flip_results_df)):
-        ratio = flip_results_df['popular_vote_ratio'][flip_results_df.index[i]]
-        formatted_ratio = f'{ratio:.5f}'
-        plt.text(flip_results_df.index[i], ratio, formatted_ratio, ha='center', va='bottom')
-    plt.tight_layout()
-    plt.savefig(os.path.join(path, f'{prefix}{plot_count}-popular_vote_ratio.png'))
-    print(f'Saved plot to {os.path.join(path, f"{prefix}{plot_count}-popular_vote_ratio.png")}')
-    plot_count += 1
-    if show_plot:
-        plt.show()
-
-    # count up the frequency of flipped states
-    flipped_states_count = {}
-    for year in flip_results_df.index:
-        for state in flip_results[year]['flipped_states']:
-            if state in flipped_states_count:
-                flipped_states_count[state] += 1
+    if key == 'popular_vote_margin':
+        plt.bar(flip_results_df.index, flip_results_df['popular_vote_margin'], color=flip_results_df['color'])
+        # plot a horizontal line at 0
+        plt.axhline(y=0, color='black', linewidth=1)
+        # put the margin on top of each bar
+        for i in range(len(flip_results_df)):
+            margin = flip_results_df['popular_vote_margin'][flip_results_df.index[i]]
+            formatted_margin = f'{margin:,}'
+            # if the margin is negative, put the text below the bar
+            if margin < 0:
+                plt.text(flip_results_df.index[i], margin, formatted_margin, ha='center', va='top')
             else:
+                plt.text(flip_results_df.index[i], margin, formatted_margin, ha='center', va='bottom')
+    else:
+        plt.bar(flip_results_df.index, flip_results_df[key])
+        
+        # Check if all values are integers
+        all_integers = flip_results_df[key].apply(lambda x: float(x).is_integer()).all()
+        
+        # put labels
+        for i in range(len(flip_results_df)):
+            ratio = flip_results_df[key][flip_results_df.index[i]]
+            if all_integers:
+                formatted_ratio = f'{int(ratio)}'
+            else:
+                formatted_ratio = f'{ratio:.5f}'
+            plt.text(flip_results_df.index[i], ratio, formatted_ratio, ha='center', va='bottom')
+    
+    plt.xlabel('Year')
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.xticks(flip_results_df.index, rotation=45, ha='right')
+    plt.tight_layout()
+    plt.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
+    print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
+    if show_plot:
+        plt.show()
+        
+def make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count, folder_path='results/', show_plot=False):
+    # make flipped_states_count dict
+    flipped_states_count = {}
+    for index, row in flip_results_df.iterrows():
+        for state in row['flipped_states']:
+            if state not in flipped_states_count:
                 flipped_states_count[state] = 1
-
-    # sort the states by frequency
-    flipped_states_count = {k: v for k, v in sorted(flipped_states_count.items(), key=lambda item: item[1], reverse=True)}
-    # print how many states appear in this dict (i.e. how many states were flipped at least once)
-    #print(f'Number of states flipped at least once: {len(flipped_states_count)}')
-    # plot a bar chart of the frequency of flipped states
+            else:
+                flipped_states_count[state] += 1
     plt.figure(figsize=(18, 8))
     plt.bar(flipped_states_count.keys(), flipped_states_count.values())
     plt.xlabel('State')
     plt.ylabel('Frequency of Flipping')
     plt.title(f'Frequency of Flipping by State ({start_year}-{end_year})')
+    # put the numbers above the bars
+    for i in range(len(flipped_states_count)):
+        plt.text(i, list(flipped_states_count.values())[i], list(flipped_states_count.values())[i], ha='center', va='bottom')
     plt.xticks(rotation=90)
-    # make sure the y ticks are integers
     plt.yticks(np.arange(0, max(flipped_states_count.values()) + 1, 1))
     plt.tight_layout()
-    plt.savefig(os.path.join(path, f'{prefix}{plot_count}-flipped_states_frequency.png'))
-    print(f'Saved plot to {os.path.join(path, f"{prefix}{plot_count}-flipped_states_frequency.png")}')
-    plot_count += 1
+    plt.savefig(os.path.join(folder_path, f'{plot_count}-flipped_states_frequency.png'))
+    print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-flipped_states_frequency.png")}')
     if show_plot:
         plt.show()
+    
+def make_all_plots(flip_results_df, start_year, end_year, folder_path='results/', show_plot=False):
+    # clean up the folder
+    for file in os.listdir(folder_path):
+        if file.endswith('.png'):
+            os.remove(os.path.join(folder_path, file))
+    plot_count = 1
+    make_plot(flip_results_df, start_year, end_year, plot_count, 'min_votes_to_flip', 'Minimum Votes to Flip', f'Minimum Votes to Flip Election Result by Year ({start_year}-{end_year})', 'flip_results', folder_path, show_plot)
+    plot_count += 1
+    make_plot(flip_results_df, start_year, end_year, plot_count, 'flip_margin_ratio', 'Minimum Votes to Flip / Total Votes Cast in Year (%)', f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})', 'flip_margin_ratio', folder_path, show_plot, use_log_scale=True)
+    plot_count += 1
+    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'number_of_flipped_states', 'Number of Flipped States', f'Number of Flipped States by Year ({start_year}-{end_year})', 'number_of_flipped_states', folder_path, show_plot)
+    plot_count += 1
+    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'popular_vote_margin', 'Popular Vote Margin', f'Popular Vote Margin by Year ({start_year}-{end_year})', 'pop_vote_margin', folder_path, show_plot)
+    plot_count += 1
+    make_plot(flip_results_df, start_year, end_year, plot_count, 'popular_vote_ratio', 'Popular Vote Margin / Total Votes Cast in Year (%)', f'Percentage Popular Vote Margin / Total Votes Cast in Year ({start_year}-{end_year})', 'popular_vote_ratio', folder_path, show_plot)
+    plot_count += 1
+    make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count, folder_path, show_plot)
+    
+start_year = 1900
+end_year = 2024
+election_results_df = pd.read_csv('1900_2024_election_results.csv')
 
-plot_results(flip_results_df, flip_results, start_year, end_year, skip_reagan=False, show_plot=False)
+flip_results_df, flip_results = get_flip_results(election_results_df)
+make_all_plots(flip_results_df, start_year, end_year, folder_path='results/', show_plot=False)
