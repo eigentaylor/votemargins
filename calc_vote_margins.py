@@ -4,10 +4,13 @@ import matplotlib.pyplot as plt
 import os
 import time
 
+# Set the dark theme for all plots
+plt.style.use('dark_background')
+
 # We want to find the minimum number of votes needed to flip the result of the election for each year
 # We will take all the states that the overall winner won and find the optimal combination of states to flip which will push the loser to 270+ electoral votes
 
-def get_flip_results(election_results_df):
+def get_flip_results(election_results_df, print_results=False):
     # Initialize a dictionary to store the results for each year
     flip_results = {}
 
@@ -126,7 +129,7 @@ def get_flip_results(election_results_df):
             'flip_margin_ratio': 100 * min_votes_to_flip / total_votes_in_year,
             'popular_vote_ratio': 100 * abs_popular_vote_margin / total_votes_in_year
         }
-        generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, print_results=True)
+        generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, print_results=print_results)
 
     # Output the results
     flip_results_df = pd.DataFrame.from_dict(flip_results, orient='index')
@@ -174,7 +177,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
     for i in range(len(flip_results_df)):
         ratio = flip_results_df[key][flip_results_df.index[i]]
         if all_integers:
-            formatted_ratio = f'{int(ratio)}'
+            formatted_ratio = f'{int(ratio):,}'
         else:
             formatted_ratio = f'{ratio:.5f}'
         plt.text(flip_results_df.index[i], ratio, formatted_ratio, ha='center', va='bottom')
@@ -191,8 +194,8 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
     plt.figure(figsize=(18, 8))
     if key == 'popular_vote_margin':
         plt.bar(flip_results_df.index, flip_results_df['popular_vote_margin'], color=flip_results_df['color'])
-        # plot a horizontal line at 0
-        plt.axhline(y=0, color='black', linewidth=1)
+        # plot a horizontal dashed line at 0
+        plt.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
         # put the margin on top of each bar
         for i in range(len(flip_results_df)):
             margin = flip_results_df['popular_vote_margin'][flip_results_df.index[i]]
@@ -236,6 +239,8 @@ def make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count,
                 flipped_states_count[state] = 1
             else:
                 flipped_states_count[state] += 1
+    # sort the dict by frequency
+    flipped_states_count = {k: v for k, v in sorted(flipped_states_count.items(), key=lambda item: item[1], reverse=True)}
     plt.figure(figsize=(18, 8))
     plt.bar(flipped_states_count.keys(), flipped_states_count.values())
     plt.xlabel('State')
@@ -274,5 +279,5 @@ start_year = 1900
 end_year = 2024
 election_results_df = pd.read_csv('1900_2024_election_results.csv')
 
-flip_results_df, flip_results = get_flip_results(election_results_df)
+flip_results_df, flip_results = get_flip_results(election_results_df, print_results=True)
 make_all_plots(flip_results_df, start_year, end_year, folder_path='results/', show_plot=False)
