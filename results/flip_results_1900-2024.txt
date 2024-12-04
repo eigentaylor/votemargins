@@ -217,8 +217,8 @@ New Winner: Donald J. Trump (R) with 270 electoral votes vs Joseph R. Biden (D) 
 
 Year: 2024
 Original Winner: Donald J. Trump (R) with 312 electoral votes vs Kamala D. Harris (D) with 226 electoral votes (270 needed)
-Popular Vote Margin: 2484570  for Donald J. Trump
-Flipped states: {'WISCONSIN': {'EC': 10, 'flipped votes': 14699, '% flipped': 0.437}, 'MICHIGAN': {'EC': 15, 'flipped votes': 40052, '% flipped': 0.721}, 'PENNSYLVANIA': {'EC': 19, 'flipped votes': 60709, '% flipped': 0.872}}
-Total number of flipped votes: 115460 across 3 states, Ratio to Popular Vote Margin: 4.64708%, Ratio to Total Votes in Year: 0.07626%
+Popular Vote Margin: 2484607  for Donald J. Trump
+Flipped states: {'WISCONSIN': {'EC': 10, 'flipped votes': 14699, '% flipped': 0.437}, 'MICHIGAN': {'EC': 15, 'flipped votes': 40052, '% flipped': 0.721}, 'PENNSYLVANIA': {'EC': 19, 'flipped votes': 60728, '% flipped': 0.872}}
+Total number of flipped votes: 115479 across 3 states, Ratio to Popular Vote Margin: 4.64778%, Ratio to Total Votes in Year: 0.07627%
 New Winner: Kamala D. Harris (D) with 270 electoral votes vs Donald J. Trump (R) with 268 electoral votes
 
