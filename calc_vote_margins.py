@@ -103,12 +103,12 @@ def get_flip_results(election_results_df, print_results=False):
         total_votes_winner = election_results[winner + '_votes'].sum()
         total_votes_loser = election_results[loser + '_votes'].sum()
         # set the color to be blue for democrat and red for republican
-        color = 'blue' if election_results['D_votes'].sum() > election_results['R_votes'].sum() else 'red'
+        color = 'deepskyblue' if election_results['D_votes'].sum() > election_results['R_votes'].sum() else 'red'
         if year == 1960:
             # this year was f'd up. WTF ALABAMA AND MISSISSIPPI
             total_votes_winner = 34220984
             total_votes_loser = 34108157
-            color = 'blue'
+            color = 'deepskyblue'  # special color for this year
         popular_vote_margin = total_votes_winner - total_votes_loser
         abs_popular_vote_margin = abs(popular_vote_margin)
         total_votes_in_year = election_results['totalvotes'].sum()

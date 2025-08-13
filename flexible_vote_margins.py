@@ -109,12 +109,12 @@ def get_flip_results(election_results_df, print_results=False):
         total_votes_winner = election_results[winner + '_votes'].sum()
         total_votes_loser = election_results[loser + '_votes'].sum()
         # set the color to be blue for democrat and red for republican
-        color = 'blue' if election_results['D_votes'].sum() > election_results['R_votes'].sum() else 'red'
+        color = 'deepskyblue' if election_results['D_votes'].sum() > election_results['R_votes'].sum() else 'red'
         if year == 1960:
             # this year was f'd up. WTF ALABAMA AND MISSISSIPPI
             total_votes_winner = 34220984
             total_votes_loser = 34108157
-            color = 'blue'
+            color = 'deepskyblue'
         popular_vote_margin = total_votes_winner - total_votes_loser
         abs_popular_vote_margin = abs(popular_vote_margin)
         total_votes_in_year = election_results['totalvotes'].sum()
@@ -174,6 +174,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
     plt.xlabel('Year')
     plt.xticks(flip_results_df.index, rotation=45, ha='right')
     plt.ylabel(ylabel)
+    plt.grid(True, linestyle='--', alpha=0.5)
     plt.title(title)
     
     # Check if all values are integers
@@ -242,6 +243,7 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
     plt.ylabel(ylabel)
     plt.title(title)
     plt.xticks(flip_results_df.index, rotation=45, ha='right')
+    plt.grid(True, linestyle='--', alpha=0.5)
     plt.tight_layout()
     # add my name (since this is a bar plot, put it at the top)
     plt.text(0.5, 0.99, 'By: eigentaylor', ha='center', va='top', transform=plt.gca().transAxes)
