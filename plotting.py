@@ -72,7 +72,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
         # Put labels on bottom
         for i in range(len(flip_results_df)):
             y = data.iloc[i]
-            formatted = f'{int(y):,}' if all_integers else f'{y:.5f}'
+            formatted = f'{int(y):,}' if all_integers else f'{y:.2e}'
             # place slightly above for positive, below for negative
             y_text = y + y_offset if y >= 0 else y - y_offset
             va = 'bottom' if y >= 0 else 'top'
@@ -140,36 +140,56 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
     data = flip_results_df[key].astype(float)
     all_integers = data.apply(lambda x: float(x).is_integer()).all()
 
+    # readability and styling (match line plots)
+    title_fs = 20
+    label_fs = 14
+    tick_fs = 12
+    data_label_fs = 10
+    data_bbox = dict(facecolor='black', alpha=0.6, pad=2, edgecolor='none')
+    bar_color_default = '#ff6b6b'
+    bar_edge = dict(edgecolor='black', linewidth=0.6)
+
     if subplot_dual_log:
         fig, (ax_top, ax_bottom) = plt.subplots(2, 1, figsize=(18, 12), sharex=True)
 
         # Top
+        top_colors = flip_results_df['color'] if 'color' in flip_results_df.columns else bar_color_default
         if key in ('popular_vote_margin', 'popular_margin_ratio'):
-            ax_top.bar(flip_results_df.index, data, color=flip_results_df['color'])
+            ax_top.bar(flip_results_df.index, data, color=top_colors, **bar_edge)
             ax_top.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
-            for i in range(len(flip_results_df)):
-                margin = data.iloc[i]
-                formatted_margin = f'{int(margin):,}' if all_integers else f'{margin:.5f}'
-                va = 'top' if margin < 0 else 'bottom'
-                ax_top.text(flip_results_df.index[i], margin, formatted_margin, ha='center', va=va)
         else:
-            ax_top.bar(flip_results_df.index, data)
-            for i in range(len(flip_results_df)):
-                ratio = data.iloc[i]
-                formatted_ratio = f'{int(ratio):,}' if all_integers else f'{ratio:.5f}'
-                va = 'bottom' if ratio >= 0 else 'top'
-                ax_top.text(flip_results_df.index[i], ratio, formatted_ratio, ha='center', va=va)
+            ax_top.bar(flip_results_df.index, data, color=bar_color_default, **bar_edge)
 
-        ax_top.set_ylabel(ylabel)
-        ax_top.set_title(title)
+        # Title/labels/fonts
+        ax_top.set_ylabel(ylabel, fontsize=label_fs)
+        ax_top.set_title(title, fontsize=title_fs)
         ax_top.grid(True, linestyle='--', alpha=0.5)
+        ax_top.tick_params(axis='both', which='major', labelsize=tick_fs)
+
+        # Compute vertical offset for bar labels
+        y_max = data.max()
+        y_min = data.min()
+        y_range = y_max - y_min
+        if y_range == 0:
+            y_offset = abs(y_max) * 0.01 if abs(y_max) > 0 else 1.0
+        else:
+            y_offset = y_range * 0.03
+
+        # Labels on top
+        for i in range(len(flip_results_df)):
+            y = data.iloc[i]
+            formatted = f'{int(y):,}' if all_integers else f'{y:.5f}'
+            y_text = y + y_offset if y >= 0 else y - y_offset
+            va = 'bottom' if y >= 0 else 'top'
+            ax_top.text(flip_results_df.index[i], y_text, formatted, ha='center', va=va, fontsize=data_label_fs, color='white', bbox=data_bbox)
 
         # Bottom (log or symlog depending on data)
+        bottom_colors = top_colors
         if key in ('popular_vote_margin', 'popular_margin_ratio'):
-            ax_bottom.bar(flip_results_df.index, data, color=flip_results_df['color'])
+            ax_bottom.bar(flip_results_df.index, data, color=bottom_colors, **bar_edge)
             ax_bottom.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
         else:
-            ax_bottom.bar(flip_results_df.index, data)
+            ax_bottom.bar(flip_results_df.index, data, color=bar_color_default, **bar_edge)
 
         if (data <= 0).any():
             ax_bottom.set_yscale('symlog', linthresh=1e-6)
@@ -178,21 +198,24 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
             ax_bottom.set_yscale('log')
             bottom_label = ylabel + ' (log)'
 
-        ax_bottom.set_ylabel(bottom_label)
+        ax_bottom.set_ylabel(bottom_label, fontsize=label_fs)
         ax_bottom.grid(True, linestyle='--', alpha=0.5)
+        ax_bottom.tick_params(axis='both', which='major', labelsize=tick_fs)
 
         # Labels on bottom
         for i in range(len(flip_results_df)):
             y = data.iloc[i]
             formatted = f'{int(y):,}' if all_integers else f'{y:.5f}'
+            y_text = y + y_offset if y >= 0 else y - y_offset
             va = 'bottom' if y >= 0 else 'top'
-            ax_bottom.text(flip_results_df.index[i], y, formatted, ha='center', va=va)
+            ax_bottom.text(flip_results_df.index[i], y_text, formatted, ha='center', va=va, fontsize=data_label_fs, color='white', bbox=data_bbox)
 
-        ax_bottom.set_xlabel('Year')
+        ax_bottom.set_xlabel('Year', fontsize=label_fs)
         ax_bottom.set_xticks(flip_results_df.index)
         for label in ax_bottom.get_xticklabels():
             label.set_rotation(45)
             label.set_ha('right')
+            label.set_fontsize(tick_fs)
 
         fig.text(0.5, 0.99, 'By: eigentaylor', ha='center', va='top')
         fig.tight_layout()
@@ -205,27 +228,36 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
 
     # Default single-axes behavior
     plt.figure(figsize=(18, 8))
+    default_colors = flip_results_df['color'] if 'color' in flip_results_df.columns else bar_color_default
     if key in ('popular_vote_margin', 'popular_margin_ratio'):
-        plt.bar(flip_results_df.index, flip_results_df[key], color=flip_results_df['color'])
+        plt.bar(flip_results_df.index, flip_results_df[key], color=default_colors, **bar_edge)
         plt.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
-        for i in range(len(flip_results_df)):
-            margin = flip_results_df[key][flip_results_df.index[i]]
-            formatted_margin = f'{int(margin):,}' if all_integers else f'{margin:.5f}'
-            va = 'top' if margin < 0 else 'bottom'
-            plt.text(flip_results_df.index[i], margin, formatted_margin, ha='center', va=va)
     else:
-        plt.bar(flip_results_df.index, flip_results_df[key])
-        for i in range(len(flip_results_df)):
-            ratio = flip_results_df[key][flip_results_df.index[i]]
-            formatted_ratio = f'{int(ratio):,}' if all_integers else f'{ratio:.5f}'
-            va = 'bottom' if ratio >= 0 else 'top'
-            plt.text(flip_results_df.index[i], ratio, formatted_ratio, ha='center', va=va)
+        plt.bar(flip_results_df.index, flip_results_df[key], color=bar_color_default, **bar_edge)
 
-    plt.xlabel('Year')
-    plt.ylabel(ylabel)
-    plt.title(title)
-    plt.xticks(flip_results_df.index, rotation=45, ha='right')
+    # label fonts and title
+    plt.xlabel('Year', fontsize=label_fs)
+    plt.ylabel(ylabel, fontsize=label_fs)
+    plt.title(title, fontsize=title_fs)
+    plt.xticks(flip_results_df.index, rotation=45, ha='right', fontsize=tick_fs)
     plt.grid(True, linestyle='--', alpha=0.5)
+
+    # Add readable data labels with bbox and offset
+    y_max = data.max()
+    y_min = data.min()
+    y_range = y_max - y_min
+    if y_range == 0:
+        y_offset = abs(y_max) * 0.01 if abs(y_max) > 0 else 1.0
+    else:
+        y_offset = y_range * 0.03
+
+    for i in range(len(flip_results_df)):
+        y = data.iloc[i]
+        formatted = f'{int(y):,}' if all_integers else f'{y:.5f}'
+        y_text = y + y_offset if y >= 0 else y - y_offset
+        va = 'bottom' if y >= 0 else 'top'
+        plt.text(flip_results_df.index[i], y_text, formatted, ha='center', va=va, fontsize=data_label_fs, color='white', bbox=data_bbox)
+
     plt.tight_layout()
     plt.text(0.5, 0.99, 'By: eigentaylor', ha='center', va='top', transform=plt.gca().transAxes)
 
