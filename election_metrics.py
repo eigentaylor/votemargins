@@ -265,7 +265,7 @@ def _plot_series(years: List[int], values: List[float], ylabel: str, title: str,
     if bar:
         make_bar_plot(df_tmp, years[0], years[-1], plot_count, 'series', ylabel, title, filename, folder_path=folder, show_plot=False)
     else:
-        make_plot(df_tmp, years[0], years[-1], plot_count, 'series', ylabel, title, filename, folder_path=folder, show_plot=False)
+        make_bar_plot(df_tmp, years[0], years[-1], plot_count, 'series', ylabel, title, filename, folder_path=folder, show_plot=False)
 
 
 def write_outputs(metrics_df: pd.DataFrame, results_dir: str = 'results') -> None:
@@ -310,7 +310,7 @@ def write_outputs(metrics_df: pd.DataFrame, results_dir: str = 'results') -> Non
         if col == 'coalition_brittleness_count':
             make_bar_plot(df_plot, first_year, last_year, plot_count, col, ylabel, full_title, filename, folder_path=plots_dir, show_plot=False)
         else:
-            make_plot(df_plot, first_year, last_year, plot_count, col, ylabel, full_title, filename, folder_path=plots_dir, show_plot=False, subplot_dual_log=True)
+            make_bar_plot(df_plot, first_year, last_year, plot_count, col, ylabel, full_title, filename, folder_path=plots_dir, show_plot=False, subplot_dual_log=True)
 
 
 if __name__ == '__main__':

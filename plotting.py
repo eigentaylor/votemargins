@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import utils
 
 # Always use dark theme here. The caller can override if desired before import.
 plt.style.use('dark_background')
@@ -146,7 +147,7 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
     tick_fs = 12
     data_label_fs = 10
     data_bbox = dict(facecolor='black', alpha=0.6, pad=2, edgecolor='none')
-    bar_color_default = '#ff6b6b'
+    bar_color_default = 'cyan'
     bar_edge = dict(edgecolor='black', linewidth=0.6)
 
     # party colors (vibrant)
