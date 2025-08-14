@@ -170,7 +170,4 @@ Additional notes and edge-case behavior
   `analysis.compute_flip_for_year`. This document assumes `f` is the minimal two-party vote change required for the
   losing party to reach `electoral_votes_to_win` given the model used in that function.
 
-If you want this converted to a machine-readable CSV or to include the exact formula references to line numbers
-in `election_metrics.py`, tell me which format you prefer and I'll add it.
-
 End of document.
