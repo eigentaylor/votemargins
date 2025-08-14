@@ -7,6 +7,7 @@ import time
 from analysis import compute_flip_for_year
 from reporting import generate_year_results
 from plotting import make_plot, make_bar_plot, make_state_frequency_plot, make_all_plots
+from election_metrics import compute_metrics_for_all_years, write_outputs
 
 # Set the dark theme for all plots
 plt.style.use('dark_background')
@@ -120,6 +121,9 @@ def main():
 
     flip_results_df, flip_results = get_flip_results(election_results_df, start_year, end_year, print_results=True)
     make_all_plots(flip_results_df, start_year, end_year, folder_path='results/', show_plot=False)
+    
+    metrics = compute_metrics_for_all_years()
+    write_outputs(metrics)
 
 
 if __name__ == '__main__':
