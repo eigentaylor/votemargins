@@ -161,7 +161,10 @@ def compute_year_metrics(year_df: pd.DataFrame, alpha: float = 0.5,
         eta = float('inf')
     else:
         denom = (PV_share - 0.5)
-        eta = (EC_share - 0.5) / denom - 1 if denom != 0 else float('inf')
+        def transform(x):
+            # Normalize to [-1, 1]
+            return np.arctan(x / 5) / (np.pi / 2)
+        eta = transform((EC_share - 0.5) / denom - 1 if denom != 0 else float('inf'))
 
     # Recount Vulnerability
     close_states_ev = 0
