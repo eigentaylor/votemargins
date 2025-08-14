@@ -343,16 +343,16 @@ def make_all_plots(flip_results_df, start_year, end_year, folder_path='results/'
                     os.remove(os.path.join(root, file))
 
     plot_count = 1
-    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'min_votes_to_flip', 'Minimum Votes to Flip', f'Minimum Votes to Flip Election Result by Year ({start_year}-{end_year})', 'flip_results', folder_path, show_plot, subplot_dual_log=True)
-    plot_count += 1
     # create a dual-subplot version: top regular, bottom log/symlog
-    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'flip_margin_ratio', 'Minimum Votes to Flip / Total Votes Cast in Year (%)', f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})', 'flip_margin_ratio', folder_path, show_plot, subplot_dual_log=True)
+    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'flip_margin_ratio', 'Minimum Votes to Flip / Total Votes Cast in Year (%)', f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})', 'min_votes_to_flip_ratio', folder_path, show_plot, subplot_dual_log=True)
     plot_count += 1
     # make_plot(flip_results_df, start_year, end_year, plot_count, 'flip_margin_ratio', 'Minimum Votes to Flip / Total Votes Cast in Year (%)', f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})', 'flip_margin_ratio', folder_path, show_plot, use_log_scale=False)
     # plot_count += 1
     make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'popular_margin_ratio', 'Popular Vote Margin / Total Votes Cast in Year (%)', f'Percentage Popular Vote Margin / Total Votes Cast in Year ({start_year}-{end_year})', 'pop_margin_ratio', folder_path, show_plot, subplot_dual_log=False)
     plot_count += 1
-    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'popular_vote_margin', 'Popular Vote Margin', f'Popular Vote Margin by Year ({start_year}-{end_year})', 'pop_vote_margin', folder_path, show_plot, subplot_dual_log=False)
+    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'min_votes_to_flip', 'Minimum Votes to Flip', f'Minimum Votes to Flip Election Result by Year ({start_year}-{end_year})', 'min_votes_to_flip_raw', folder_path, show_plot, subplot_dual_log=True)
+    plot_count += 1
+    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'popular_vote_margin', 'Popular Vote Margin', f'Popular Vote Margin by Year ({start_year}-{end_year})', 'pop_vote_margin_raw', folder_path, show_plot, subplot_dual_log=False)
     plot_count += 1
     make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'number_of_flipped_states', 'Number of Flipped States', f'Number of Flipped States by Year ({start_year}-{end_year})', 'number_of_flipped_states', folder_path, show_plot)
     plot_count += 1
