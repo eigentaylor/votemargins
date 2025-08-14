@@ -21,13 +21,19 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
     tick_fs = 12
     data_label_fs = 10
     data_bbox = dict(facecolor='black', alpha=0.6, pad=2, edgecolor='none')
+    # vibrant styling for dark background
+    line_color = '#00d1ff'  # bright cyan
+    line_width = 2.6
+    marker_style = dict(marker='o', markersize=6, markeredgecolor='black', markeredgewidth=0.6)
+    bar_color = '#ff6b6b'  # coral/salmon
+    bar_edge = dict(edgecolor='black', linewidth=0.6)
 
     if subplot_dual_log:
         # Create two-row subplot: top regular, bottom log/symlog
         fig, (ax_top, ax_bottom) = plt.subplots(2, 1, figsize=(18, 12), sharex=True)
 
         # Top (regular)
-        ax_top.plot(flip_results_df.index, data)
+        ax_top.plot(flip_results_df.index, data, color=line_color, linewidth=line_width, **marker_style)
         ax_top.set_ylabel(ylabel, fontsize=label_fs)
         ax_top.grid(True, linestyle='--', alpha=0.5)
         ax_top.set_title(title, fontsize=title_fs)
@@ -48,7 +54,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
             ax_top.text(flip_results_df.index[i], y_text, formatted, ha='center', va='bottom' if y >= 0 else 'top', fontsize=data_label_fs, color='white', bbox=data_bbox)
 
         # Bottom (log or symlog depending on data)
-        ax_bottom.plot(flip_results_df.index, data)
+        ax_bottom.plot(flip_results_df.index, data, color=line_color, linewidth=line_width, alpha=0.9, **marker_style)
 
         # Choose log vs symlog if non-positive values exist
         if (data <= 0).any():
@@ -93,7 +99,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
 
     # Default single-axes behavior
     plt.figure(figsize=(18, 8))
-    plt.plot(flip_results_df.index, data)
+    plt.plot(flip_results_df.index, data, color=line_color, linewidth=line_width, **marker_style)
     plt.xlabel('Year', fontsize=label_fs)
     plt.xticks(flip_results_df.index, rotation=45, ha='right', fontsize=tick_fs)
     plt.ylabel(ylabel, fontsize=label_fs)
