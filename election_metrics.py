@@ -5,6 +5,7 @@ from typing import Dict, List, Tuple
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from plotting import make_plot, make_bar_plot
 
 from analysis import compute_flip_for_year
 
@@ -248,24 +249,23 @@ def compute_metrics_for_all_years(csv_path: str = '1900_2024_election_results.cs
 
 def _plot_series(years: List[int], values: List[float], ylabel: str, title: str, out_path: str,
                  is_percentage: bool = False, bar: bool = False):
-    plt.figure(figsize=(18, 8))
-    if bar:
-        plt.bar(years, values)
+    """Deprecated internal plotting (kept for compatibility). Election metrics now uses
+    plotting.make_plot/make_bar_plot for consistent styling. This function is unused.
+    """
+    df_tmp = pd.DataFrame({"series": values}, index=years)
+    folder = os.path.dirname(out_path)
+    base = os.path.basename(out_path)
+    if base.lower().endswith('.png'):
+        base = base[:-4]
+    # try to split like '01-C1_euclidean'
+    if '-' in base:
+        plot_count, filename = base.split('-', 1)
     else:
-        plt.plot(years, values, marker='o', linewidth=2)
-    plt.xlabel('Year')
-    plt.ylabel(ylabel)
-    plt.title(title)
-    plt.grid(True, linestyle='--', alpha=0.5)
-    plt.xticks(years, rotation=45, ha='right')
-
-    # Credit
-    plt.text(0.5, 0.01, 'By: eigentaylor', ha='center', va='bottom', transform=plt.gca().transAxes)
-
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    plt.tight_layout()
-    plt.savefig(out_path)
-    plt.close()
+        plot_count, filename = '00', base
+    if bar:
+        make_bar_plot(df_tmp, years[0], years[-1], plot_count, 'series', ylabel, title, filename, folder_path=folder, show_plot=False)
+    else:
+        make_plot(df_tmp, years[0], years[-1], plot_count, 'series', ylabel, title, filename, folder_path=folder, show_plot=False)
 
 
 def write_outputs(metrics_df: pd.DataFrame, results_dir: str = 'results') -> None:
@@ -301,9 +301,16 @@ def write_outputs(metrics_df: pd.DataFrame, results_dir: str = 'results') -> Non
 
     for idx, (col, ylabel, title) in enumerate(plot_specs, start=1):
         values = metrics_df[col].tolist()
-        out_path = os.path.join(plots_dir, f'{idx:02d}-{col}.png')
-        bar = (col == 'coalition_brittleness_count')
-        _plot_series(years, values, ylabel, f'{title} ({first_year}-{last_year})', out_path, bar=bar)
+        # Construct a small DataFrame with index=years and the series as a single column
+        df_plot = pd.DataFrame({col: values}, index=years)
+        # Use plotting helpers for consistent style; save as 2-digit prefix like before
+        plot_count = f"{idx:02d}"
+        filename = col
+        full_title = f"{title} ({first_year}-{last_year})"
+        if col == 'coalition_brittleness_count':
+            make_bar_plot(df_plot, first_year, last_year, plot_count, col, ylabel, full_title, filename, folder_path=plots_dir, show_plot=False)
+        else:
+            make_plot(df_plot, first_year, last_year, plot_count, col, ylabel, full_title, filename, folder_path=plots_dir, show_plot=False, subplot_dual_log=True)
 
 
 if __name__ == '__main__':

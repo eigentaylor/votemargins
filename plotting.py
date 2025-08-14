@@ -265,9 +265,11 @@ def make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count,
 
 def make_all_plots(flip_results_df, start_year, end_year, folder_path='results/', show_plot=False):
     os.makedirs(folder_path, exist_ok=True)
-    for file in os.listdir(folder_path):
-        if file.endswith('.png'):
-            os.remove(os.path.join(folder_path, file))
+    # Remove all .png files in folder_path and its subfolders
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith('.png'):
+                os.remove(os.path.join(root, file))
 
     plot_count = 1
     make_plot(flip_results_df, start_year, end_year, plot_count, 'min_votes_to_flip', 'Minimum Votes to Flip', f'Minimum Votes to Flip Election Result by Year ({start_year}-{end_year})', 'flip_results', folder_path, show_plot, subplot_dual_log=True)
