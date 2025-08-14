@@ -149,16 +149,56 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
     bar_color_default = '#ff6b6b'
     bar_edge = dict(edgecolor='black', linewidth=0.6)
 
+    # party colors (vibrant)
+    party_colors = {
+        'D': 'deepskyblue',  # '#2b83ba',
+        'R': 'red',  # '#ff4d4d',
+    }
+
+    # Keys that should use the electoral-college loser color
+    ec_loser_keys = {'min_votes_to_flip', 'number_of_flipped_states', 'flip_margin_ratio'}
+
+    # compute per-row colors when requested
+    def _compute_ec_loser_colors(df):
+        #  flip colors from the color column
+        if 'color' in df.columns:
+            colors = df['color'].apply(lambda c: party_colors['D'] if str(c).strip() == 'red' else party_colors['R']).copy()
+            # Force 2000 and 2016 to use party_colors['D']
+            for year in [2000, 2016]:
+                if year in df.index:
+                    colors.loc[year] = party_colors['D']
+            return colors
+        # try overall_winner or winner_party columns to infer loser
+        if 'overall_winner' in df.columns:
+            return df['overall_winner'].apply(lambda w: party_colors['D'] if str(w).strip() == 'R' else party_colors['R'])
+        if 'winner_party' in df.columns:
+            return df['winner_party'].apply(lambda w: party_colors['D'] if str(w).strip() == 'R' else party_colors['R'])
+        # fallback: uniform default
+        return [bar_color_default] * len(df)
+    
+    # choose default colors per row; for some keys use EC-loser colors
+    default_colors = flip_results_df['color'] if 'color' in flip_results_df.columns else bar_color_default
+    if key in ec_loser_keys:
+        #default_colors = flip_results_df['color'] if 'color' in flip_results_df.columns else bar_color_default#
+        default_colors = _compute_ec_loser_colors(flip_results_df)
+        # flip the colors for 2000 and 2016
+        # if 2000 in flip_results_df.index:
+        #     default_colors[2000] = party_colors['D']
+        # if 2016 in flip_results_df.index:
+        #     default_colors[2016] = party_colors['D']
+    else:
+        default_colors = flip_results_df['color'] if 'color' in flip_results_df.columns else bar_color_default
+
     if subplot_dual_log:
         fig, (ax_top, ax_bottom) = plt.subplots(2, 1, figsize=(18, 12), sharex=True)
 
         # Top
-        top_colors = flip_results_df['color'] if 'color' in flip_results_df.columns else bar_color_default
+        top_colors = default_colors
         if key in ('popular_vote_margin', 'popular_margin_ratio'):
             ax_top.bar(flip_results_df.index, data, color=top_colors, **bar_edge)
             ax_top.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
         else:
-            ax_top.bar(flip_results_df.index, data, color=bar_color_default, **bar_edge)
+            ax_top.bar(flip_results_df.index, data, color=top_colors, **bar_edge)
 
         # Title/labels/fonts
         ax_top.set_ylabel(ylabel, fontsize=label_fs)
@@ -184,12 +224,12 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
             ax_top.text(flip_results_df.index[i], y_text, formatted, ha='center', va=va, fontsize=data_label_fs, color='white', bbox=data_bbox)
 
         # Bottom (log or symlog depending on data)
-        bottom_colors = top_colors
+        bottom_colors = default_colors
         if key in ('popular_vote_margin', 'popular_margin_ratio'):
             ax_bottom.bar(flip_results_df.index, data, color=bottom_colors, **bar_edge)
             ax_bottom.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
         else:
-            ax_bottom.bar(flip_results_df.index, data, color=bar_color_default, **bar_edge)
+            ax_bottom.bar(flip_results_df.index, data, color=bottom_colors, **bar_edge)
 
         if (data <= 0).any():
             ax_bottom.set_yscale('symlog', linthresh=1e-6)
@@ -228,12 +268,10 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
 
     # Default single-axes behavior
     plt.figure(figsize=(18, 8))
-    default_colors = flip_results_df['color'] if 'color' in flip_results_df.columns else bar_color_default
+    
+    plt.bar(flip_results_df.index, flip_results_df[key], color=default_colors, **bar_edge)
     if key in ('popular_vote_margin', 'popular_margin_ratio'):
-        plt.bar(flip_results_df.index, flip_results_df[key], color=default_colors, **bar_edge)
         plt.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
-    else:
-        plt.bar(flip_results_df.index, flip_results_df[key], color=bar_color_default, **bar_edge)
 
     # label fonts and title
     plt.xlabel('Year', fontsize=label_fs)
@@ -295,19 +333,20 @@ def make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count,
         plt.show()
 
 
-def make_all_plots(flip_results_df, start_year, end_year, folder_path='results/', show_plot=False):
+def make_all_plots(flip_results_df, start_year, end_year, folder_path='results/', show_plot=False, clear_files=False):
     os.makedirs(folder_path, exist_ok=True)
-    # Remove all .png files in folder_path and its subfolders
-    for root, dirs, files in os.walk(folder_path):
-        for file in files:
-            if file.endswith('.png'):
-                os.remove(os.path.join(root, file))
+    if clear_files:
+        # Remove all .png files in folder_path and its subfolders
+        for root, dirs, files in os.walk(folder_path):
+            for file in files:
+                if file.endswith('.png'):
+                    os.remove(os.path.join(root, file))
 
     plot_count = 1
-    make_plot(flip_results_df, start_year, end_year, plot_count, 'min_votes_to_flip', 'Minimum Votes to Flip', f'Minimum Votes to Flip Election Result by Year ({start_year}-{end_year})', 'flip_results', folder_path, show_plot, subplot_dual_log=True)
+    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'min_votes_to_flip', 'Minimum Votes to Flip', f'Minimum Votes to Flip Election Result by Year ({start_year}-{end_year})', 'flip_results', folder_path, show_plot, subplot_dual_log=True)
     plot_count += 1
     # create a dual-subplot version: top regular, bottom log/symlog
-    make_plot(flip_results_df, start_year, end_year, plot_count, 'flip_margin_ratio', 'Minimum Votes to Flip / Total Votes Cast in Year (%)', f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})', 'flip_margin_ratio', folder_path, show_plot, use_log_scale=True, subplot_dual_log=True)
+    make_bar_plot(flip_results_df, start_year, end_year, plot_count, 'flip_margin_ratio', 'Minimum Votes to Flip / Total Votes Cast in Year (%)', f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})', 'flip_margin_ratio', folder_path, show_plot, subplot_dual_log=True)
     plot_count += 1
     # make_plot(flip_results_df, start_year, end_year, plot_count, 'flip_margin_ratio', 'Minimum Votes to Flip / Total Votes Cast in Year (%)', f'Percentage Minimum Votes to Flip / Total Votes Cast in Year ({start_year}-{end_year})', 'flip_margin_ratio', folder_path, show_plot, use_log_scale=False)
     # plot_count += 1
