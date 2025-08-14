@@ -1,7 +1,6 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-import utils
 
 # Always use dark theme here. The caller can override if desired before import.
 plt.style.use('dark_background')

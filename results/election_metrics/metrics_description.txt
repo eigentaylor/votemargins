@@ -1,0 +1,176 @@
+Metrics produced by compute_year_metrics (description, units, and calculation)
+
+This file documents each metric produced by the function `compute_year_metrics` in
+`election_metrics.py`. For each metric we list what it measures, the units, and how
+it is calculated (including special cases).
+
+Common data conventions
+- Vote counts are integer two-party votes (D_votes and R_votes) unless noted.
+- S (S_two_party) is the total two-party popular vote: D_total + R_total.
+- Shares are unitless fractions (0..1). Electoral votes (EV) are integer counts.
+
+Fields and descriptions
+
+year
+ - What: Election year.
+ - Units: year (integer)
+ - How: Copied from the input DataFrame.
+
+winner_party / loser_party
+ - What: Political party that won (winner_party) and the other party (loser_party).
+ - Units: 'D' or 'R' string.
+ - How: From the per-year summary column `overall_winner`.
+
+D_total / R_total
+ - What: Two-party popular vote totals for Democrats (D_total) and Republicans (R_total).
+ - Units: integer votes.
+ - How: Sum of `D_votes` and `R_votes` over all states in the year (non-two-party votes ignored).
+
+S_two_party
+ - What: Total two-party popular votes across the nation.
+ - Units: integer votes.
+ - How: S = D_total + R_total.
+
+winner_EC / loser_EC / total_EC
+ - What: Electoral College votes won by the winner, by the loser, and the total electoral votes.
+ - Units: integer electoral votes.
+ - How: Read from per-year columns `D_electoral`, `R_electoral`, `total_electoral_votes`.
+
+PV_share (Winner popular vote share)
+ - What: Fraction of the two-party popular vote won by the overall winning party.
+ - Units: fraction (0..1).
+ - How: winner_pop_two_party / S where winner_pop_two_party = D_total if winner is D else R_total.
+ - Notes: If S == 0, the result is NaN.
+
+EC_share (Winner electoral vote share)
+ - What: Fraction of total Electoral College votes won by the overall winning party.
+ - Units: fraction (0..1).
+ - How: winner_ec / total_ec.
+ - Notes: If total_ec == 0, the result is NaN.
+
+m (Popular vote margin safety)
+ - What: Absolute two-party popular vote margin (safety) expressed as a fraction of two-party votes.
+ - Units: fraction (0..1).
+ - How: m = abs(D_total - R_total) / S.
+ - Notes: If S == 0, m is NaN.
+
+f (Minimum two-party votes required to flip Electoral College)
+ - What: Minimum number of two-party votes (for the losing party) required to change enough states
+   so that the loser reaches the electoral-votes-to-win threshold.
+ - Units: integer votes.
+ - How: Computed by `compute_flip_for_year` (returns `f`). It examines states and selects a minimal set
+   of vote changes (under the code's assumed model) needed to flip the required electoral votes. The exact
+   internal algorithm lives in `analysis.compute_flip_for_year` but `f` is treated here as the sum of
+   two-party vote changes the loser must pick up nationally to flip the necessary states.
+ - Notes: f is an integer; if no flips are needed f may be 0.
+
+f_over_S (Electoral vulnerability scaled by two-party votes)
+ - What: f normalized by total two-party votes.
+ - Units: fraction (0..1) or larger if f > S (rare/impossible in normal data).
+ - How: f_over_S = f / S.
+ - Notes: If S == 0, result is NaN.
+
+alpha
+ - What: Exponent mixing parameter used for C4 (weighted geometric mean).
+ - Units: unitless (0..1 typical).
+ - How: Passed through from the function argument; default 0.5.
+
+C1_euclidean (Combined closeness - Euclidean)
+ - What: Combined measure of how close the popular vote and electoral college are, using Euclidean distance.
+ - Units: fraction (0..~1).
+ - How: C1 = sqrt(m^2 + f_over_S^2).
+ - Interpretation: Both small m and small f_over_S (tight popular and EC margins) produce a small C1.
+
+C2_max (Combined closeness - max metric)
+ - What: Combined closeness measured by the maximum of the two normalized distances.
+ - Units: fraction.
+ - How: C2 = max(m, f_over_S).
+ - Interpretation: Dominated by the larger of popular margin or EC vulnerability.
+
+C3_harmonic_like (Combined closeness - harmonic-like)
+ - What: A harmonic-like combination that emphasizes cases where both margins are small.
+ - Units: fraction.
+ - How: C3 = (2 * m * f) / (S + m * f) when denominator > 0, otherwise NaN.
+ - Notes: Uses the raw votes f in the numerator, not f_over_S; denominator prevents division by zero.
+
+C4_weighted_geom (Combined closeness - weighted geometric mean)
+ - What: Weighted geometric mean of popular and electoral vulnerabilities.
+ - Units: fraction.
+ - How: C4 = m^alpha * (f_over_S)^(1 - alpha).
+ - Notes: alpha controls the weighting; defaults to 0.5 (geometric mean).
+
+C5_efficiency_ratio (Electoral efficiency ratio)
+ - What: Ratio expressing how many votes (f) are needed relative to the popular margin times two-party votes.
+ - Units: dimensionless (can be large or infinite).
+ - How: C5 = f / (m * S).
+ - Edge cases: If m == 0 and S > 0, C5 is set to +infinity. If S == 0, result is NaN.
+
+popular_vote_safety
+ - What: Same as `m`; kept separately for clarity in outputs.
+ - Units: fraction.
+ - How: assigned m.
+
+electoral_college_safety
+ - What: Same as `f_over_S` (EC vulnerability normalized by two-party votes).
+ - Units: fraction.
+ - How: assigned f_over_S.
+
+state_concentration_R (State concentration risk)
+ - What: Measures how concentrated the flipped-state reliance is across states. Lower values mean
+   the required votes are concentrated in fewer states (higher risk that a small set of states matters).
+ - Units: unitless.
+ - How: R = f^2 / sum_i(f_i^2) where f_i is the votes-to-flip for each state in the chosen flipped set.
+ - Interpretation: If all f_i are equal and there are n flipped states, R = f^2 / (n * (f/n)^2) = n. Larger R
+   indicates less concentration (spread across more states); smaller R (close to 0) indicates more concentration.
+ - Edge cases: If f <= 0 or flipped_states empty or sum square == 0 -> R = 0.
+
+margin_sensitivity_sigma (Uniform-swing sensitivity threshold)
+ - What: The uniform two-party swing (as a fraction of that state's two-party vote) required to flip
+   enough states to reach the needed electoral votes for the loser.
+ - Units: fraction (0..1).
+ - How: For each state the loser currently lost, compute threshold_i = votes_to_flip_state_i / (D_i + R_i).
+   Sort thresholds ascending and accumulate the electoral votes of those states until the loser would reach the
+   required electoral votes; sigma is the threshold value at that cutoff.
+ - Notes: If votes_needed_ev <= 0, sigma = 0. If the two-party vote for a state is 0, that state is skipped.
+
+vote_efficiency_gap_eta (Vote efficiency gap like measure)
+ - What: Relative difference between EC share and PV share normalized by (PV_share - 0.5) and shifted by -1.
+   This is computed in a way that resembles an efficiency-gap style normalization for the winner.
+ - Units: unitless; can be infinite.
+ - How: If PV_share == 0.5 -> eta = +infinity. Otherwise eta = (EC_share - 0.5) / (PV_share - 0.5) - 1.
+ - Interpretation: If EC_share matches PV_share, eta ~ 0. Positive values indicate EC amplifies the winner's
+   advantage; negative values indicate EC reduces it. The -1 shift means eta = 0 when EC advantage equals PV advantage.
+
+recount_vulnerability_V
+ - What: Fraction of Electoral College votes allocated to states where the two-party margin is smaller than
+   the `recount_threshold` (default 0.5%). This measures susceptibility to recounts changing outcomes.
+ - Units: fraction (0..1).
+ - How: For each state with positive two-party votes, margin_share = abs(D-R)/(D+R); if margin_share < recount_threshold,
+   add that state's electoral votes. V = sum(close states EV) / total_EC.
+ - Notes: If total_EC == 0 -> NaN.
+
+coalition_brittleness_count
+ - What: Count of winning-party states with a very small two-party margin (default threshold 2%) indicating brittle
+   coalition states that could flip with small swings.
+ - Units: integer count of states.
+ - How: For every state the winner carried, compute margin_share = abs(D-R)/(D+R); increment count if margin_share < brittleness_threshold.
+
+institutional_distortion_D
+ - What: Relative difference between Electoral College vulnerability and popular vote margin. Measures the distortion
+   introduced by mapping votes to electoral votes.
+ - Units: unitless.
+ - How: If m == 0 or either quantity is NaN -> NaN. Otherwise D = abs(f_over_S - m) / m.
+ - Interpretation: D quantifies how much the EC vulnerability (f_over_S) differs proportionally from the popular
+   vote margin m. Larger D means larger proportional distortion.
+
+Additional notes and edge-case behavior
+- Many metrics depend on S (two-party votes). If S == 0 the code returns NaN for ratios that would divide by S.
+- C5 and eta can be infinite when denominators are zero by design; the code explicitly sets infinity in those cases.
+- The precise definition of `f` (votes to flip) and the chosen flipped_states set depends on the flip algorithm in
+  `analysis.compute_flip_for_year`. This document assumes `f` is the minimal two-party vote change required for the
+  losing party to reach `electoral_votes_to_win` given the model used in that function.
+
+If you want this converted to a machine-readable CSV or to include the exact formula references to line numbers
+in `election_metrics.py`, tell me which format you prefer and I'll add it.
+
+End of document.
