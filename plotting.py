@@ -24,7 +24,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
     # vibrant styling for dark background
     line_color = '#00d1ff'  # bright cyan
     line_width = 2.6
-    marker_style = dict(marker='o', markersize=6, markeredgecolor='black', markeredgewidth=0.6)
+    marker_style = dict(marker='o', markersize=6)
     bar_color = '#ff6b6b'  # coral/salmon
     bar_edge = dict(edgecolor='black', linewidth=0.6)
 
@@ -87,11 +87,12 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
             label.set_fontsize(tick_fs)
 
         # Credit
-        fig.text(0.5, 0.01, 'By: eigentaylor', ha='center', va='bottom')
+        #fig.text(0.5, 0.01, 'By: eigentaylor', ha='center', va='bottom')
         fig.tight_layout()
 
         os.makedirs(folder_path, exist_ok=True)
         fig.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
+        print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
         if show_plot:
             plt.show()
         plt.close(fig)
@@ -99,7 +100,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
 
     # Default single-axes behavior
     plt.figure(figsize=(18, 8))
-    plt.plot(flip_results_df.index, data, color=line_color, linewidth=line_width, **marker_style)
+    plt.plot(flip_results_df.index, data, color=line_color, linewidth=line_width, marker=marker_style['marker'], markersize=marker_style['markersize'])
     plt.xlabel('Year', fontsize=label_fs)
     plt.xticks(flip_results_df.index, rotation=45, ha='right', fontsize=tick_fs)
     plt.ylabel(ylabel, fontsize=label_fs)
@@ -129,6 +130,7 @@ def make_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel, ti
 
     os.makedirs(folder_path, exist_ok=True)
     plt.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
+    print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
     if show_plot:
         plt.show()
 
@@ -257,10 +259,11 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
             label.set_ha('right')
             label.set_fontsize(tick_fs)
 
-        fig.text(0.5, 0.99, 'By: eigentaylor', ha='center', va='top')
+        fig.text(0.3, 0.02, 'By: eigentaylor', ha='center', va='bottom')
         fig.tight_layout()
         os.makedirs(folder_path, exist_ok=True)
         fig.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
+        print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
         if show_plot:
             plt.show()
         plt.close(fig)
@@ -269,7 +272,7 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
     # Default single-axes behavior
     plt.figure(figsize=(18, 8))
     
-    plt.bar(flip_results_df.index, flip_results_df[key], color=default_colors, **bar_edge)
+    plt.bar(flip_results_df.index, flip_results_df[key], color=default_colors, edgecolor=bar_edge['edgecolor'], linewidth=bar_edge['linewidth'])
     if key in ('popular_vote_margin', 'popular_margin_ratio'):
         plt.axhline(y=0, color='white', linewidth=1, linestyle='dashed')
 
@@ -301,6 +304,7 @@ def make_bar_plot(flip_results_df, start_year, end_year, plot_count, key, ylabel
 
     os.makedirs(folder_path, exist_ok=True)
     plt.savefig(os.path.join(folder_path, f'{plot_count}-{filename}.png'))
+    print(f'Saved plot to {os.path.join(folder_path, f"{plot_count}-{filename}.png")}')
     if show_plot:
         plt.show()
 
@@ -314,7 +318,7 @@ def make_state_frequency_plot(flip_results_df, start_year, end_year, plot_count,
     flipped_states_count = dict(sorted(flipped_states_count.items(), key=lambda item: item[1], reverse=True))
 
     plt.figure(figsize=(18, 8))
-    plt.bar(flipped_states_count.keys(), flipped_states_count.values())
+    plt.bar(list(flipped_states_count.keys()), list(flipped_states_count.values()))
     plt.xlabel('State')
     plt.ylabel('Frequency of Flipping')
     plt.title(f'Frequency of Flipping by State ({start_year}-{end_year})')

@@ -106,9 +106,11 @@ def _state_concentration_risk(flipped_states: List[str], winner_states_dict: Dic
     return (f * f) / sum_sq
 
 
+from typing import Union
+
 def compute_year_metrics(year_df: pd.DataFrame, alpha: float = 0.5,
                           recount_threshold: float = 0.005,
-                          brittleness_threshold: float = 0.02) -> Dict[str, float]:
+                          brittleness_threshold: float = 0.02) -> Dict[str, Union[int, float, str]]:
     year = int(year_df['year'].iloc[0])
 
     # Winner/loser parties for the year
@@ -240,7 +242,7 @@ def compute_metrics_for_all_years(csv_path: str = '1900_2024_election_results.cs
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
 
-    metrics: List[Dict[str, float]] = []
+    metrics: List[Dict[str, Union[int, float, str]]] = []
     for year, year_df in df.groupby('year'):
         metrics.append(compute_year_metrics(year_df.copy(), alpha=alpha,
                                             recount_threshold=recount_threshold,

@@ -6,7 +6,7 @@ import time
 
 from analysis import compute_flip_for_year
 from reporting import generate_year_results
-from plotting import make_plot, make_bar_plot, make_state_frequency_plot, make_all_plots
+from plotting import make_all_plots
 from election_metrics import compute_metrics_for_all_years, write_outputs
 
 # Set the dark theme for all plots
