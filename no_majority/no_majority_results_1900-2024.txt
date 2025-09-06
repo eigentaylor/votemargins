@@ -1,23 +1,3 @@
-Year: 1900
-	Original Winner:
-		William McKinley (R) with 292 electoral votes (224 needed)
-			vs William Jennings Bryan (D) with 155 electoral votes 
-	Popular Vote Margin: 860,014  for William McKinley
-	Flipped states: 
-		UTAH            ( 3 EVs):     1,067 ( 1.158%) flipped votes; 
-		DELAWARE        ( 3 EVs):     1,842 ( 4.451%) flipped votes; 
-		NEBRASKA        ( 8 EVs):     3,912 ( 1.659%) flipped votes; 
-		MARYLAND        ( 8 EVs):     6,974 ( 2.699%) flipped votes; 
-		KANSAS          (10 EVs):    11,678 ( 3.350%) flipped votes; 
-		INDIANA         (15 EVs):    13,240 ( 2.051%) flipped votes; 
-		OHIO            (23 EVs):    34,519 ( 3.388%) flipped votes
-	Total number of flipped votes: 73,232 (70 EVs) across 7 states
-	Ratio to Popular Vote Margin: 8.51521%
-	Ratio to Total Votes in Year: 0.53931%
-	New Winner:
-		William Jennings Bryan (D) with 225 electoral votes (224 needed)
-			vs William McKinley (R) with 222 electoral votes
-
 Year: 1904
 	Original Winner:
 		Theodore Roosevelt (R) with 343 electoral votes (239 needed)
@@ -42,28 +22,6 @@ Year: 1904
 	NO MAJORITY
 		vs Theodore Roosevelt (R) with 238 electoral votes (239 needed)
 			Alton B. Parker (D) with 238 electoral votes
-
-Year: 1908
-	Original Winner:
-		William Howard Taft (R) with 327 electoral votes (242 needed)
-			vs William Jennings Bryan (D) with 156 electoral votes 
-	Popular Vote Margin: 1,269,315  for William Howard Taft
-	Flipped states: 
-		MARYLAND        ( 8 EVs):       303 ( 0.130%) flipped votes; 
-		MISSOURI        (18 EVs):       315 ( 0.045%) flipped votes; 
-		DELAWARE        ( 3 EVs):     1,480 ( 3.144%) flipped votes; 
-		MONTANA         ( 3 EVs):     1,504 ( 2.228%) flipped votes; 
-		WYOMING         ( 3 EVs):     2,965 ( 8.290%) flipped votes; 
-		INDIANA         (15 EVs):     5,366 ( 0.781%) flipped votes; 
-		IDAHO           ( 3 EVs):     8,230 ( 8.647%) flipped votes; 
-		KANSAS          (10 EVs):    18,004 ( 5.023%) flipped votes; 
-		OHIO            (23 EVs):    34,796 ( 3.237%) flipped votes
-	Total number of flipped votes: 72,963 (86 EVs) across 9 states
-	Ratio to Popular Vote Margin: 5.74822%
-	Ratio to Total Votes in Year: 0.51302%
-	New Winner:
-		William Jennings Bryan (D) with 242 electoral votes (242 needed)
-			vs William Howard Taft (R) with 241 electoral votes
 
 Year: 1912
 	Original Winner:
@@ -102,55 +60,6 @@ Year: 1912
 			Theodore Roosevelt (T) with 258 electoral votes
 				vs William Howard Taft (R) with 8 electoral votes
 
-Year: 1916
-	Original Winner:
-		Woodrow Wilson (D) with 276 electoral votes (266 needed)
-			vs Charles Evans Hughes (R) with 255 electoral votes 
-	Popular Vote Margin: 584,693  for Woodrow Wilson
-	Flipped states: 
-		CALIFORNIA      (13 EVs):     1,887 ( 0.203%) flipped votes
-	Total number of flipped votes: 1,887 (13 EVs) across 1 states
-	Ratio to Popular Vote Margin: 0.32273%
-	Ratio to Total Votes in Year: 0.01056%
-	New Winner:
-		Charles Evans Hughes (R) with 268 electoral votes (266 needed)
-			vs Woodrow Wilson (D) with 263 electoral votes
-
-Year: 1920
-	Original Winner:
-		Warren G. Harding (R) with 404 electoral votes (266 needed)
-			vs James M. Cox (D) with 127 electoral votes 
-	Popular Vote Margin: 7,027,428  for Warren G. Harding
-	Flipped states: 
-		NEVADA          ( 3 EVs):     2,815 (10.352%) flipped votes; 
-		ARIZONA         ( 3 EVs):     3,736 ( 5.613%) flipped votes; 
-		NEW MEXICO      ( 3 EVs):     5,484 ( 5.258%) flipped votes; 
-		DELAWARE        ( 3 EVs):     6,474 ( 6.979%) flipped votes; 
-		TENNESSEE       (12 EVs):     6,636 ( 1.556%) flipped votes; 
-		WYOMING         ( 3 EVs):     8,832 (16.816%) flipped votes; 
-		UTAH            ( 4 EVs):    12,459 ( 9.016%) flipped votes; 
-		OKLAHOMA        (10 EVs):    13,390 ( 2.752%) flipped votes; 
-		NEW HAMPSHIRE   ( 4 EVs):    16,268 (10.305%) flipped votes; 
-		IDAHO           ( 4 EVs):    21,199 (15.639%) flipped votes; 
-		VERMONT         ( 4 EVs):    23,647 (26.531%) flipped votes; 
-		MONTANA         ( 4 EVs):    26,030 (14.541%) flipped votes; 
-		RHODE ISLAND    ( 5 EVs):    26,201 (16.121%) flipped votes; 
-		MARYLAND        ( 8 EVs):    27,746 ( 6.658%) flipped votes; 
-		WEST VIRGINIA   ( 8 EVs):    30,610 ( 6.088%) flipped votes; 
-		OREGON          ( 5 EVs):    31,787 (14.215%) flipped votes; 
-		COLORADO        ( 6 EVs):    34,157 (12.279%) flipped votes; 
-		SOUTH DAKOTA    ( 5 EVs):    37,378 (20.612%) flipped votes; 
-		MAINE           ( 6 EVs):    38,698 (19.813%) flipped votes; 
-		CONNECTICUT     ( 7 EVs):    54,259 (15.504%) flipped votes; 
-		MISSOURI        (18 EVs):    76,182 ( 5.851%) flipped votes; 
-		INDIANA         (15 EVs):    92,504 ( 7.659%) flipped votes
-	Total number of flipped votes: 596,492 (140 EVs) across 22 states
-	Ratio to Popular Vote Margin: 8.48806%
-	Ratio to Total Votes in Year: 2.30215%
-	New Winner:
-		James M. Cox (D) with 267 electoral votes (266 needed)
-			vs Warren G. Harding (R) with 264 electoral votes
-
 Year: 1924
 	Original Winner:
 		Calvin Coolidge (R) with 382 electoral votes (266 needed)
@@ -184,165 +93,6 @@ Year: 1924
 			John W. Davis (D) with 253 electoral votes
 				vs Robert M. La Follette (T) with 13 electoral votes
 
-Year: 1928
-	Original Winner:
-		Herbert Hoover (R) with 444 electoral votes (266 needed)
-			vs Al Smith (D) with 87 electoral votes 
-	Popular Vote Margin: 6,407,359  for Herbert Hoover
-	Flipped states: 
-		NEVADA          ( 3 EVs):     2,119 ( 6.537%) flipped votes; 
-		UTAH            ( 4 EVs):     6,817 ( 3.882%) flipped votes; 
-		ARIZONA         ( 3 EVs):     6,999 ( 7.685%) flipped votes; 
-		NEW MEXICO      ( 3 EVs):    10,718 ( 9.094%) flipped votes; 
-		VIRGINIA        (12 EVs):    12,232 ( 4.014%) flipped votes; 
-		NORTH DAKOTA    ( 5 EVs):    12,647 ( 5.323%) flipped votes; 
-		TEXAS           (20 EVs):    13,003 ( 1.836%) flipped votes; 
-		TENNESSEE       (12 EVs):    14,023 ( 3.866%) flipped votes; 
-		NEW HAMPSHIRE   ( 4 EVs):    17,345 ( 8.844%) flipped votes; 
-		MONTANA         ( 4 EVs):    17,362 ( 9.048%) flipped votes; 
-		FLORIDA         ( 6 EVs):    21,203 ( 8.621%) flipped votes; 
-		CONNECTICUT     ( 7 EVs):    22,279 ( 4.060%) flipped votes; 
-		NORTH CAROLINA  (12 EVs):    31,349 ( 4.936%) flipped votes; 
-		MARYLAND        ( 8 EVs):    38,927 ( 7.413%) flipped votes; 
-		WISCONSIN       (13 EVs):    46,974 ( 4.724%) flipped votes; 
-		NEW YORK        (45 EVs):    51,741 ( 1.208%) flipped votes; 
-		MISSOURI        (18 EVs):    85,760 ( 5.730%) flipped votes
-	Total number of flipped votes: 411,498 (179 EVs) across 17 states
-	Ratio to Popular Vote Margin: 6.42227%
-	Ratio to Total Votes in Year: 1.12894%
-	New Winner:
-		Al Smith (D) with 266 electoral votes (266 needed)
-			vs Herbert Hoover (R) with 265 electoral votes
-
-Year: 1932
-	Original Winner:
-		Franklin D. Roosevelt (D) with 472 electoral votes (266 needed)
-			vs Herbert Hoover (R) with 59 electoral votes 
-	Popular Vote Margin: 7,060,910  for Franklin D. Roosevelt
-	Flipped states: 
-		WYOMING         ( 3 EVs):     7,394 ( 7.870%) flipped votes; 
-		NEVADA          ( 3 EVs):     8,042 (19.411%) flipped votes; 
-		NEW JERSEY      (16 EVs):    15,474 ( 0.978%) flipped votes; 
-		RHODE ISLAND    ( 4 EVs):    15,670 ( 5.984%) flipped votes; 
-		UTAH            ( 4 EVs):    15,978 ( 7.928%) flipped votes; 
-		IDAHO           ( 4 EVs):    19,032 (10.521%) flipped votes; 
-		NEW MEXICO      ( 3 EVs):    20,437 (13.688%) flipped votes; 
-		ARIZONA         ( 3 EVs):    21,581 (18.706%) flipped votes; 
-		COLORADO        ( 6 EVs):    30,631 ( 6.954%) flipped votes; 
-		MASSACHUSETTS   (17 EVs):    31,595 ( 2.055%) flipped votes; 
-		OHIO            (26 EVs):    37,189 ( 1.470%) flipped votes; 
-		WEST VIRGINIA   ( 8 EVs):    37,197 ( 5.055%) flipped votes; 
-		KANSAS          ( 9 EVs):    37,354 ( 4.828%) flipped votes; 
-		OREGON          ( 5 EVs):    38,927 (11.125%) flipped votes; 
-		SOUTH CAROLINA  ( 8 EVs):    50,185 (48.104%) flipped votes; 
-		VIRGINIA        (11 EVs):    57,172 (19.472%) flipped votes; 
-		MICHIGAN        (19 EVs):    65,904 ( 4.089%) flipped votes; 
-		TENNESSEE       (11 EVs):    66,361 (17.182%) flipped votes; 
-		NEW YORK        (47 EVs):   298,499 ( 6.673%) flipped votes
-	Total number of flipped votes: 874,622 (207 EVs) across 19 states
-	Ratio to Popular Vote Margin: 12.38682%
-	Ratio to Total Votes in Year: 2.26692%
-	New Winner:
-		Herbert Hoover (R) with 266 electoral votes (266 needed)
-			vs Franklin D. Roosevelt (D) with 265 electoral votes
-
-Year: 1936
-	Original Winner:
-		Franklin D. Roosevelt (D) with 523 electoral votes (266 needed)
-			vs Alf Landon (R) with 8 electoral votes 
-	Popular Vote Margin: 11,073,857  for Franklin D. Roosevelt
-	Flipped states: 
-		NEW HAMPSHIRE   ( 4 EVs):     1,910 ( 0.896%) flipped votes; 
-		DELAWARE        ( 3 EVs):     6,234 ( 4.911%) flipped votes; 
-		NEVADA          ( 3 EVs):    10,002 (22.811%) flipped votes; 
-		WYOMING         ( 3 EVs):    11,943 (11.782%) flipped votes; 
-		SOUTH DAKOTA    ( 4 EVs):    17,081 ( 5.970%) flipped votes; 
-		RHODE ISLAND    ( 4 EVs):    20,104 ( 6.489%) flipped votes; 
-		NEW MEXICO      ( 3 EVs):    22,156 (13.207%) flipped votes; 
-		ARIZONA         ( 3 EVs):    26,645 (22.176%) flipped votes; 
-		IDAHO           ( 4 EVs):    29,714 (15.481%) flipped votes; 
-		KANSAS          ( 9 EVs):    33,397 ( 3.873%) flipped votes; 
-		UTAH            ( 4 EVs):    42,846 (19.947%) flipped votes; 
-		NORTH DAKOTA    ( 4 EVs):    45,199 (16.580%) flipped votes; 
-		NEBRASKA        ( 7 EVs):    49,858 ( 8.377%) flipped votes; 
-		CONNECTICUT     ( 8 EVs):    51,723 ( 7.827%) flipped votes; 
-		SOUTH CAROLINA  ( 8 EVs):    56,073 (48.575%) flipped votes; 
-		ARKANSAS        ( 9 EVs):    57,364 (32.082%) flipped votes; 
-		IOWA            (11 EVs):    66,890 ( 6.028%) flipped votes; 
-		VIRGINIA        (11 EVs):    68,323 (20.498%) flipped votes; 
-		MISSISSIPPI     ( 9 EVs):    76,434 (47.240%) flipped votes; 
-		MARYLAND        ( 8 EVs):    79,089 (12.735%) flipped votes; 
-		KENTUCKY        (11 EVs):    86,122 ( 9.447%) flipped votes; 
-		MASSACHUSETTS   (17 EVs):    87,052 ( 4.757%) flipped votes; 
-		WEST VIRGINIA   ( 8 EVs):    88,613 (10.703%) flipped votes; 
-		TENNESSEE       (11 EVs):    90,282 (19.063%) flipped votes; 
-		ALABAMA         (11 EVs):   101,420 (37.075%) flipped votes; 
-		GEORGIA         (12 EVs):   109,212 (37.362%) flipped votes; 
-		INDIANA         (14 EVs):   121,703 ( 7.482%) flipped votes; 
-		MICHIGAN        (19 EVs):   158,531 ( 9.236%) flipped votes; 
-		PENNSYLVANIA    (36 EVs):   331,894 ( 8.207%) flipped votes
-	Total number of flipped votes: 1,947,814 (258 EVs) across 29 states
-	Ratio to Popular Vote Margin: 17.58930%
-	Ratio to Total Votes in Year: 4.35635%
-	New Winner:
-		Alf Landon (R) with 266 electoral votes (266 needed)
-			vs Franklin D. Roosevelt (D) with 265 electoral votes
-
-Year: 1940
-	Original Winner:
-		Franklin D. Roosevelt (D) with 449 electoral votes (266 needed)
-			vs Wendell Willkie (R) with 82 electoral votes 
-	Popular Vote Margin: 4,964,706  for Franklin D. Roosevelt
-	Flipped states: 
-		WYOMING         ( 3 EVs):     3,328 ( 2.974%) flipped votes; 
-		NEVADA          ( 3 EVs):     5,359 (10.078%) flipped votes; 
-		DELAWARE        ( 3 EVs):     6,580 ( 4.837%) flipped votes; 
-		NEW HAMPSHIRE   ( 4 EVs):     7,583 ( 3.221%) flipped votes; 
-		IDAHO           ( 4 EVs):    10,645 ( 4.541%) flipped votes; 
-		NEW MEXICO      ( 3 EVs):    12,193 ( 6.662%) flipped votes; 
-		WISCONSIN       (12 EVs):    12,808 ( 0.925%) flipped votes; 
-		MINNESOTA       (11 EVs):    23,962 ( 1.932%) flipped votes; 
-		CONNECTICUT     ( 8 EVs):    27,902 ( 3.580%) flipped votes; 
-		NEW JERSEY      (16 EVs):    35,667 ( 1.818%) flipped votes; 
-		MISSOURI        (15 EVs):    43,734 ( 2.391%) flipped votes; 
-		ILLINOIS        (29 EVs):    51,348 ( 1.223%) flipped votes; 
-		OHIO            (26 EVs):    73,184 ( 2.204%) flipped votes; 
-		NEW YORK        (47 EVs):   112,221 ( 1.787%) flipped votes
-	Total number of flipped votes: 426,514 (184 EVs) across 14 states
-	Ratio to Popular Vote Margin: 8.59092%
-	Ratio to Total Votes in Year: 0.85884%
-	New Winner:
-		Wendell Willkie (R) with 266 electoral votes (266 needed)
-			vs Franklin D. Roosevelt (D) with 265 electoral votes
-
-Year: 1944
-	Original Winner:
-		Franklin D. Roosevelt (D) with 432 electoral votes (266 needed)
-			vs Thomas E. Dewey (R) with 99 electoral votes 
-	Popular Vote Margin: 3,599,597  for Franklin D. Roosevelt
-	Flipped states: 
-		NEVADA          ( 3 EVs):     2,507 ( 4.623%) flipped votes; 
-		IDAHO           ( 4 EVs):     3,632 ( 1.750%) flipped votes; 
-		NEW HAMPSHIRE   ( 4 EVs):     4,874 ( 2.123%) flipped votes; 
-		NEW MEXICO      ( 4 EVs):     5,351 ( 3.519%) flipped votes; 
-		DELAWARE        ( 3 EVs):     5,710 ( 4.571%) flipped votes; 
-		MONTANA         ( 4 EVs):     9,697 ( 4.714%) flipped votes; 
-		MICHIGAN        (19 EVs):    11,239 ( 0.513%) flipped votes; 
-		MARYLAND        ( 8 EVs):    11,271 ( 1.852%) flipped votes; 
-		OREGON          ( 6 EVs):    11,636 ( 2.455%) flipped votes; 
-		NEW JERSEY      (16 EVs):    13,270 ( 0.681%) flipped votes; 
-		CONNECTICUT     ( 8 EVs):    22,310 ( 2.702%) flipped votes; 
-		MISSOURI        (15 EVs):    23,141 ( 1.475%) flipped votes; 
-		MINNESOTA       (11 EVs):    31,225 ( 2.795%) flipped votes; 
-		PENNSYLVANIA    (35 EVs):    52,713 ( 1.396%) flipped votes; 
-		ILLINOIS        (28 EVs):    70,083 ( 1.744%) flipped votes
-	Total number of flipped votes: 278,659 (168 EVs) across 15 states
-	Ratio to Popular Vote Margin: 7.74139%
-	Ratio to Total Votes in Year: 0.58334%
-	New Winner:
-		Thomas E. Dewey (R) with 267 electoral votes (266 needed)
-			vs Franklin D. Roosevelt (D) with 264 electoral votes
-
 Year: 1948
 	Original Winner:
 		Harry S. Truman (D) with 315 electoral votes (266 needed)
@@ -359,72 +109,6 @@ Year: 1948
 		vs Harry S. Truman (D) with 265 electoral votes (266 needed)
 			Thomas E. Dewey (R) with 239 electoral votes
 				vs Strom Thurmond (T) with 27 electoral votes
-
-Year: 1952
-	Original Winner:
-		Dwight D. Eisenhower (R) with 442 electoral votes (266 needed)
-			vs Adlai Stevenson (D) with 89 electoral votes 
-	Popular Vote Margin: 7,117,752  for Dwight D. Eisenhower
-	Flipped states: 
-		TENNESSEE       (11 EVs):     1,219 ( 0.137%) flipped votes; 
-		DELAWARE        ( 3 EVs):     3,373 ( 1.946%) flipped votes; 
-		RHODE ISLAND    ( 4 EVs):     3,822 ( 0.923%) flipped votes; 
-		NEVADA          ( 3 EVs):     9,408 (11.447%) flipped votes; 
-		NEW MEXICO      ( 4 EVs):    13,255 ( 5.573%) flipped votes; 
-		MISSOURI        (13 EVs):    14,800 ( 0.783%) flipped votes; 
-		WYOMING         ( 3 EVs):    16,557 (12.837%) flipped votes; 
-		ARIZONA         ( 4 EVs):    21,758 ( 8.350%) flipped votes; 
-		MONTANA         ( 4 EVs):    25,591 ( 9.708%) flipped votes; 
-		UTAH            ( 4 EVs):    29,414 ( 8.925%) flipped votes; 
-		NEW HAMPSHIRE   ( 4 EVs):    29,813 (10.923%) flipped votes; 
-		VIRGINIA        (12 EVs):    40,181 ( 6.505%) flipped votes; 
-		OKLAHOMA        ( 8 EVs):    43,554 ( 4.590%) flipped votes; 
-		FLORIDA         (10 EVs):    49,544 ( 5.010%) flipped votes; 
-		MARYLAND        ( 9 EVs):    52,044 ( 5.817%) flipped votes; 
-		WASHINGTON      ( 9 EVs):    53,132 ( 4.866%) flipped votes; 
-		TEXAS           (24 EVs):    66,826 ( 3.225%) flipped votes; 
-		MASSACHUSETTS   (16 EVs):   104,401 ( 4.394%) flipped votes; 
-		PENNSYLVANIA    (32 EVs):   134,761 ( 2.954%) flipped votes
-	Total number of flipped votes: 713,453 (177 EVs) across 19 states
-	Ratio to Popular Vote Margin: 10.02357%
-	Ratio to Total Votes in Year: 1.16478%
-	New Winner:
-		Adlai Stevenson (D) with 266 electoral votes (266 needed)
-			vs Dwight D. Eisenhower (R) with 265 electoral votes
-
-Year: 1956
-	Original Winner:
-		Dwight D. Eisenhower (R) with 457 electoral votes (266 needed)
-			vs Adlai Stevenson (D) with 74 electoral votes 
-	Popular Vote Margin: 10,264,919  for Dwight D. Eisenhower
-	Flipped states: 
-		TENNESSEE       (11 EVs):     2,891 ( 0.315%) flipped votes; 
-		NEVADA          ( 3 EVs):     7,705 ( 7.969%) flipped votes; 
-		DELAWARE        ( 3 EVs):     9,319 ( 5.251%) flipped votes; 
-		WYOMING         ( 3 EVs):    12,510 (10.078%) flipped votes; 
-		MONTANA         ( 4 EVs):    19,348 ( 7.135%) flipped votes; 
-		NEW MEXICO      ( 4 EVs):    20,346 ( 8.046%) flipped votes; 
-		SOUTH DAKOTA    ( 4 EVs):    24,641 ( 8.385%) flipped votes; 
-		IDAHO           ( 4 EVs):    30,556 (11.199%) flipped votes; 
-		RHODE ISLAND    ( 4 EVs):    32,015 ( 8.260%) flipped votes; 
-		ARIZONA         ( 4 EVs):    32,056 (11.059%) flipped votes; 
-		WEST VIRGINIA   ( 8 EVs):    33,882 ( 4.078%) flipped votes; 
-		OREGON          ( 6 EVs):    38,595 ( 5.247%) flipped votes; 
-		LOUISIANA       (10 EVs):    42,536 ( 6.888%) flipped votes; 
-		OKLAHOMA        ( 8 EVs):    44,095 ( 5.131%) flipped votes; 
-		KENTUCKY        (10 EVs):    47,870 ( 4.565%) flipped votes; 
-		WASHINGTON      ( 9 EVs):    48,715 ( 4.260%) flipped votes; 
-		VIRGINIA        (12 EVs):    59,350 ( 8.513%) flipped votes; 
-		FLORIDA         (10 EVs):    81,740 ( 7.271%) flipped votes; 
-		TEXAS           (24 EVs):   110,331 ( 5.685%) flipped votes; 
-		MICHIGAN        (20 EVs):   176,875 ( 5.755%) flipped votes; 
-		PENNSYLVANIA    (32 EVs):   301,742 ( 6.607%) flipped votes
-	Total number of flipped votes: 1,177,118 (193 EVs) across 21 states
-	Ratio to Popular Vote Margin: 11.46739%
-	Ratio to Total Votes in Year: 1.90390%
-	New Winner:
-		Adlai Stevenson (D) with 267 electoral votes (266 needed)
-			vs Dwight D. Eisenhower (R) with 264 electoral votes
 
 Year: 1960
 	Original Winner:
@@ -539,21 +223,6 @@ Year: 1972
 	NO MAJORITY
 		vs Richard Nixon (R) with 269 electoral votes (270 needed)
 			George McGovern (D) with 269 electoral votes
-
-Year: 1976
-	Original Winner:
-		Jimmy Carter (D) with 297 electoral votes (270 needed)
-			vs Gerald Ford (R) with 241 electoral votes 
-	Popular Vote Margin: 1,809,553  for Jimmy Carter
-	Flipped states: 
-		HAWAII          ( 4 EVs):     3,687 ( 1.283%) flipped votes; 
-		OHIO            (25 EVs):     4,667 ( 0.116%) flipped votes
-	Total number of flipped votes: 8,354 (29 EVs) across 2 states
-	Ratio to Popular Vote Margin: 0.46166%
-	Ratio to Total Votes in Year: 0.01050%
-	New Winner:
-		Gerald Ford (R) with 270 electoral votes (270 needed)
-			vs Jimmy Carter (D) with 268 electoral votes
 
 Year: 1980
 	Original Winner:
@@ -698,20 +367,6 @@ Year: 1996
 		vs Bill Clinton (D) with 269 electoral votes (270 needed)
 			Robert Dole (R) with 269 electoral votes
 
-Year: 2000
-	Original Winner:
-		George W. Bush (R) with 271 electoral votes (270 needed)
-			vs Al Gore (D) with 267 electoral votes 
-	Popular Vote Margin: -519,208  for Al Gore
-	Flipped states: 
-		FLORIDA         (25 EVs):       269 ( 0.005%) flipped votes
-	Total number of flipped votes: 269 (25 EVs) across 1 states
-	Ratio to Popular Vote Margin: 0.05181%
-	Ratio to Total Votes in Year: 0.00027%
-	New Winner:
-		Al Gore (D) with 292 electoral votes (270 needed)
-			vs George W. Bush (R) with 246 electoral votes
-
 Year: 2004
 	Original Winner:
 		George W. Bush (R) with 286 electoral votes (270 needed)
@@ -749,39 +404,6 @@ Year: 2008
 		vs Barack H. Obama (D) with 269 electoral votes (270 needed)
 			John Mccain (R) with 269 electoral votes
 
-Year: 2012
-	Original Winner:
-		Barack H. Obama (D) with 332 electoral votes (270 needed)
-			vs Mitt Romney (R) with 206 electoral votes 
-	Popular Vote Margin: 5,081,900  for Barack H. Obama
-	Flipped states: 
-		NEW HAMPSHIRE   ( 4 EVs):    19,822 ( 2.834%) flipped votes; 
-		FLORIDA         (29 EVs):    37,155 ( 0.442%) flipped votes; 
-		VIRGINIA        (13 EVs):    74,650 ( 1.967%) flipped votes; 
-		OHIO            (18 EVs):    83,108 ( 1.514%) flipped votes
-	Total number of flipped votes: 214,735 (64 EVs) across 4 states
-	Ratio to Popular Vote Margin: 4.22549%
-	Ratio to Total Votes in Year: 0.16986%
-	New Winner:
-		Mitt Romney (R) with 270 electoral votes (270 needed)
-			vs Barack H. Obama (D) with 268 electoral votes
-
-Year: 2016
-	Original Winner:
-		Donald J. Trump (R) with 306 electoral votes (270 needed)
-			vs Hillary Clinton (D) with 232 electoral votes 
-	Popular Vote Margin: -2,984,757  for Hillary Clinton
-	Flipped states: 
-		MICHIGAN        (16 EVs):     5,353 ( 0.118%) flipped votes; 
-		WISCONSIN       (10 EVs):    11,375 ( 0.408%) flipped votes; 
-		PENNSYLVANIA    (20 EVs):    22,147 ( 0.376%) flipped votes
-	Total number of flipped votes: 38,875 (46 EVs) across 3 states
-	Ratio to Popular Vote Margin: 1.30245%
-	Ratio to Total Votes in Year: 0.03028%
-	New Winner:
-		Hillary Clinton (D) with 278 electoral votes (270 needed)
-			vs Donald J. Trump (R) with 260 electoral votes
-
 Year: 2020
 	Original Winner:
 		Joseph R. Biden (D) with 306 electoral votes (270 needed)
@@ -797,20 +419,4 @@ Year: 2020
 	NO MAJORITY
 		vs Joseph R. Biden (D) with 269 electoral votes (270 needed)
 			Donald J. Trump (R) with 269 electoral votes
-
-Year: 2024
-	Original Winner:
-		Donald J. Trump (R) with 312 electoral votes (270 needed)
-			vs Kamala D. Harris (D) with 226 electoral votes 
-	Popular Vote Margin: 2,484,607  for Donald J. Trump
-	Flipped states: 
-		WISCONSIN       (10 EVs):    14,699 ( 0.437%) flipped votes; 
-		MICHIGAN        (15 EVs):    40,052 ( 0.721%) flipped votes; 
-		PENNSYLVANIA    (19 EVs):    60,728 ( 0.872%) flipped votes
-	Total number of flipped votes: 115,479 (44 EVs) across 3 states
-	Ratio to Popular Vote Margin: 4.64778%
-	Ratio to Total Votes in Year: 0.07627%
-	New Winner:
-		Kamala D. Harris (D) with 270 electoral votes (270 needed)
-			vs Donald J. Trump (R) with 268 electoral votes
 

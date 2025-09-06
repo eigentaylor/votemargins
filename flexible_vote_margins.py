@@ -36,7 +36,9 @@ def get_flip_results(election_results_df, start_year, end_year, print_results=Fa
     for m in modes:
         folder = folder_map.get(m, os.path.join('results', m))
         os.makedirs(folder, exist_ok=True)
-        with open(os.path.join(folder, f'flip_results_{start_year}-{end_year}.txt'), 'w') as f:
+        # name the text summary file depending on mode
+        txt_name = f'no_majority_results_{start_year}-{end_year}.txt' if m == 'no_majority' else f'flip_results_{start_year}-{end_year}.txt'
+        with open(os.path.join(folder, txt_name), 'w') as f:
             f.write('')
 
     # loop through the years in the election results data
@@ -189,30 +191,61 @@ def get_flip_results(election_results_df, start_year, end_year, print_results=Fa
             other_parties.pop(winner_name, None)
             other_parties.pop(loser_name, None)
 
-            generate_year_results(
-                year,
-                winner_name,
-                winner,
-                winner_electoral_votes,
-                loser_name,
-                loser,
-                loser_electoral_votes,
-                total_votes_winner,
-                total_votes_loser,
-                popular_vote_margin,
-                electoral_college_votes_to_win,
-                flipped_states_votes_dict,
-                min_votes_to_flip,
-                number_of_flipped_states,
-                abs_popular_vote_margin,
-                total_votes_in_year,
-                best_v,
-                start_year,
-                end_year,
-                print_results=print_results,
-                mode=m,
-                other_parties=other_parties,
-            )
+            # For no_majority mode only produce a TXT entry when the flip produces NO MAJORITY
+            if m == 'no_majority':
+                # after flipping best_v to the loser, does the original winner end up below the threshold?
+                adjusted_loser_ev = best_v + loser_electoral_votes
+                adjusted_winner_ev = winner_electoral_votes - best_v
+                if adjusted_winner_ev < electoral_college_votes_to_win:
+                    generate_year_results(
+                        year,
+                        winner_name,
+                        winner,
+                        winner_electoral_votes,
+                        loser_name,
+                        loser,
+                        loser_electoral_votes,
+                        total_votes_winner,
+                        total_votes_loser,
+                        popular_vote_margin,
+                        electoral_college_votes_to_win,
+                        flipped_states_votes_dict,
+                        min_votes_to_flip,
+                        number_of_flipped_states,
+                        abs_popular_vote_margin,
+                        total_votes_in_year,
+                        best_v,
+                        start_year,
+                        end_year,
+                        print_results=print_results,
+                        mode=m,
+                        other_parties=other_parties,
+                    )
+            else:
+                generate_year_results(
+                    year,
+                    winner_name,
+                    winner,
+                    winner_electoral_votes,
+                    loser_name,
+                    loser,
+                    loser_electoral_votes,
+                    total_votes_winner,
+                    total_votes_loser,
+                    popular_vote_margin,
+                    electoral_college_votes_to_win,
+                    flipped_states_votes_dict,
+                    min_votes_to_flip,
+                    number_of_flipped_states,
+                    abs_popular_vote_margin,
+                    total_votes_in_year,
+                    best_v,
+                    start_year,
+                    end_year,
+                    print_results=print_results,
+                    mode=m,
+                    other_parties=other_parties,
+                )
 
     # Output the results per mode
     output = {}
