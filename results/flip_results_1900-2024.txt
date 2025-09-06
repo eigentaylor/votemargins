@@ -15,7 +15,7 @@ Year: 1900
 	Ratio to Popular Vote Margin: 8.51521%
 	Ratio to Total Votes in Year: 0.53931%
 	New Winner:
-		William Jennings Bryan (D) with 225 electoral votes
+		William Jennings Bryan (D) with 225 electoral votes (224 needed)
 			vs William McKinley (R) with 222 electoral votes
 
 Year: 1904
@@ -40,7 +40,7 @@ Year: 1904
 	Ratio to Popular Vote Margin: 7.69994%
 	Ratio to Total Votes in Year: 1.51723%
 	New Winner:
-		Alton B. Parker (D) with 239 electoral votes
+		Alton B. Parker (D) with 239 electoral votes (239 needed)
 			vs Theodore Roosevelt (R) with 237 electoral votes
 
 Year: 1908
@@ -62,7 +62,7 @@ Year: 1908
 	Ratio to Popular Vote Margin: 5.74822%
 	Ratio to Total Votes in Year: 0.51302%
 	New Winner:
-		William Jennings Bryan (D) with 242 electoral votes
+		William Jennings Bryan (D) with 242 electoral votes (242 needed)
 			vs William Howard Taft (R) with 241 electoral votes
 
 Year: 1912
@@ -98,7 +98,7 @@ Year: 1912
 	Ratio to Popular Vote Margin: 9.87401%
 	Ratio to Total Votes in Year: 1.50455%
 	New Winner:
-		Theodore Roosevelt (T) with 266 electoral votes
+		Theodore Roosevelt (T) with 266 electoral votes (266 needed)
 			vs Woodrow Wilson (D) with 257 electoral votes
 
 Year: 1916
@@ -112,7 +112,7 @@ Year: 1916
 	Ratio to Popular Vote Margin: 0.32273%
 	Ratio to Total Votes in Year: 0.01056%
 	New Winner:
-		Charles Evans Hughes (R) with 268 electoral votes
+		Charles Evans Hughes (R) with 268 electoral votes (266 needed)
 			vs Woodrow Wilson (D) with 263 electoral votes
 
 Year: 1920
@@ -147,7 +147,7 @@ Year: 1920
 	Ratio to Popular Vote Margin: 8.48806%
 	Ratio to Total Votes in Year: 2.30215%
 	New Winner:
-		James M. Cox (D) with 267 electoral votes
+		James M. Cox (D) with 267 electoral votes (266 needed)
 			vs Warren G. Harding (R) with 264 electoral votes
 
 Year: 1924
@@ -181,7 +181,7 @@ Year: 1924
 	Ratio to Popular Vote Margin: 7.48610%
 	Ratio to Total Votes in Year: 1.90405%
 	New Winner:
-		John W. Davis (D) with 267 electoral votes
+		John W. Davis (D) with 267 electoral votes (266 needed)
 			vs Calvin Coolidge (R) with 251 electoral votes
 
 Year: 1928
@@ -211,7 +211,7 @@ Year: 1928
 	Ratio to Popular Vote Margin: 6.42227%
 	Ratio to Total Votes in Year: 1.12894%
 	New Winner:
-		Al Smith (D) with 266 electoral votes
+		Al Smith (D) with 266 electoral votes (266 needed)
 			vs Herbert Hoover (R) with 265 electoral votes
 
 Year: 1932
@@ -243,7 +243,7 @@ Year: 1932
 	Ratio to Popular Vote Margin: 12.38682%
 	Ratio to Total Votes in Year: 2.26692%
 	New Winner:
-		Herbert Hoover (R) with 266 electoral votes
+		Herbert Hoover (R) with 266 electoral votes (266 needed)
 			vs Franklin D. Roosevelt (D) with 265 electoral votes
 
 Year: 1936
@@ -285,7 +285,7 @@ Year: 1936
 	Ratio to Popular Vote Margin: 17.58930%
 	Ratio to Total Votes in Year: 4.35635%
 	New Winner:
-		Alf Landon (R) with 266 electoral votes
+		Alf Landon (R) with 266 electoral votes (266 needed)
 			vs Franklin D. Roosevelt (D) with 265 electoral votes
 
 Year: 1940
@@ -312,7 +312,7 @@ Year: 1940
 	Ratio to Popular Vote Margin: 8.59092%
 	Ratio to Total Votes in Year: 0.85884%
 	New Winner:
-		Wendell Willkie (R) with 266 electoral votes
+		Wendell Willkie (R) with 266 electoral votes (266 needed)
 			vs Franklin D. Roosevelt (D) with 265 electoral votes
 
 Year: 1944
@@ -340,7 +340,7 @@ Year: 1944
 	Ratio to Popular Vote Margin: 9.25860%
 	Ratio to Total Votes in Year: 0.58334%
 	New Winner:
-		Thomas E. Dewey (R) with 267 electoral votes
+		Thomas E. Dewey (R) with 267 electoral votes (266 needed)
 			vs Franklin D. Roosevelt (D) with 253 electoral votes
 
 Year: 1948
@@ -356,7 +356,7 @@ Year: 1948
 	Ratio to Popular Vote Margin: 1.74789%
 	Ratio to Total Votes in Year: 0.06125%
 	New Winner:
-		Thomas E. Dewey (R) with 267 electoral votes
+		Thomas E. Dewey (R) with 267 electoral votes (266 needed)
 			vs Harry S. Truman (D) with 226 electoral votes
 
 Year: 1952
@@ -388,7 +388,7 @@ Year: 1952
 	Ratio to Popular Vote Margin: 10.02357%
 	Ratio to Total Votes in Year: 1.16478%
 	New Winner:
-		Adlai Stevenson (D) with 266 electoral votes
+		Adlai Stevenson (D) with 266 electoral votes (266 needed)
 			vs Dwight D. Eisenhower (R) with 265 electoral votes
 
 Year: 1956
@@ -422,7 +422,7 @@ Year: 1956
 	Ratio to Popular Vote Margin: 11.46739%
 	Ratio to Total Votes in Year: 1.90390%
 	New Winner:
-		Adlai Stevenson (D) with 267 electoral votes
+		Adlai Stevenson (D) with 267 electoral votes (266 needed)
 			vs Dwight D. Eisenhower (R) with 264 electoral votes
 
 Year: 1960
@@ -440,7 +440,7 @@ Year: 1960
 	Ratio to Popular Vote Margin: 10.52408%
 	Ratio to Total Votes in Year: 0.01722%
 	New Winner:
-		Richard Nixon (R) with 270 electoral votes
+		Richard Nixon (R) with 270 electoral votes (269 needed)
 			vs John F. Kennedy (D) with 248 electoral votes
 
 Year: 1964
@@ -479,7 +479,7 @@ Year: 1964
 	Ratio to Popular Vote Margin: 13.70721%
 	Ratio to Total Votes in Year: 2.92027%
 	New Winner:
-		Barry Goldwater (R) with 270 electoral votes
+		Barry Goldwater (R) with 270 electoral votes (270 needed)
 			vs Lyndon B. Johnson (D) with 254 electoral votes
 
 Year: 1968
@@ -499,7 +499,7 @@ Year: 1968
 	Ratio to Popular Vote Margin: 11.26071%
 	Ratio to Total Votes in Year: 0.22646%
 	New Winner:
-		Hubert Humphrey (D) with 271 electoral votes
+		Hubert Humphrey (D) with 271 electoral votes (270 needed)
 			vs Richard Nixon (R) with 212 electoral votes
 
 Year: 1972
@@ -538,7 +538,7 @@ Year: 1972
 	Ratio to Popular Vote Margin: 17.48275%
 	Ratio to Total Votes in Year: 4.32416%
 	New Winner:
-		George McGovern (D) with 270 electoral votes
+		George McGovern (D) with 270 electoral votes (270 needed)
 			vs Richard Nixon (R) with 268 electoral votes
 
 Year: 1976
@@ -553,7 +553,7 @@ Year: 1976
 	Ratio to Popular Vote Margin: 0.46166%
 	Ratio to Total Votes in Year: 0.01050%
 	New Winner:
-		Gerald Ford (R) with 270 electoral votes
+		Gerald Ford (R) with 270 electoral votes (270 needed)
 			vs Jimmy Carter (D) with 268 electoral votes
 
 Year: 1980
@@ -582,7 +582,7 @@ Year: 1980
 	Ratio to Popular Vote Margin: 7.92298%
 	Ratio to Total Votes in Year: 0.81726%
 	New Winner:
-		Jimmy Carter (D) with 271 electoral votes
+		Jimmy Carter (D) with 271 electoral votes (270 needed)
 			vs Ronald Reagan (R) with 267 electoral votes
 
 Year: 1984
@@ -618,7 +618,7 @@ Year: 1984
 	Ratio to Popular Vote Margin: 15.52488%
 	Ratio to Total Votes in Year: 2.83278%
 	New Winner:
-		Walter Mondale (D) with 270 electoral votes
+		Walter Mondale (D) with 270 electoral votes (270 needed)
 			vs Ronald Reagan (R) with 268 electoral votes
 
 Year: 1988
@@ -645,7 +645,7 @@ Year: 1988
 	Ratio to Popular Vote Margin: 7.76450%
 	Ratio to Total Votes in Year: 0.59514%
 	New Winner:
-		Michael Dukakis (D) with 270 electoral votes
+		Michael Dukakis (D) with 270 electoral votes (270 needed)
 			vs George H.W. Bush (R) with 268 electoral votes
 
 Year: 1992
@@ -670,7 +670,7 @@ Year: 1992
 	Ratio to Popular Vote Margin: 4.70196%
 	Ratio to Total Votes in Year: 0.34049%
 	New Winner:
-		George H.W. Bush (R) with 271 electoral votes
+		George H.W. Bush (R) with 271 electoral votes (270 needed)
 			vs Bill Clinton (D) with 267 electoral votes
 
 Year: 1996
@@ -694,7 +694,7 @@ Year: 1996
 	Ratio to Popular Vote Margin: 6.94088%
 	Ratio to Total Votes in Year: 0.66688%
 	New Winner:
-		Robert Dole (R) with 270 electoral votes
+		Robert Dole (R) with 270 electoral votes (270 needed)
 			vs Bill Clinton (D) with 268 electoral votes
 
 Year: 2000
@@ -708,7 +708,7 @@ Year: 2000
 	Ratio to Popular Vote Margin: 0.05181%
 	Ratio to Total Votes in Year: 0.00027%
 	New Winner:
-		Al Gore (D) with 292 electoral votes
+		Al Gore (D) with 292 electoral votes (270 needed)
 			vs George W. Bush (R) with 246 electoral votes
 
 Year: 2004
@@ -724,7 +724,7 @@ Year: 2004
 	Ratio to Popular Vote Margin: 1.94036%
 	Ratio to Total Votes in Year: 0.04785%
 	New Winner:
-		John Kerry (D) with 273 electoral votes
+		John Kerry (D) with 273 electoral votes (270 needed)
 			vs George W. Bush (R) with 265 electoral votes
 
 Year: 2008
@@ -744,7 +744,7 @@ Year: 2008
 	Ratio to Popular Vote Margin: 5.09322%
 	Ratio to Total Votes in Year: 0.38411%
 	New Winner:
-		John Mccain (R) with 270 electoral votes
+		John Mccain (R) with 270 electoral votes (270 needed)
 			vs Barack H. Obama (D) with 268 electoral votes
 
 Year: 2012
@@ -761,7 +761,7 @@ Year: 2012
 	Ratio to Popular Vote Margin: 4.22549%
 	Ratio to Total Votes in Year: 0.16986%
 	New Winner:
-		Mitt Romney (R) with 270 electoral votes
+		Mitt Romney (R) with 270 electoral votes (270 needed)
 			vs Barack H. Obama (D) with 268 electoral votes
 
 Year: 2016
@@ -777,7 +777,7 @@ Year: 2016
 	Ratio to Popular Vote Margin: 1.30245%
 	Ratio to Total Votes in Year: 0.03028%
 	New Winner:
-		Hillary Clinton (D) with 278 electoral votes
+		Hillary Clinton (D) with 278 electoral votes (270 needed)
 			vs Donald J. Trump (R) with 260 electoral votes
 
 Year: 2020
@@ -794,7 +794,7 @@ Year: 2020
 	Ratio to Popular Vote Margin: 0.45769%
 	Ratio to Total Votes in Year: 0.02076%
 	New Winner:
-		Donald J. Trump (R) with 270 electoral votes
+		Donald J. Trump (R) with 270 electoral votes (270 needed)
 			vs Joseph R. Biden (D) with 268 electoral votes
 
 Year: 2024
@@ -810,6 +810,6 @@ Year: 2024
 	Ratio to Popular Vote Margin: 4.64778%
 	Ratio to Total Votes in Year: 0.07627%
 	New Winner:
-		Kamala D. Harris (D) with 270 electoral votes
+		Kamala D. Harris (D) with 270 electoral votes (270 needed)
 			vs Donald J. Trump (R) with 268 electoral votes
 

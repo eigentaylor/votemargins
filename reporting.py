@@ -66,4 +66,4 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
         flipped_states_str = _format_flipped_for_write(flipped_states_votes_dict)
         f.write(f'\tFlipped states: {flipped_states_str}\n')
         f.write(f'\tTotal number of flipped votes: {min_votes_to_flip:,} across {number_of_flipped_states} states\n\tRatio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%\n\tRatio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%\n')
-        f.write(f'\tNew Winner:\n\t\t{loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes\n\t\t\tvs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n\n')
+        f.write(f'\tNew Winner:\n\t\t{loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)\n\t\t\tvs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n\n')
