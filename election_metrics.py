@@ -229,7 +229,7 @@ def compute_year_metrics(year_df: pd.DataFrame, alpha: float = 0.5,
     }
 
 
-def compute_metrics_for_all_years(csv_path: str = '1900_2024_election_results.csv',
+def compute_metrics_for_all_years(csv_path: str = '1900_2024_election_results.fixed.csv',
                                   alpha: float = 0.5,
                                   recount_threshold: float = 0.005,
                                   brittleness_threshold: float = 0.02) -> pd.DataFrame:
@@ -273,7 +273,8 @@ def _plot_series(years: List[int], values: List[float], ylabel: str, title: str,
         make_bar_plot(df_tmp, years[0], years[-1], plot_count, 'series', ylabel, title, filename, folder_path=folder, show_plot=False)
 
 
-def write_outputs(metrics_df: pd.DataFrame, results_dir: str = 'results') -> None:
+def write_outputs(metrics_df: pd.DataFrame, results_dir: str = 'election_metrics') -> None:
+    # write outputs to 'election_metrics/' folder per user preference
     os.makedirs(results_dir, exist_ok=True)
 
     first_year = int(metrics_df['year'].min())
@@ -282,7 +283,8 @@ def write_outputs(metrics_df: pd.DataFrame, results_dir: str = 'results') -> Non
     csv_out = os.path.join(results_dir, f'election_metrics-{first_year}-{last_year}.csv')
     metrics_df.to_csv(csv_out, index=False)
 
-    plots_dir = os.path.join(results_dir, 'election_metrics')
+    # place plots directly into the election_metrics folder
+    plots_dir = results_dir
     os.makedirs(plots_dir, exist_ok=True)
 
     # Define plotting order and labels

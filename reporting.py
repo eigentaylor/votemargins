@@ -1,12 +1,44 @@
 import os
 
 
-def generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, start_year, end_year, print_results=True):
+def generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, start_year, end_year, print_results=True, mode='classic', other_parties=None):
     """Print and persist per-year summary details."""
     popular_vote_margin = total_votes_winner - total_votes_loser
     if print_results:
         print(f'Year: {year}')
         print(f'Original Winner: {winner_name} ({winner}) with {winner_electoral_votes} electoral votes vs {loser_name} ({loser}) with {loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)')
+        # include the single other party/candidate with the least EVs (if any)
+        other_candidate = None
+        if other_parties:
+            try:
+                parsed = []
+                for code, info in other_parties.items():
+                    name = ''
+                    ev = 0
+                    if isinstance(info, (list, tuple)) and len(info) >= 2:
+                        name, ev = info[0], int(info[1])
+                    elif isinstance(info, dict):
+                        name = info.get('name') or info.get('candidate') or ''
+                        ev = int(info.get('electoral_votes', 0))
+                    else:
+                        name = str(code)
+                        if isinstance(info, (int, float)):
+                            ev = int(info)
+                        else:
+                            try:
+                                ev = int(str(info))
+                            except Exception:
+                                ev = 0
+                    parsed.append((code, (name or str(code)), ev))
+                # choose the candidate with the smallest non-zero EVs
+                # exclude the primary winner and runner-up from consideration
+                parsed = [p for p in parsed if p[2] > 0 and p[1] not in (winner_name, loser_name)]
+                if parsed:
+                    other_candidate = min(parsed, key=lambda x: x[2])
+                    code, name, ev = other_candidate[0], other_candidate[1], other_candidate[2]
+                    print(f'Other party/candidate: {name} ({code}) with {ev} electoral votes')
+            except Exception:
+                other_candidate = None
         # Format flipped states dict for nicer printing (commas for large numbers, % formatting)
         def _format_flipped(d):
             if not isinstance(d, dict):
@@ -32,17 +64,60 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
         print(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%')
         print(f'New Winner:{loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n')
 
-    # Ensure results directory exists
-    if not os.path.exists('results'):
-        os.makedirs('results')
-
-    # Append to the text summary file
-    with open(f'results/flip_results_{start_year}-{end_year}.txt', 'a') as f:
+    # Map modes to output folders (user preference):
+    # classic -> results/, no_majority -> no_majority/
+    folder_map = {
+        'classic': 'results',
+        'no_majority': 'no_majority'
+    }
+    folder = folder_map.get(mode, os.path.join('results', mode))
+    os.makedirs(folder, exist_ok=True)
+    # Append to the text summary file for the selected mode
+    with open(os.path.join(folder, f'flip_results_{start_year}-{end_year}.txt'), 'a') as f:
         f.write(f'Year: {year}\n')
         f.write(f'\tOriginal Winner:\n\t\t{winner_name} ({winner}) with {winner_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)\n\t\t\tvs {loser_name} ({loser}) with {loser_electoral_votes} electoral votes \n')
+        # include the single other party/candidate with the least EVs in the text output
+        if other_parties:
+            try:
+                # reuse logic above if available
+                if 'other_candidate' in locals() and other_candidate:
+                    code, name, ev = other_candidate[0], other_candidate[1], other_candidate[2]
+                else:
+                    # fallback parse
+                    parsed = []
+                    for code, info in other_parties.items():
+                        name = ''
+                        ev = 0
+                        if isinstance(info, (list, tuple)) and len(info) >= 2:
+                            name, ev = info[0], int(info[1])
+                        elif isinstance(info, dict):
+                            name = info.get('name') or info.get('candidate') or ''
+                            ev = int(info.get('electoral_votes', 0))
+                        else:
+                            name = str(code)
+                            if isinstance(info, (int, float)):
+                                ev = int(info)
+                            else:
+                                try:
+                                    ev = int(str(info))
+                                except Exception:
+                                    ev = 0
+                        parsed.append((code, (name or str(code)), ev))
+                    # exclude primary winner/runner-up when choosing the small contender
+                    parsed = [p for p in parsed if p[2] > 0 and p[1] not in (winner_name, loser_name)]
+                    if parsed:
+                        code, name, ev = min(parsed, key=lambda x: x[2])
+                    else:
+                        code, name, ev = None, None, 0
+                if ev > 0:
+                    f.write(f'\t\t\t\tvs {name} ({code}) with {ev} electoral votes\n')
+            except Exception:
+                pass
+        # if T_electoral > 0, include in original winner line
         popular_vote_winner = winner_name if popular_vote_margin > 0 else loser_name
         f.write(f'\tPopular Vote Margin: {popular_vote_margin:<,}  for {popular_vote_winner}\n')
         # write a nicely formatted flipped states string (with thousands separators and percent formatting)
+        total_flipped_EVs = sum(info.get('EC', 0) for info in flipped_states_votes_dict.values())
         def _format_flipped_for_write(d):
             # reuse same formatting logic as printing
             if not isinstance(d, dict):
@@ -65,5 +140,91 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
 
         flipped_states_str = _format_flipped_for_write(flipped_states_votes_dict)
         f.write(f'\tFlipped states: {flipped_states_str}\n')
-        f.write(f'\tTotal number of flipped votes: {min_votes_to_flip:,} across {number_of_flipped_states} states\n\tRatio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%\n\tRatio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%\n')
-        f.write(f'\tNew Winner:\n\t\t{loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)\n\t\t\tvs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n\n')
+        f.write(f'\tTotal number of flipped votes: {min_votes_to_flip:,} ({total_flipped_EVs} EVs) across {number_of_flipped_states} states\n\tRatio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%\n\tRatio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%\n')
+        # Write New Winner block or NO MAJORITY. Also include the small other contender if present.
+        if best_v + loser_electoral_votes >= electoral_college_votes_to_win:
+            f.write(f'\tNew Winner:\n')
+            f.write(f'\t\t{loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes ({electoral_college_votes_to_win} needed)\n')
+            f.write(f'\t\t\tvs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n')
+            # append the other contender if we have one
+            try:
+                if other_parties:
+                    if 'other_candidate' in locals() and other_candidate:
+                        code, name, ev = other_candidate[0], other_candidate[1], other_candidate[2]
+                    else:
+                        # pick smallest
+                        parsed = []
+                        for code, info in other_parties.items():
+                            if isinstance(info, (list, tuple)) and len(info) >= 2:
+                                n, e = info[0], int(info[1])
+                            elif isinstance(info, dict):
+                                n = info.get('name') or info.get('candidate') or ''
+                                e = int(info.get('electoral_votes', 0))
+                            else:
+                                n = str(code)
+                                try:
+                                    e = int(info)
+                                except Exception:
+                                    try:
+                                        e = int(str(info))
+                                    except Exception:
+                                        e = 0
+                            parsed.append((code, (n or str(code)), e))
+                        # exclude primary winner/runner-up when picking the small contender
+                        parsed = [p for p in parsed if p[2] > 0 and p[1] not in (winner_name, loser_name)]
+                        if parsed:
+                            code, name, ev = min(parsed, key=lambda x: x[2])
+                        else:
+                            code, name, ev = None, None, 0
+                    if ev > 0:
+                        f.write(f'\t\t\tvs {name} ({code}) with {ev} electoral votes\n')
+            except Exception:
+                pass
+            f.write('\n')
+        else:
+            # NO MAJORITY: show adjusted EV totals after flipping and include the small other contender (if any)
+            f.write('\tNO MAJORITY\n')
+            try:
+                # adjusted totals after flipping `best_v` from the winner to the loser
+                adjusted_loser_ev = best_v + loser_electoral_votes
+                adjusted_winner_ev = winner_electoral_votes - best_v
+                f.write(f"\t\tvs {winner_name} ({winner}) with {adjusted_winner_ev} electoral votes ({electoral_college_votes_to_win} needed)\n")
+                f.write(f"\t\t\t{loser_name} ({loser}) with {adjusted_loser_ev} electoral votes\n")
+
+                # include the small other contender if present (exclude primary winner/runner-up)
+                other_code = other_name = None
+                other_ev = 0
+                if other_parties:
+                    if 'other_candidate' in locals() and other_candidate:
+                        other_code, other_name, other_ev = other_candidate[0], other_candidate[1], other_candidate[2]
+                    else:
+                        parsed = []
+                        for code, info in other_parties.items():
+                            name = ''
+                            ev = 0
+                            if isinstance(info, (list, tuple)) and len(info) >= 2:
+                                name, ev = info[0], int(info[1])
+                            elif isinstance(info, dict):
+                                name = info.get('name') or info.get('candidate') or ''
+                                ev = int(info.get('electoral_votes', 0))
+                            else:
+                                name = str(code)
+                                try:
+                                    ev = int(info)
+                                except Exception:
+                                    try:
+                                        ev = int(str(info))
+                                    except Exception:
+                                        ev = 0
+                            parsed.append((code, (name or str(code)), ev))
+                        # exclude primary winner/runner-up
+                        parsed = [p for p in parsed if p[2] > 0 and p[1] not in (winner_name, loser_name)]
+                        if parsed:
+                            other_code, other_name, other_ev = min(parsed, key=lambda x: x[2])
+
+                if other_ev and other_name:
+                    f.write(f"\t\t\t\tvs {other_name} ({other_code}) with {other_ev} electoral votes\n")
+            except Exception:
+                # fallback to previous simple line if something goes wrong
+                f.write('\tNO MAJORITY\n')
+            f.write('\n')

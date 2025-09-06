@@ -1,0 +1,76 @@
+[
+  {
+    "year": 1944,
+    "state": "MINNESOTA",
+    "state_po": "MN",
+    "changes": {
+      "D_name": "Franklin D. Roosevelt",
+      "D_votes": 589864,
+      "R_votes": 527416,
+      "T_votes": 0,
+      "overall_winner": "D",
+      "overall_runner_up": "R",
+      "party_win": "D"
+    }
+  },
+  {
+    "year": 1948,
+    "state": "MINNESOTA",
+    "state_po": "MN",
+    "changes": {
+      "D_name": "Harry S. Truman",
+      "D_votes": 692966,
+      "R_name": "Thomas E. Dewey",
+      "R_votes": 483617,
+      "T_votes": 0,
+      "overall_winner": "D",
+      "overall_runner_up": "R",
+      "party_win": "D"
+    }
+  },
+  {
+    "year": 1964,
+    "state": "MINNESOTA",
+    "state_po": "MN",
+    "changes": {
+      "D_name": "Lyndon B. Johnson",
+      "D_votes": 991117,
+      "R_name": "Barry Goldwater",
+      "R_votes": 559624,
+      "T_votes": 0,
+      "overall_winner": "D",
+      "overall_runner_up": "R",
+      "party_win": "D"
+    }
+  },
+  {
+    "year": 1964,
+    "state": "NORTH DAKOTA",
+    "state_po": "ND",
+    "changes": {
+      "D_name": "Lyndon B. Johnson",
+      "D_votes": 149784,
+      "R_name": "Barry Goldwater",
+      "R_votes": 108207,
+      "T_votes": 0,
+      "overall_winner": "R",
+      "overall_runner_up": "D",
+      "party_win": "D"
+    }
+  },
+  {
+    "year": 1968,
+    "state": "MINNESOTA",
+    "state_po": "MN",
+    "changes": {
+      "D_name": "Hubert Humphrey",
+      "D_votes": 857738,
+      "R_name": "Richard Nixon",
+      "R_votes": 658643,
+      "T_votes": 0,
+      "overall_winner": "D",
+      "overall_runner_up": "R",
+      "party_win": "D"
+    }
+  }
+]
