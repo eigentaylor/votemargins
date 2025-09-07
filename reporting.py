@@ -1,7 +1,7 @@
 import os
 
 
-def generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, start_year, end_year, print_results=True, mode='classic', other_parties=None, skip_majority=True):
+def generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, start_year, end_year, print_results=True, mode='classic', other_parties=None, skip_majority=False):
     """Print and persist per-year summary details."""
     if best_v + loser_electoral_votes >= electoral_college_votes_to_win and mode == 'no_majority' and skip_majority:
         return
@@ -58,10 +58,66 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
                     pct_str = f"{float(pct):.3f}%" if pct != '' else ''
                 except Exception:
                     pct_str = str(pct)
-                parts.append(f"{state}: EC={ec}, flipped votes={fv_str}, % flipped={pct_str}")
+                # compute original and adjusted tuples if original_votes present
+                orig = info.get('original_votes') or {}
+                state_winner = info.get('state_winner') or ''
+                # orig tuple ordering: D, R, T (T may be zero)
+                try:
+                    D_orig = int(orig.get('D', 0))
+                except Exception:
+                    D_orig = 0
+                try:
+                    R_orig = int(orig.get('R', 0))
+                except Exception:
+                    R_orig = 0
+                try:
+                    T_orig = int(orig.get('T', 0))
+                except Exception:
+                    T_orig = 0
+
+                # default adjusted = original
+                D_adj, R_adj, T_adj = D_orig, R_orig, T_orig
+                try:
+                    fv_int = int(fv)
+                except Exception:
+                    fv_int = None
+
+                if fv_int is not None and state_winner in ('D', 'R'):
+                    # flipped votes are removed from the original winner and added to the runner-up (loser arg of generate_year_results)
+                    if state_winner == 'D':
+                        # D was winner, so subtract fv from D and add to R
+                        D_adj = max(0, D_orig - fv_int)
+                        R_adj = R_orig + fv_int
+                    else:
+                        R_adj = max(0, R_orig - fv_int)
+                        D_adj = D_orig + fv_int
+
+                # format tuples; include T only if non-zero
+                def tuple_str(d, r, t):
+                    if t:
+                        return f"(D: {d:,}, R: {r:,}, T: {t:,})"
+                    else:
+                        return f"(D: {d:,}, R: {r:,})"
+
+                orig_tuple = tuple_str(D_orig, R_orig, T_orig)
+                adj_tuple = tuple_str(D_adj, R_adj, T_adj)
+
+                parts.append(f"{state}: EC={ec}, flipped votes={fv_str}, % flipped={pct_str}, {orig_tuple} -> {adj_tuple}")
             return "; ".join(parts)
 
+        # compute popular vote winner and percentage of total votes (for printing)
+        popular_vote_winner = winner_name if popular_vote_margin > 0 else loser_name
+        try:
+            pop_pct_of_total = 100 * abs(popular_vote_margin) / total_votes_in_year if total_votes_in_year else None
+        except Exception:
+            pop_pct_of_total = None
+
         flipped_states_str = _format_flipped(flipped_states_votes_dict)
+        # Print popular vote margin with total votes and percentage of total votes
+        if pop_pct_of_total is None:
+            print(f'Popular Vote Margin: {abs(popular_vote_margin):,}  for {popular_vote_winner} (Total votes: {total_votes_in_year})')
+        else:
+            print(f'Popular Vote Margin: {abs(popular_vote_margin):,}  for {popular_vote_winner} (Total votes: {total_votes_in_year:,}; Ratio to Total Votes in Year: {pop_pct_of_total:.5f}%)')
         print(f'Flipped states: {flipped_states_str}')
         print(f'Total number of flipped votes: {min_votes_to_flip} across {number_of_flipped_states} states, Ratio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%, Ratio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%')
         print(f'New Winner:{loser_name} ({loser}) with {best_v+loser_electoral_votes} electoral votes vs {winner_name} ({winner}) with {winner_electoral_votes-best_v} electoral votes\n')
@@ -119,7 +175,16 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
                 pass
         # if T_electoral > 0, include in original winner line
         popular_vote_winner = winner_name if popular_vote_margin > 0 else loser_name
-        f.write(f'\tPopular Vote Margin: {popular_vote_margin:<,}  for {popular_vote_winner}\n')
+        # write popular vote margin with total votes in year and percentage of total votes
+        try:
+            pop_pct_of_total = 100 * abs(popular_vote_margin) / total_votes_in_year if total_votes_in_year else None
+        except Exception:
+            pop_pct_of_total = None
+
+        if pop_pct_of_total is None:
+            f.write(f"\tPopular Vote Margin: {abs(popular_vote_margin):<,}  for {popular_vote_winner}\n\tTotal votes in year: {total_votes_in_year}\n")
+        else:
+            f.write(f"\tPopular Vote Margin: {abs(popular_vote_margin):<,} ({pop_pct_of_total:<.5f}% of total)  for {popular_vote_winner}\n\tTotal votes in year: {total_votes_in_year:,}\n")
         # write a nicely formatted flipped states string (with thousands separators and percent formatting)
         total_flipped_EVs = sum(info.get('EC', 0) for info in flipped_states_votes_dict.values())
         def _format_flipped_for_write(d):
@@ -139,12 +204,49 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
                     pct_str = f"{float(pct):.3f}%" if pct != '' else ''
                 except Exception:
                     pct_str = str(pct)
-                parts.append(f"\n\t\t{state:<15} ({ec:>2} EVs):{fv_str:>10} ({pct_str:>7}) flipped votes")
+                # compute original and adjusted tuples
+                orig = info.get('original_votes') or {}
+                state_winner = info.get('state_winner') or ''
+                try:
+                    D_orig = int(orig.get('D', 0))
+                except Exception:
+                    D_orig = 0
+                try:
+                    R_orig = int(orig.get('R', 0))
+                except Exception:
+                    R_orig = 0
+                try:
+                    T_orig = int(orig.get('T', 0))
+                except Exception:
+                    T_orig = 0
+
+                D_adj, R_adj, T_adj = D_orig, R_orig, T_orig
+                try:
+                    fv_int = int(fv)
+                except Exception:
+                    fv_int = None
+
+                if fv_int is not None and state_winner in ('D', 'R'):
+                    if state_winner == 'D':
+                        D_adj = max(0, D_orig - fv_int)
+                        R_adj = R_orig + fv_int
+                    else:
+                        R_adj = max(0, R_orig - fv_int)
+                        D_adj = D_orig + fv_int
+
+                if T_orig:
+                    orig_tuple = f"(D{'*' if state_winner == 'D' else ' '}: {D_orig:>10,}, R{'*' if state_winner == 'R' else ' '}: {R_orig:>10,}, T: {T_orig:>10,})"
+                    adj_tuple = f"(D{'*' if D_adj > R_adj else ' '}: {D_adj:>10,}, R{'*' if R_adj > D_adj else ' '}: {R_adj:>10,}, T: {T_adj:>10,})"
+                else:
+                    orig_tuple = f"(D{'*' if state_winner == 'D' else ' '}: {D_orig:>10,}, R{'*' if state_winner == 'R' else ' '}: {R_orig:>10,})"
+                    adj_tuple = f"(D{'*' if D_adj > R_adj else ' '}: {D_adj:>10,}, R{'*' if R_adj > D_adj else ' '}: {R_adj:>10,})"
+
+                parts.append(f"\n\t\t{state:<15} ({ec:>2} EVs):{fv_str:>10} ({pct_str:>7}) flipped votes\n\t\t\t   {orig_tuple} \n\t\t\t-> {adj_tuple}")
             return "; ".join(parts)
 
         flipped_states_str = _format_flipped_for_write(flipped_states_votes_dict)
         f.write(f'\tFlipped states: {flipped_states_str}\n')
-        f.write(f'\tTotal number of flipped votes: {min_votes_to_flip:,} ({total_flipped_EVs} EVs) across {number_of_flipped_states} states\n\tRatio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}%\n\tRatio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}%\n')
+        f.write(f'\tTotal number of flipped votes: {min_votes_to_flip:,} ({total_flipped_EVs} EVs) across {number_of_flipped_states} states\n\tRatio to Popular Vote Margin: {100 * min_votes_to_flip / abs_popular_vote_margin:.5f}% ({popular_vote_margin:<,})\n\tRatio to Total Votes in Year: {100 * min_votes_to_flip / total_votes_in_year:.5f}% ({total_votes_in_year:,})\n')
         # Write New Winner block or NO MAJORITY. Also include the small other contender if present.
         if best_v + loser_electoral_votes >= electoral_college_votes_to_win:
             f.write(f'\tNew Winner:\n')

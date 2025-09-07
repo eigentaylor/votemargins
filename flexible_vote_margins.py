@@ -93,12 +93,47 @@ def get_flip_results(election_results_df, start_year, end_year, print_results=Fa
 
             flipped_states_votes_dict = {}
             for state in flipped_states:
+                # attempt to capture original per-party vote totals for the state so we can
+                # show original -> adjusted tuples in reports
+                try:
+                    prow = election_results[election_results['state'] == state].iloc[0]
+                except Exception:
+                    prow = None
+
+                d_votes = r_votes = t_votes = 0
+                state_winner = ''
+                if prow is not None:
+                    try:
+                        d_votes = int(prow.get('D_votes') or 0)
+                    except Exception:
+                        d_votes = 0
+                    try:
+                        r_votes = int(prow.get('R_votes') or 0)
+                    except Exception:
+                        r_votes = 0
+                    try:
+                        t_votes = int(prow.get('T_votes') or 0)
+                    except Exception:
+                        t_votes = 0
+
+                    state_winner = (prow.get('party_win') or '').strip()
+                    if state_winner not in ('D', 'R', 'T'):
+                        # fallback: infer by comparing vote totals in the row
+                        if d_votes >= r_votes and d_votes >= t_votes:
+                            state_winner = 'D'
+                        elif r_votes >= d_votes and r_votes >= t_votes:
+                            state_winner = 'R'
+                        else:
+                            state_winner = 'T'
+
                 flipped_states_votes_dict[state] = {
                     'EC': winner_states_dict[state]['electoral_votes'],
                     'flipped votes': winner_states_dict[state]['votes_to_flip'],
                     '% flipped': round(
                         winner_states_dict[state]['votes_to_flip'] / winner_states_dict[state]['total_votes'] * 100, 3
                     ),
+                    'original_votes': {'D': d_votes, 'R': r_votes, 'T': t_votes},
+                    'state_winner': state_winner,
                 }
 
             flipped_states_votes_dict = {
