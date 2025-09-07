@@ -50,8 +50,8 @@ Year: 1960
 	Ratio to Popular Vote Margin: 3.97777% (112,827)
 	Ratio to Total Votes in Year: 0.00651% (68,968,146)
 	NO MAJORITY
-		vs John F. Kennedy (D) with 268 electoral votes (269 needed)
-			Richard Nixon (R) with 250 electoral votes
+		John F. Kennedy (D) with 268 electoral votes (269 needed)
+			vs Richard Nixon (R) with 250 electoral votes
 				vs Harry F. Byrd (T) with 19 electoral votes
 
 Year: 1976
@@ -92,8 +92,8 @@ Year: 1948
 	Ratio to Popular Vote Margin: 0.52712% (2,368,927)
 	Ratio to Total Votes in Year: 0.02611% (47,830,161)
 	NO MAJORITY
-		vs Harry S. Truman (D) with 265 electoral votes (266 needed)
-			Thomas E. Dewey (R) with 239 electoral votes
+		Harry S. Truman (D) with 265 electoral votes (266 needed)
+			vs Thomas E. Dewey (R) with 239 electoral votes
 				vs Strom Thurmond (T) with 27 electoral votes
 
 Year: 2004
@@ -116,8 +116,8 @@ Year: 2004
 	Ratio to Popular Vote Margin: 0.63046% (2,978,157)
 	Ratio to Total Votes in Year: 0.01555% (120,767,265)
 	NO MAJORITY
-		vs George W. Bush (R) with 269 electoral votes (270 needed)
-			John Kerry (D) with 269 electoral votes
+		George W. Bush (R) with 269 electoral votes (270 needed)
+			vs John Kerry (D) with 269 electoral votes
 
 Year: 2020
 	Original Winner:
@@ -139,8 +139,8 @@ Year: 2020
 	Ratio to Popular Vote Margin: 0.30429% (7,052,762)
 	Ratio to Total Votes in Year: 0.01380% (155,485,054)
 	NO MAJORITY
-		vs Joseph R. Biden (D) with 269 electoral votes (270 needed)
-			Donald J. Trump (R) with 269 electoral votes
+		Joseph R. Biden (D) with 269 electoral votes (270 needed)
+			vs Donald J. Trump (R) with 269 electoral votes
 
 Year: 2016
 	Original Winner:
@@ -189,8 +189,8 @@ Year: 1968
 	Ratio to Popular Vote Margin: 7.55797% (605,083)
 	Ratio to Total Votes in Year: 0.06287% (72,740,101)
 	NO MAJORITY
-		vs Richard Nixon (R) with 267 electoral votes (270 needed)
-			Hubert Humphrey (D) with 226 electoral votes
+		Richard Nixon (R) with 267 electoral votes (270 needed)
+			vs Hubert Humphrey (D) with 226 electoral votes
 				vs George Wallace (T) with 45 electoral votes
 
 Year: 1908
@@ -370,8 +370,8 @@ Year: 1912
 	Ratio to Popular Vote Margin: 8.88635% (2,120,264)
 	Ratio to Total Votes in Year: 1.35405% (13,914,805)
 	NO MAJORITY
-		vs Woodrow Wilson (D) with 265 electoral votes (266 needed)
-			Theodore Roosevelt (T) with 258 electoral votes
+		Woodrow Wilson (D) with 265 electoral votes (266 needed)
+			vs Theodore Roosevelt (T) with 258 electoral votes
 				vs William Howard Taft (R) with 8 electoral votes
 
 Year: 1904
@@ -421,8 +421,8 @@ Year: 1904
 	Ratio to Popular Vote Margin: 7.41585% (2,546,330)
 	Ratio to Total Votes in Year: 1.46125% (12,922,637)
 	NO MAJORITY
-		vs Theodore Roosevelt (R) with 238 electoral votes (239 needed)
-			Alton B. Parker (D) with 238 electoral votes
+		Theodore Roosevelt (R) with 238 electoral votes (239 needed)
+			vs Alton B. Parker (D) with 238 electoral votes
 
 Year: 2012
 	Original Winner:
@@ -494,8 +494,8 @@ Year: 1992
 	Ratio to Popular Vote Margin: 4.55803% (6,057,834)
 	Ratio to Total Votes in Year: 0.33006% (83,655,660)
 	NO MAJORITY
-		vs Bill Clinton (D) with 269 electoral votes (270 needed)
-			George H.W. Bush (R) with 269 electoral votes
+		Bill Clinton (D) with 269 electoral votes (270 needed)
+			vs George H.W. Bush (R) with 269 electoral votes
 
 Year: 1944
 	Original Winner:
@@ -743,8 +743,8 @@ Year: 1924
 	Ratio to Popular Vote Margin: 5.98431% (7,339,279)
 	Ratio to Total Votes in Year: 1.52207% (28,855,699)
 	NO MAJORITY
-		vs Calvin Coolidge (R) with 265 electoral votes (266 needed)
-			John W. Davis (D) with 253 electoral votes
+		Calvin Coolidge (R) with 265 electoral votes (266 needed)
+			vs John W. Davis (D) with 253 electoral votes
 				vs Robert M. La Follette (T) with 13 electoral votes
 
 Year: 2008
@@ -782,8 +782,8 @@ Year: 2008
 	Ratio to Popular Vote Margin: 4.97843% (9,725,011)
 	Ratio to Total Votes in Year: 0.37545% (128,952,681)
 	NO MAJORITY
-		vs Barack H. Obama (D) with 269 electoral votes (270 needed)
-			John Mccain (R) with 269 electoral votes
+		Barack H. Obama (D) with 269 electoral votes (270 needed)
+			vs John Mccain (R) with 269 electoral votes
 
 Year: 1988
 	Original Winner:
@@ -838,8 +838,8 @@ Year: 1988
 	Ratio to Popular Vote Margin: 7.59262% (6,925,961)
 	Ratio to Total Votes in Year: 0.58197% (90,359,319)
 	NO MAJORITY
-		vs George H.W. Bush (R) with 269 electoral votes (270 needed)
-			Michael Dukakis (D) with 269 electoral votes
+		George H.W. Bush (R) with 269 electoral votes (270 needed)
+			vs Michael Dukakis (D) with 269 electoral votes
 
 Year: 1996
 	Original Winner:
@@ -888,8 +888,8 @@ Year: 1996
 	Ratio to Popular Vote Margin: 6.76735% (8,291,654)
 	Ratio to Total Votes in Year: 0.65021% (86,299,048)
 	NO MAJORITY
-		vs Bill Clinton (D) with 269 electoral votes (270 needed)
-			Robert Dole (R) with 269 electoral votes
+		Bill Clinton (D) with 269 electoral votes (270 needed)
+			vs Robert Dole (R) with 269 electoral votes
 
 Year: 1920
 	Original Winner:
@@ -1036,8 +1036,8 @@ Year: 1980
 	Ratio to Popular Vote Margin: 7.82984% (8,161,691)
 	Ratio to Total Votes in Year: 0.80766% (79,123,587)
 	NO MAJORITY
-		vs Ronald Reagan (R) with 269 electoral votes (270 needed)
-			Jimmy Carter (D) with 269 electoral votes
+		Ronald Reagan (R) with 269 electoral votes (270 needed)
+			vs Jimmy Carter (D) with 269 electoral votes
 
 Year: 1952
 	Original Winner:
@@ -1448,8 +1448,8 @@ Year: 1964
 	Ratio to Popular Vote Margin: 12.62378% (16,163,998)
 	Ratio to Total Votes in Year: 2.89370% (70,515,546)
 	NO MAJORITY
-		vs Lyndon B. Johnson (D) with 269 electoral votes (270 needed)
-			Barry Goldwater (R) with 269 electoral votes
+		Lyndon B. Johnson (D) with 269 electoral votes (270 needed)
+			vs Barry Goldwater (R) with 269 electoral votes
 
 Year: 1984
 	Original Winner:
@@ -1531,8 +1531,8 @@ Year: 1984
 	Ratio to Popular Vote Margin: 15.41173% (16,717,016)
 	Ratio to Total Votes in Year: 2.81213% (91,616,642)
 	NO MAJORITY
-		vs Ronald Reagan (R) with 269 electoral votes (270 needed)
-			Walter Mondale (D) with 269 electoral votes
+		Ronald Reagan (R) with 269 electoral votes (270 needed)
+			vs Walter Mondale (D) with 269 electoral votes
 
 Year: 1972
 	Original Winner:
@@ -1623,5 +1623,5 @@ Year: 1972
 	Ratio to Popular Vote Margin: 17.44007% (18,898,218)
 	Ratio to Total Votes in Year: 4.31360% (76,406,253)
 	NO MAJORITY
-		vs Richard Nixon (R) with 269 electoral votes (270 needed)
-			George McGovern (D) with 269 electoral votes
+		Richard Nixon (R) with 269 electoral votes (270 needed)
+			vs George McGovern (D) with 269 electoral votes

@@ -294,8 +294,8 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
                 # adjusted totals after flipping `best_v` from the winner to the loser
                 adjusted_loser_ev = best_v + loser_electoral_votes
                 adjusted_winner_ev = winner_electoral_votes - best_v
-                f.write(f"\t\tvs {winner_name} ({winner}) with {adjusted_winner_ev} electoral votes ({electoral_college_votes_to_win} needed)\n")
-                f.write(f"\t\t\t{loser_name} ({loser}) with {adjusted_loser_ev} electoral votes\n")
+                f.write(f"\t\t{winner_name} ({winner}) with {adjusted_winner_ev} electoral votes ({electoral_college_votes_to_win} needed)\n")
+                f.write(f"\t\t\tvs {loser_name} ({loser}) with {adjusted_loser_ev} electoral votes\n")
 
                 # include the small other contender if present (exclude primary winner/runner-up)
                 other_code = other_name = None
