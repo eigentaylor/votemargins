@@ -305,7 +305,12 @@ def main():
     results_by_mode = get_flip_results(election_results_df, start_year, end_year, print_results=True, flip_mode='both')
     for mode, (flip_results_df, _) in results_by_mode.items():
         folder_path = 'results' if mode == 'classic' else mode
-        make_all_plots(flip_results_df, start_year, end_year, folder_path=os.path.join(folder_path), show_plot=False)
+        make_all_plots(flip_results_df, start_year, end_year, folder_path=os.path.join(folder_path), show_plot=False, mode=mode, clear_files=True)
+        
+    # run the sorting script to produce sorted versions of the results files
+    import tools.sort_flip_results
+    # run the file
+    tools.sort_flip_results.main()
 
     metrics = compute_metrics_for_all_years()
     write_outputs(metrics)
@@ -313,8 +318,8 @@ def main():
 
 if __name__ == '__main__':
     # delete folders if they exist
-    for folder in ['results', 'no_majority', 'election_metrics']:
-        if os.path.exists(folder):
-            import shutil
-            shutil.rmtree(folder)
+    # for folder in ['results', 'no_majority', 'election_metrics']:
+    #     if os.path.exists(folder):
+    #         import shutil
+    #         shutil.rmtree(folder)
     main()
