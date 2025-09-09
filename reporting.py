@@ -1,7 +1,7 @@
 import os
 
 
-def generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, start_year, end_year, print_results=True, mode='classic', other_parties=None, skip_majority=False):
+def generate_year_results(year, winner_name, winner, winner_electoral_votes, loser_name, loser, loser_electoral_votes, total_votes_winner, total_votes_loser, popular_vote_margin, electoral_college_votes_to_win, flipped_states_votes_dict, min_votes_to_flip, number_of_flipped_states, abs_popular_vote_margin, total_votes_in_year, best_v, start_year, end_year, filename=None, print_results=True, mode='classic', other_parties=None, skip_majority=False):
     """Print and persist per-year summary details."""
     if best_v + loser_electoral_votes >= electoral_college_votes_to_win and mode == 'no_majority' and skip_majority:
         return
@@ -131,7 +131,10 @@ def generate_year_results(year, winner_name, winner, winner_electoral_votes, los
     folder = folder_map.get(mode, os.path.join('results', mode))
     os.makedirs(folder, exist_ok=True)
     # Choose the correct filename depending on mode
-    txt_name = f'no_majority_results_{start_year}-{end_year}.txt' if mode == 'no_majority' else f'flip_results_{start_year}-{end_year}.txt'
+    if filename:
+        txt_name = filename + f'_{start_year}-{end_year}.txt'
+    else:
+        txt_name = f'no_majority_results_{start_year}-{end_year}.txt' if mode == 'no_majority' else f'flip_results_{start_year}-{end_year}.txt'
     # Append to the text summary file for the selected mode
     with open(os.path.join(folder, txt_name), 'a') as f:
         f.write(f'Year: {year}\n')

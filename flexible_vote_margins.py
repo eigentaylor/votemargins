@@ -256,6 +256,33 @@ def get_flip_results(election_results_df, start_year, end_year, print_results=Fa
                         mode=m,
                         other_parties=other_parties,
                     )
+                    # also save to a separate ONLY file with just these years
+                    generate_year_results(
+                        year,
+                        winner_name,
+                        winner,
+                        winner_electoral_votes,
+                        loser_name,
+                        loser,
+                        loser_electoral_votes,
+                        total_votes_winner,
+                        total_votes_loser,
+                        popular_vote_margin,
+                        electoral_college_votes_to_win,
+                        flipped_states_votes_dict,
+                        min_votes_to_flip,
+                        number_of_flipped_states,
+                        abs_popular_vote_margin,
+                        total_votes_in_year,
+                        best_v,
+                        start_year,
+                        end_year,
+                        print_results=print_results,
+                        mode=m,
+                        other_parties=other_parties,
+                        filename='no_majority_ONLY_results',
+                        skip_majority=True,
+                    )
             else:
                 generate_year_results(
                     year,
@@ -318,8 +345,8 @@ def main():
 
 if __name__ == '__main__':
     # delete folders if they exist
-    # for folder in ['results', 'no_majority', 'election_metrics']:
-    #     if os.path.exists(folder):
-    #         import shutil
-    #         shutil.rmtree(folder)
+    for folder in ['results', 'no_majority', 'election_metrics']:
+        if os.path.exists(folder):
+            import shutil
+            shutil.rmtree(folder)
     main()

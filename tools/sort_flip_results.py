@@ -6,6 +6,7 @@ def main():
     SOURCES = [
         Path('results/flip_results_1900-2024.txt'),
         Path('no_majority/no_majority_results_1900-2024.txt'),
+        Path('no_majority/no_majority_ONLY_results_1900-2024.txt')
     ]
 
     for SRC in SOURCES:
@@ -59,3 +60,6 @@ def main():
         dst_raw.write_text(out_raw, encoding='utf-8')
         dst_ratio.write_text(out_ratio, encoding='utf-8')
         print(f'Wrote {dst_raw} and {dst_ratio} with {len(sections)} sections')
+
+if __name__ == '__main__':
+    main()
